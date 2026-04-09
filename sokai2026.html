@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>令和8年度 定時総会 議案説明資料｜宮前平小学校PTA</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    @font-face {
+      font-family: 'AdjustedYuGothic';
+      src: local('Yu Gothic Medium'), local('YuGothic-Medium');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'AdjustedYuGothic';
+      src: local('Yu Gothic Bold'), local('YuGothic-Bold');
+      font-weight: 700;
+    }
+    :root {
+      --primary: #0077c7;
+      --primary-dark: #005fa3;
+      --primary-light: #e8f4fd;
+      --text: #23221e;
+      --text-sub: #706e69;
+      --bg: #f8f7f6;
+      --bg-white: #ffffff;
+      --border: #d6d3d0;
+      --stone-100: #f5f4f2;
+      --stone-200: #ebe9e6;
+      --approval: #c2410c;
+      --approval-bg: #fff7ed;
+      --approval-border: #fed7aa;
+      --mgmt: #15803d;
+      --mgmt-bg: #f0fdf4;
+      --mgmt-border: #bbf7d0;
+      --radius: 6px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'AdjustedYuGothic', 'Yu Gothic', 'YuGothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ===== STICKY NAV ===== */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 32px;
+      height: 52px;
+    }
+    .topbar-logo {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-right: 32px;
+      white-space: nowrap;
+    }
+    .topbar-nav {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .topbar-nav::-webkit-scrollbar { display: none; }
+    .topbar-nav a {
+      display: flex;
+      align-items: center;
+      height: 52px;
+      padding: 0 16px;
+      font-size: 13px;
+      color: var(--text-sub);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .topbar-nav a:hover { color: var(--primary); border-color: var(--primary); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #003d6b 0%, #0077c7 60%, #00a3e0 100%);
+      color: #fff;
+      padding: 64px 40px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -60px;
+      width: 320px; height: 320px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .hero-meta {
+      font-size: 13px;
+      opacity: 0.8;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .hero-sub { font-size: 15px; opacity: 0.85; max-width: 600px; }
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .hero-badge span { font-size: 18px; font-weight: 700; }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 56px 0 48px; }
+    .section + .section { border-top: 1px solid var(--border); }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-header { margin-bottom: 32px; }
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .section-desc {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--text-sub);
+      max-width: 640px;
+    }
+
+    /* ===== TYPE BADGES ===== */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+    .badge-approval {
+      background: var(--approval-bg);
+      color: var(--approval);
+      border: 1px solid var(--approval-border);
+    }
+    .badge-mgmt {
+      background: var(--mgmt-bg);
+      color: var(--mgmt);
+      border: 1px solid var(--mgmt-border);
+    }
+    .badge-info {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid #bfdbfe;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .card-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-number.approval { background: var(--approval); }
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .card-title-sub {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+
+    /* ===== OVERVIEW / STATS ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .stat-unit { font-size: 16px; font-weight: 400; }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-top: 4px;
+    }
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+      display: flex;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+    .timeline-item {
+      flex: 1;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      position: relative;
+    }
+    .timeline-item + .timeline-item {
+      margin-left: -1px;
+      border-left-color: transparent;
+    }
+    .timeline-item:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .timeline-item:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+    .timeline-round {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .timeline-date { font-size: 12px; color: var(--text-sub); margin-bottom: 8px; }
+    .timeline-count { font-size: 20px; font-weight: 700; color: var(--text); }
+    .timeline-count small { font-size: 12px; font-weight: 400; color: var(--text-sub); }
+    .timeline-theme { font-size: 12px; color: var(--text-sub); margin-top: 4px; }
+
+    /* ===== CHART CONTAINER ===== */
+    .chart-wrap {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .chart-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+    }
+    .chart-canvas-wrap {
+      position: relative;
+    }
+
+    /* ===== BEFORE/AFTER ===== */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px;
+      align-items: start;
+      margin: 16px 0;
+    }
+    .comp-box {
+      background: var(--stone-100);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .comp-box.after {
+      background: var(--primary-light);
+      border-color: #93c5fd;
+    }
+    .comp-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+    }
+    .comp-box.after .comp-label { color: var(--primary); }
+    .comp-arrow {
+      font-size: 20px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      padding-top: 32px;
+    }
+    .comp-list { list-style: none; }
+    .comp-list li {
+      font-size: 13px;
+      padding: 4px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .comp-list li:last-child { border-bottom: none; }
+    .comp-list li::before { content: '・ '; color: var(--text-sub); }
+    .comp-box.after .comp-list li::before { content: '✓ '; color: var(--primary); }
+
+    /* ===== MEMBERSHIP TABLE ===== */
+    .mem-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .mem-table th {
+      background: var(--stone-100);
+      color: var(--text);
+      font-weight: 700;
+      padding: 10px 12px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      font-size: 12px;
+    }
+    .mem-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      text-align: center;
+      vertical-align: middle;
+    }
+    .mem-table tr:last-child td { border-bottom: none; }
+    .mem-table td:last-child, .mem-table th:last-child { border-right: none; }
+    .mem-table td:first-child { text-align: left; font-weight: 700; }
+    .tag-yes { color: var(--mgmt); font-weight: 700; }
+    .tag-no { color: var(--text-sub); }
+    .tag-optional { color: #92400e; }
+    .style-leader { background: #eff6ff; }
+    .style-legend { background: #f5f3ff; }
+    .style-sup-a { background: #fff7ed; }
+    .style-teacher { background: #f0fdf4; }
+    .style-non { background: var(--stone-100); }
+
+    /* ===== PILLAR CARDS ===== */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .pillar {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px;
+    }
+    .pillar-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .pillar-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .pillar-body { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
+
+    /* ===== EVENT TABLE ===== */
+    .event-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin: 16px 0;
+    }
+    .event-table th {
+      background: var(--stone-100);
+      font-weight: 700;
+      padding: 10px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+    .event-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .event-table tr:last-child td { border-bottom: none; }
+    .event-table td:first-child { font-weight: 700; white-space: nowrap; }
+
+    /* ===== APPROVAL SUMMARY BOX ===== */
+    .approval-summary {
+      background: var(--approval-bg);
+      border: 1px solid var(--approval-border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+    .approval-summary h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--approval);
+      margin-bottom: 12px;
+    }
+    .approval-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .approval-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .approval-list .num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--approval);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ===== QA ===== */
+    .qa-item {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .qa-q {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .qa-q:hover { background: var(--stone-100); }
+    .qa-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .qa-q-text { font-size: 14px; font-weight: 700; flex: 1; line-height: 1.5; }
+    .qa-toggle { color: var(--text-sub); font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+    .qa-a {
+      display: none;
+      padding: 0 20px 16px 56px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-sub);
+      border-top: 1px solid var(--stone-200);
+      padding-top: 12px;
+    }
+    .qa-item.open .qa-a { display: block; }
+    .qa-item.open .qa-toggle { transform: rotate(180deg); }
+
+    /* ===== MGMT ITEMS ===== */
+    .mgmt-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--mgmt);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+    }
+    .mgmt-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .mgmt-title { font-size: 15px; font-weight: 700; }
+    .mgmt-body { font-size: 13px; color: var(--text-sub); line-height: 1.7; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px;
+      font-size: 12px;
+      line-height: 1.8;
+      margin-top: 48px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+    /* ===== DATA POINT INLINE ===== */
+    .data-point {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 3px;
+      background: var(--primary-light);
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .data-point small { font-size: 11px; font-weight: 400; }
+
+    @media (max-width: 640px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .timeline { flex-direction: column; }
+      .timeline-item + .timeline-item { margin-left: 0; margin-top: -1px; border-left-color: var(--border); border-top-color: transparent; }
+      .timeline-item:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+      .timeline-item:last-child { border-radius: 0 0 var(--radius) var(--radius); }
+      .comparison { grid-template-columns: 1fr; }
+      .comp-arrow { display: none; }
+      .pillars { grid-template-columns: 1fr; }
+      .hero { padding: 40px 20px 36px; }
+      .hero h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<nav class="topbar">
+  <div class="topbar-logo">宮前平小PTA 2026</div>
+  <div class="topbar-nav">
+    <a href="#overview">改革の全体像</a>
+    <a href="#approval">総会承認事項</a>
+    <a href="#mgmt">運営判断事項</a>
+    <a href="#qa">想定Q&amp;A</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-meta">令和8年4月 ｜ 宮前平小学校PTA 定時総会 議案説明資料</div>
+    <h1>PTA改革 総会議案のご説明</h1>
+    <p class="hero-sub">3回のアンケート（延べ 930名）のご回答をもとに設計した制度改革について、総会での承認事項と運営判断事項に分けてご説明します。</p>
+    <div class="hero-badges">
+      <div class="hero-badge">承認事項 <span>4</span> 件</div>
+      <div class="hero-badge">運営判断 <span>5</span> 件</div>
+      <div class="hero-badge">根拠調査 <span>3</span> 回</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 1: 全体像 ===== -->
+<section class="section" id="overview">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Background</div>
+      <div class="section-title">改革の全体像</div>
+      <div class="section-desc">令和7年12月〜令和8年3月の3回にわたるアンケートで、保護者の皆さまの声を集めました。</div>
+    </div>
+
+    <!-- 統計サマリー -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">930<span class="stat-unit">名</span></div>
+        <div class="stat-label">3回合計の回答数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">87.5<span class="stat-unit">%</span></div>
+        <div class="stat-label">新会員スタイル制度への支持率（第3回）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">85.9<span class="stat-unit">%</span></div>
+        <div class="stat-label">活動最適化（外注・廃止等）への賛成率（第3回）</div>
+      </div>
+    </div>
+
+    <!-- タイムライン -->
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-round">第1回アンケート</div>
+        <div class="timeline-date">令和7年12月</div>
+        <div class="timeline-count">308 <small>件の回答</small></div>
+        <div class="timeline-theme">任意加入の周知・柔軟な参加・デジタル化</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-round">第2回アンケート</div>
+        <div class="timeline-date">令和8年1月</div>
+        <div class="timeline-count">318 <small>件の回答</small></div>
+        <div class="timeline-theme">会費徴収ツール選定・自動引き落とし</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-round">第3回アンケート</div>
+        <div class="timeline-date">令和8年3月</div>
+        <div class="timeline-count">304 <small>件の回答</small></div>
+        <div class="timeline-theme">会員スタイル制度・会費額・先生の関わり方</div>
+      </div>
+    </div>
+
+    <!-- 自由回答テーマグラフ -->
+    <div class="chart-wrap">
+      <div class="chart-title">自由回答で多かったテーマ（3回合計 151件）</div>
+      <div class="chart-canvas-wrap" style="height: 220px;">
+        <canvas id="themeChart"></canvas>
+      </div>
+    </div>
+
+    <!-- 承認事項サマリーボックス -->
+    <div class="approval-summary">
+      <h3>🗳 本総会での承認事項（4件）</h3>
+      <ul class="approval-list">
+        <li><span class="num">1</span> 規約改正（入会の任意性明確化・電子決済の明記・電子総会導入・教職員のアドバイザー化・学年委員選出条件廃止・教職員慶弔廃止）</li>
+        <li><span class="num">2</span> 会員スタイル制度の新設と会費改定</li>
+        <li><span class="num">3</span> 個人情報取扱規則の改正</li>
+        <li><span class="num">4</span> 会計細則の制定</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: 承認事項 ===== -->
+<section class="section" id="approval">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Agenda Items</div>
+      <div class="section-title">総会承認事項</div>
+      <div class="section-desc">以下4件について、会員の皆さまのご承認をお願いします。</div>
+    </div>
+
+    <!-- 承認1: 規約改正 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number approval">1</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <span class="badge badge-approval">🗳 総会承認</span>
+          </div>
+          <div class="card-title">規約改正</div>
+          <div class="card-title-sub">入会の任意性の明確化・年度ごと入会同意制・電子決済による年額一括徴収の規約明記・電子総会の導入・教職員のアドバイザー化・学年委員選出条件廃止・教職員慶弔廃止</div>
+        </div>
+      </div>
+
+      <div class="chart-wrap" style="margin-bottom:16px;">
+        <div class="chart-title">根拠：第1回アンケート ─ 任意加入に関する認知・意向</div>
+        <div class="chart-canvas-wrap" style="height: 180px;">
+          <canvas id="optInChart"></canvas>
+        </div>
+      </div>
+
+      <div class="comparison">
+        <div class="comp-box">
+          <div class="comp-label">BEFORE（現行規約）</div>
+          <ul class="comp-list">
+            <li>「入学時に自動加入」の慣例</li>
+            <li>退会手続きが明示されていない</li>
+            <li>年度更新の意思確認なし</li>
+            <li>総会は物理参加または紙面参加（含む電子投票）が前提</li>
+            <li>役員は互選・選出方法が不明確</li>
+            <li>校長・教頭・教務主任が役員として議決権を持つ</li>
+            <li>学年委員は各クラス1名の選出要件あり</li>
+            <li>教職員も慶弔規定の対象</li>
+          </ul>
+        </div>
+        <div class="comp-arrow">→</div>
+        <div class="comp-box after">
+          <div class="comp-label">AFTER（改正案）</div>
+          <ul class="comp-list">
+            <li>入会は毎年度の意思確認で確定（第4条）</li>
+            <li>退会はいつでも可能・退会意思の表明（退会届）をもって手続き完了（第4条）</li>
+            <li>会費は「電子決済システムによる年額一括払い」を規約（第5条）に明記</li>
+            <li>具体的なツール（がくぷり等）は会計細則で指定し、乗り換え時は細則改定のみで対応可</li>
+            <li>電子総会・書面議決を正式化（第9条）</li>
+            <li>役員構成をスリム化・推薦委員会を明文化</li>
+            <li>校長・教頭・教務主任はアドバイザー（出席・助言のみ、議決権なし）に変更</li>
+            <li>学年委員の「各クラス1名」選出条件を廃止（役割はキラどきに特化・手挙げ制へ）</li>
+            <li>教職員の慶弔規定を廃止（会費0円との整合性を確保）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:var(--stone-100);border-radius:var(--radius);padding:14px 16px;font-size:13px;color:var(--text-sub);margin-top:8px;">
+        📌 <strong style="color:var(--text);">法的根拠：</strong>憲法21条（結社の自由）・文科省通知（任意性の周知）・川崎市ガイドライン（入会届必須）に準拠した改正内容です。
+      </div>
+    </div>
+
+    <!-- 承認2: 会員スタイル -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number approval">2</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <span class="badge badge-approval">🗳 総会承認</span>
+          </div>
+          <div class="card-title">会員スタイル制度の新設と会費改定</div>
+          <div class="card-title-sub">全7区分を新設。活動量・関わり方に応じた選択制へ移行</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+        <div class="chart-wrap" style="margin-bottom:0;">
+          <div class="chart-title">第3回 ─ 新スタイル制度への支持</div>
+          <div class="chart-canvas-wrap" style="height: 160px;">
+            <canvas id="styleChart"></canvas>
+          </div>
+        </div>
+        <div class="chart-wrap" style="margin-bottom:0;">
+          <div class="chart-title">第3回 ─ サポーターA 希望会費（役務免除枠）</div>
+          <div class="chart-canvas-wrap" style="height: 160px;">
+            <canvas id="feeChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table class="mem-table">
+          <thead>
+            <tr>
+              <th style="text-align:left;">スタイル</th>
+              <th>年会費</th>
+              <th>役務</th>
+              <th>議決権</th>
+              <th>PTA保険</th>
+              <th>慶弔</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>スタンダード</td>
+              <td>¥3,600</td>
+              <td><span class="tag-yes">募集対象（係など）</span></td>
+              <td><span class="tag-yes">あり</span></td>
+              <td><span class="tag-yes">あり</span></td>
+              <td><span class="tag-yes">あり</span></td>
+            </tr>
+            <tr class="style-leader">
+              <td>リーダー</td>
+              <td>¥3,600</td>
+              <td><span class="tag-yes">委員活動</span></td>
+              <td><span class="tag-yes">あり</span></td>
+              <td><span class="tag-yes">あり</span></td>
+              <td><span class="tag-yes">あり</span></td>
+            </tr>
+            <tr class="style-legend">
+              <td>レジェンド</td>
+              <td>¥3,600</td>
+              <td><span class="tag-yes">役員活動</span></td>
+              <td><span class="tag-yes">あり</span></td>
+              <td><span class="tag-yes">あり</span></td>
+              <td><span class="tag-yes">あり</span></td>
+            </tr>
+            <tr class="style-sup-a">
+              <td>サポーターA</td>
+              <td style="font-size:12px;text-align:left;">¥5,400〜<br><span style="color:var(--text-sub);font-weight:400;">年会費¥3,600＋賛助費¥1,800/口<br>（何口でもOK）</span></td>
+              <td><span class="tag-no">役務免除</span></td>
+              <td><span class="tag-no">なし</span></td>
+              <td><span class="tag-yes">あり</span></td>
+              <td><span class="tag-yes">あり</span></td>
+            </tr>
+            <tr>
+              <td>サポーターB</td>
+              <td style="font-size:12px;text-align:left;">¥10,000〜<br><span style="color:var(--text-sub);font-weight:400;">1口¥10,000<br>（何口でもOK）</span></td>
+              <td><span class="tag-no">役務なし</span></td>
+              <td><span class="tag-no">なし</span></td>
+              <td><span class="tag-no">適用外</span></td>
+              <td><span class="tag-no">適用外</span></td>
+            </tr>
+            <tr class="style-teacher">
+              <td>ティーチャー（教職員）</td>
+              <td>¥0</td>
+              <td><span class="tag-no">任意参加</span></td>
+              <td><span class="tag-yes">あり</span></td>
+              <td><span class="tag-no">なし</span></td>
+              <td><span class="tag-no">なし</span></td>
+            </tr>
+            <tr class="style-non">
+              <td>非会員</td>
+              <td>¥0</td>
+              <td><span class="tag-no">なし</span></td>
+              <td><span class="tag-no">なし</span></td>
+              <td><span class="tag-no">なし</span></td>
+              <td><span class="tag-no">なし</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px;font-size:12px;color:var(--text-sub);">※ サポーターBは枠の設置のみ。実運用は次年度以降に整備予定。ティーチャーは地方公務員法に基づき完全任意・活動記録は求めない。</div>
+    </div>
+
+    <!-- 承認3: 個人情報取扱規則 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number approval">3</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <span class="badge badge-approval">🗳 総会承認</span>
+          </div>
+          <div class="card-title">個人情報取扱規則の改正</div>
+          <div class="card-title-sub">デジタル管理・学校との共同利用・廃棄ルールを明文化</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0;">
+        <div style="background:var(--stone-100);border-radius:var(--radius);padding:14px;font-size:13px;">
+          <div style="font-weight:700;margin-bottom:6px;font-size:12px;color:var(--text-sub);">取得情報の明示</div>
+          入会時に取得する情報の種類・目的を同意フォームで明記。活動履歴（役職歴）は会費適用の根拠として保持。
+        </div>
+        <div style="background:var(--stone-100);border-radius:var(--radius);padding:14px;font-size:13px;">
+          <div style="font-weight:700;margin-bottom:6px;font-size:12px;color:var(--text-sub);">学校との共同利用</div>
+          PTA保険・慶弔対応に必要な情報を、学校と共同利用する条件・範囲を規則に明記（個人情報保護法27条対応）。
+        </div>
+        <div style="background:var(--stone-100);border-radius:var(--radius);padding:14px;font-size:13px;">
+          <div style="font-weight:700;margin-bottom:6px;font-size:12px;color:var(--text-sub);">廃棄ルールの整備</div>
+          保存期間は卒業後1年。毎年3月に機械的廃棄。紙は溶解処理証明書を保管。USBは物理破壊。廃棄記録を5年保持。
+        </div>
+      </div>
+      <div style="background:var(--primary-light);border-radius:var(--radius);padding:14px 16px;font-size:13px;color:var(--text-sub);">
+        📌 <strong style="color:var(--text);">法的根拠：</strong>個人情報保護法Q&A「学校とPTAは別組織・第三者提供には同意が必要」に対応。共同利用条件（個情法27条5項3号）の整備により、保険適用判定のための情報連携が適法化されます。
+      </div>
+    </div>
+
+    <!-- 承認4: 会計細則 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number approval">4</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <span class="badge badge-approval">🗳 総会承認</span>
+          </div>
+          <div class="card-title">会計細則の制定（電帳法対応）</div>
+          <div class="card-title-sub">デジタル会計を原則化し、帳簿の透明性と監査可能性を確保</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0;">
+        <div style="background:var(--stone-100);border-radius:var(--radius);padding:12px;font-size:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:6px;">📱</div>
+          <div style="font-weight:700;margin-bottom:4px;">電子会計原則</div>
+          クラウド会計ソフトの導入を検討中。専用iPad（借用誓約書あり）での管理を想定
+        </div>
+        <div style="background:var(--stone-100);border-radius:var(--radius);padding:12px;font-size:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:6px;">🔍</div>
+          <div style="font-weight:700;margin-bottom:4px;">電帳法準拠</div>
+          電子領収書・PDF等は訂正削除禁止、ファイル名規則化、バックアップ必須
+        </div>
+        <div style="background:var(--stone-100);border-radius:var(--radius);padding:12px;font-size:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:6px;">🚫</div>
+          <div style="font-weight:700;margin-bottom:4px;">飲食費ゼロ</div>
+          会合時の飲食費・懇親会費等は一切支出しない旨を明文化
+        </div>
+        <div style="background:var(--stone-100);border-radius:var(--radius);padding:12px;font-size:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:6px;">📂</div>
+          <div style="font-weight:700;margin-bottom:4px;">閲覧・監査</div>
+          帳簿は会員が申請すれば閲覧可能。監査委員による年1回の外部チェックを実施
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SECTION 3: 運営判断事項 ===== -->
+<section class="section" id="mgmt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Management Decisions</div>
+      <div class="section-title">運営判断事項（参考）</div>
+      <div class="section-desc">以下は総会決議ではなく、運営委員会の判断として進めていく事項です。取り組みの全体像として共有します。</div>
+    </div>
+
+    <!-- 運営1: がくぷり -->
+    <div class="mgmt-card">
+      <div class="mgmt-header">
+        <span class="badge badge-mgmt">⚙ 運営判断</span>
+        <div class="mgmt-title">がくぷり（会費徴収アプリ）の採用・運用方針</div>
+      </div>
+      <div class="mgmt-body">
+        第2回アンケートで <span class="data-point">67<small>%</small></span> が「がくぷり」を希望したことを受け、令和8年度より電子決済ツールとして採用します。非会員の方にも情報配信を開放する方針については、「会員費用の追加負担なし（定額契約）」「除外のための名簿照合コストが配信費用を大幅に上回る」「文科省・川崎市ガイドラインへの準拠」という3つの合理性から、運営委員会として判断しました。
+        <div class="pillars" style="margin-top:12px;">
+          <div class="pillar">
+            <div class="pillar-num">PILLAR 01</div>
+            <div class="pillar-title">限界費用ゼロ</div>
+            <div class="pillar-body">定額契約のため、非会員を含めても追加費用は発生しない</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">PILLAR 02</div>
+            <div class="pillar-title">事務負担の最適化</div>
+            <div class="pillar-body">除外作業にかかるボランティアの労力こそが最大のコスト</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">PILLAR 03</div>
+            <div class="pillar-title">広報・勧誘費として</div>
+            <div class="pillar-body">未入会の方への情報発信は「加入促進の投資」として適正な予算執行</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">PILLAR 04</div>
+            <div class="pillar-title">ガイドライン準拠</div>
+            <div class="pillar-body">文科省・川崎市の「情報格差は不適切」という方針に合致</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 運営2: 業務委託覚書 -->
+    <div class="mgmt-card">
+      <div class="mgmt-header">
+        <span class="badge badge-mgmt">⚙ 運営判断</span>
+        <div class="mgmt-title">学校との業務委託覚書の改定</div>
+      </div>
+      <div class="mgmt-body">
+        「給食費等との一括徴収」は文科省通知の趣旨に反するため廃止します。代わりに、以下2点を学校と覚書で明文化し、適法な協力関係を整備します。
+        <table class="event-table" style="margin-top:12px;">
+          <thead>
+            <tr><th>委託内容</th><th>具体的な方法</th><th>法的根拠</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>年3回の入会案内配信</td>
+              <td>ミマモルメ経由での配信（PTA側が原稿を作成）</td>
+              <td>学校設置者との業務委託契約</td>
+            </tr>
+            <tr>
+              <td>全保護者へのプリント等の配布</td>
+              <td>PTAが印刷・製本等を完了した状態で学校に持参</td>
+              <td>「地域団体からの資料配布」として職務範囲内</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 運営3: 祝賀事業 -->
+    <div class="mgmt-card">
+      <div class="mgmt-header">
+        <span class="badge badge-info">📋 継続検討</span>
+        <div class="mgmt-title">祝賀事業の方針転換（個別配布 → 全体演出）</div>
+      </div>
+      <div class="mgmt-body">
+        コサージュ・進級祝い品等の個別配布から、全児童が等しく体験できる「全体演出」への転換を検討しています。「会員の子だけ祝われる」という教育的問題の解消や、名簿照合・仕分け作業の負担削減につながる方向性として、引き続き具体案を詰めていきます。
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+          <div style="background:var(--stone-100);border:1px solid var(--border);border-radius:var(--radius);padding:10px 16px;font-size:13px;"><strong>フラワーシャワー・ブーケ装飾</strong>（式後に自由持帰り）</div>
+          <div style="background:var(--stone-100);border:1px solid var(--border);border-radius:var(--radius);padding:10px 16px;font-size:13px;"><strong>フォトスポット設置</strong>（バルーン・記念看板）</div>
+          <div style="background:var(--stone-100);border:1px solid var(--border);border-radius:var(--radius);padding:10px 16px;font-size:13px;"><strong>環境寄贈</strong>（図書・遊具・備品）</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 運営4: 未回答者対応 -->
+    <div class="mgmt-card">
+      <div class="mgmt-header">
+        <span class="badge badge-mgmt">⚙ 運営判断</span>
+        <div class="mgmt-title">未回答者への対応方針（任意性の担保）</div>
+      </div>
+      <div class="mgmt-body">
+        年度初めの入会案内に未回答の場合、追いかけることはしません（追跡は任意性の原則に反するため）。ただし、いつでも入会できる機会を保障するため、ミマモルメを通じて年3回の加入案内を配信します。
+        <div style="display:flex;align-items:center;gap:16px;margin-top:12px;flex-wrap:wrap;">
+          <div style="text-align:center;flex:1;min-width:100px;">
+            <div style="font-size:24px;">4月</div>
+            <div style="font-size:12px;color:var(--text-sub);">年度初め一斉案内</div>
+          </div>
+          <div style="color:var(--border);font-size:20px;">→</div>
+          <div style="text-align:center;flex:1;min-width:100px;">
+            <div style="font-size:24px;">9月</div>
+            <div style="font-size:12px;color:var(--text-sub);">後期入会の案内</div>
+          </div>
+          <div style="color:var(--border);font-size:20px;">→</div>
+          <div style="text-align:center;flex:1;min-width:100px;">
+            <div style="font-size:24px;">1月</div>
+            <div style="font-size:12px;color:var(--text-sub);">次年度入会の予告案内</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 運営5: 選解任 -->
+    <div class="mgmt-card">
+      <div class="mgmt-header">
+        <span class="badge badge-info">📋 継続検討</span>
+        <div class="mgmt-title">選解任規定・活動実績の評価基準</div>
+      </div>
+      <div class="mgmt-body">
+        「名前のみ登録・活動ゼロ」のケースへの対応規定は、実運用のデータが蓄積されてから制度化する方針です。当面の判断基準（案）として「一度も運営会議に出席しない」「依頼業務を一切行わない」が継続した場合は、翌年度の推薦委員会で対応を検討します。正式な規約化は令和9年度以降を目途とします。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SECTION 4: Q&A ===== -->
+<section class="section" id="qa">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Q&amp;A</div>
+      <div class="section-title">想定される質問と回答</div>
+      <div class="section-desc">クリックで回答を展開できます。</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">入会しなかった場合、子どもへの不利益はありますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        学校教育において差別されることは一切ありません。文科省通知・川崎市ガイドラインにも「非会員の子どもへの不利益の禁止」が明記されており、本PTAはこれを厳守します。なお、卒業記念品・コサージュ等の物品は会員の会費から拠出されているため、非会員の方には実費ご負担または自前でのご用意をお願いする考え方が最も公平と考えています。ただし個別配布によって子どもに見える差が生じることを避けるため、今年度より全児童を対象とした「体験型の演出（フラワーシャワー・フォトスポット等）」への転換を検討中です。いずれにせよ、子どもたちが悲しい思いをしないよう配慮した運用を進めます。また、がくぷりによる情報配信は全保護者に開放します。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">会員費で運営するがくぷりを非会員に開放するのはなぜですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        ①がくぷりの契約は児童数ベースの定額制のため、非会員を含めても追加費用は発生しません。②非会員を除外するために名簿照合や配信リスト管理をすると、そのボランティア労力のほうがはるかに大きなコストになります。③未加入の方への情報発信は「加入促進のための広報活動」として正当な予算執行です。④文科省・川崎市ガイドラインの「情報格差をつくらない」原則に準拠した判断です。本方針は運営委員会として決定しており、総会にてご報告します。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">スタンダード（¥3,600）とサポーターA（¥5,400）の違いは何ですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        スタンダードは係活動（ボランティア）の募集対象となる代わりに年会費¥3,600です。サポーターAはすべての役務が免除される代わりに年会費が¥5,400となります。PTA保険・慶弔対応はどちらも同じです。第3回アンケートでは「¥5,400なら役務免除でよい」とお答えいただいた方が40%にのぼりました。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">先生（ティーチャー区分）は強制加入になりますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        なりません。地方公務員法により、教職員のPTA加入は完全任意です。ティーチャー区分（¥0）はあくまで「加入を希望する先生が自発的に選ぶ枠」であり、活動記録も求めません。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">年度初めに回答しなかった場合はどうなりますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        未回答の場合は「非入会」として扱いますが、追いかけることはしません。ただし年3回（4月・9月・1月）にミマモルメ経由でご案内をお送りします。いつでも入会いただけますので、タイミングが合わなかった場合もご安心ください。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">会費の使途はどのように確認できますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        会員の方からの申請があれば帳簿の閲覧が可能です。また、監査委員による年1回の外部チェックを実施し、総会で報告します。会議・活動に直接関係しない飲食費や懇親会費については、原則として支出しない方針です。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">兄弟姉妹が複数在籍している場合、会費は人数分かかりますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        いいえ、兄弟姉妹が何人在籍されていても「1世帯あたり1口」の会費設定です。家庭の負担が人数によって増えることはありません。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">役員（リーダー）を引き受けるメリットはありますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        1年間リーダー（運営役員）を務めていただいた方は、その後の活動が永久免除（レジェンド扱い）になるインセンティブ制度を継続します。なお、従来のポイント制については、役員選出が推薦制度に移行したことで役目を終えますが、これまでのポイント貢献に対するインセンティブは継続して検討してまいります。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">ボランティアが集まらなかった場合、行事は中止になりますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        必要最低限の人数が集まらない場合は、無理に実施するのではなく「外部委託」または「その年度の実施を見送る（縮小・廃止）」という判断を柔軟に行います。「前例があるから」という理由だけで無理な活動を強いることはありません。規約にも事業の撤退基準を明文化し、役員が責任を持って判断できる根拠を設けます。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">クレジット決済の手数料は誰が負担するのですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        システム利用料・決済手数料は年会費の中に含まれる形となります。がくぷりでの決済の場合、手数料は1件あたり190円です。役員による集金袋の回収・管理・未収対応といった膨大な事務負担がゼロになることを踏まえると、全体としての負担軽減効果の方が大きいと考えています。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">期限までに支払いや登録を忘れてしまったらどうなりますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        期限を過ぎた場合は「入会辞退（非会員）」として処理するルールを検討しています。ただし、期限前にはアプリを通じてリマインド通知を行い、意図しない未加入が起きないよう配慮します。また、年3回（4月・9月・1月）の加入案内をミマモルメ経由でお送りするため、タイミングが合わなかった場合もいつでも入会いただけます。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">改革によってこれまでの伝統が壊れてしまわないか心配です。</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        伝統を壊すことが目的ではありません。「今の時代の保護者のライフスタイルに合わせることで、PTAを存続させること」が目的です。無理なく楽しく関われる組織にすることで、結果として子どもたちのための環境がより良くなることを目指しています。続けてきた活動のうち本当に価値あるものは残し、時代に合わないものは見直す、という姿勢で取り組んでいます。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <div>令和8年4月 ｜ 宮前平小学校PTA 定時総会 議案説明資料</div>
+  <div style="margin-top:4px;">本資料に関するご質問は総会当日、または会長（manabu_my@nyle.co.jp）までお問い合わせください。</div>
+</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  /* QA accordion */
+  function toggleQA(el) {
+    el.parentElement.classList.toggle('open');
+  }
+
+  /* Chart defaults */
+  Chart.defaults.font.family = "'AdjustedYuGothic','Yu Gothic','Hiragino Kaku Gothic ProN',sans-serif";
+  Chart.defaults.font.size = 12;
+  Chart.defaults.color = '#706e69';
+
+  const primary = '#0077c7';
+  const primaryAlpha = 'rgba(0,119,199,0.15)';
+
+  /* テーマ横棒グラフ */
+  new Chart(document.getElementById('themeChart'), {
+    type: 'bar',
+    data: {
+      labels: ['役員・係の負担', '感謝・ありがとう', '会費・費用', '改革への支持', '活動の削減・廃止', 'デジタル化への期待', '情報公開・透明性'],
+      datasets: [{
+        label: '件数',
+        data: [45, 40, 32, 29, 27, 18, 14],
+        backgroundColor: ['#c2410c','#0077c7','#0077c7','#0077c7','#0077c7','#0077c7','#0077c7'],
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: '#ebe9e6' }, ticks: { stepSize: 10 } },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+
+  /* 任意入会認知（ドーナツ） */
+  new Chart(document.getElementById('optInChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['任意と知っていた', '知らなかった', '曖昧だった'],
+      datasets: [{
+        data: [38, 31, 31],
+        backgroundColor: ['#0077c7', '#d6d3d0', '#93c5fd'],
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '65%',
+      plugins: {
+        legend: { position: 'right', labels: { boxWidth: 12, padding: 12 } }
+      }
+    }
+  });
+
+  /* 新スタイル制度支持（ドーナツ） */
+  new Chart(document.getElementById('styleChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['支持する', 'どちらでもない', '反対'],
+      datasets: [{
+        data: [87.5, 8.5, 4.0],
+        backgroundColor: ['#0077c7', '#d6d3d0', '#fca5a5'],
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '65%',
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 12, padding: 10 } }
+      }
+    }
+  });
+
+  /* サポーターA 会費（横棒） */
+  new Chart(document.getElementById('feeChart'), {
+    type: 'bar',
+    data: {
+      labels: ['¥3,600', '¥5,400', '¥7,200', 'その他'],
+      datasets: [{
+        label: '希望者割合',
+        data: [28, 40, 18, 14],
+        backgroundColor: ['#93c5fd', '#0077c7', '#93c5fd', '#d6d3d0'],
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: {
+          grid: { color: '#ebe9e6' },
+          ticks: { callback: v => v + '%' },
+          max: 60
+        },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+</script>
+</body>
+</html>
