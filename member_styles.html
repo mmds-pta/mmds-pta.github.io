@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会員スタイル比較表｜宮前平小学校PTA 令和8年度</title>
+  <style>
+    @font-face { font-family: 'AY'; src: local('Yu Gothic Medium'), local('YuGothic-Medium'); font-weight: 400; }
+    @font-face { font-family: 'AY'; src: local('Yu Gothic Bold'), local('YuGothic-Bold'); font-weight: 700; }
+    :root {
+      --primary: #0077c7;
+      --text: #23221e;
+      --text-sub: #706e69;
+      --bg: #f8f7f6;
+      --white: #ffffff;
+      --border: #d6d3d0;
+      --stone: #f5f4f2;
+      --radius: 6px;
+      /* スタイル別カラー */
+      --std:   #eff6ff;
+      --ldr:   #f5f3ff;
+      --lgd:   #fdf4ff;
+      --spa:   #fff7ed;
+      --spb:   #fefce8;
+      --tch:   #f0fdf4;
+      --non:   #f8f7f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'AY','Yu Gothic','YuGothic','Hiragino Kaku Gothic ProN',sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar-logo { font-size: 13px; font-weight: 700; color: var(--primary); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg,#003d6b 0%,#0077c7 70%);
+      color: #fff;
+      padding: 40px 32px 36px;
+    }
+    .hero-meta { font-size: 12px; opacity: .8; margin-bottom: 8px; letter-spacing: .05em; }
+    .hero h1 { font-size: 24px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+    .hero-sub { font-size: 14px; opacity: .85; }
+
+    /* MAIN */
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 16px 48px; }
+
+    /* TABLE WRAPPER */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 860px;
+      font-size: 13px;
+    }
+
+    /* HEADER ROW */
+    thead tr th {
+      padding: 0;
+      border-right: 1px solid var(--border);
+      border-bottom: 2px solid var(--border);
+      vertical-align: bottom;
+    }
+    thead tr th:last-child { border-right: none; }
+
+    .th-inner {
+      padding: 12px 10px 10px;
+      text-align: center;
+    }
+    .th-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      letter-spacing: .04em;
+    }
+    .th-name { font-size: 15px; font-weight: 700; display: block; margin-bottom: 2px; }
+    .th-fee  { font-size: 12px; color: var(--text-sub); }
+
+    /* 項目列（左） */
+    th.row-head {
+      background: var(--stone);
+      text-align: left;
+      padding: 0;
+      width: 130px;
+      min-width: 120px;
+      position: sticky;
+      left: 0;
+      z-index: 10;
+      border-right: 2px solid var(--border);
+    }
+    .row-head-inner { padding: 12px 14px; font-weight: 700; font-size: 12px; color: var(--text-sub); letter-spacing: .04em; }
+
+    /* BODY */
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+
+    td {
+      padding: 10px 10px;
+      border-right: 1px solid var(--border);
+      vertical-align: top;
+      font-size: 12px;
+      line-height: 1.6;
+      text-align: center;
+    }
+    td:last-child { border-right: none; }
+
+    td.row-head {
+      background: var(--stone);
+      text-align: left;
+      position: sticky;
+      left: 0;
+      z-index: 5;
+      border-right: 2px solid var(--border);
+    }
+
+    /* スタイル別背景 */
+    .col-std  { background: var(--std); }
+    .col-ldr  { background: var(--ldr); }
+    .col-lgd  { background: var(--lgd); }
+    .col-spa  { background: var(--spa); }
+    .col-spb  { background: var(--spb); }
+    .col-tch  { background: var(--tch); }
+    .col-non  { background: var(--non); }
+
+    /* バッジ */
+    .yes { color: #15803d; font-weight: 700; }
+    .no  { color: #9ca3af; }
+    .req { color: #92400e; font-size: 11px; }
+    .na  { color: #d1d5db; font-size: 12px; }
+    .warn { color: #c2410c; font-size: 11px; font-weight: 700; }
+
+    /* タグ配色 */
+    .tag-std { background: #dbeafe; color: #1d4ed8; }
+    .tag-ldr { background: #ede9fe; color: #6d28d9; }
+    .tag-lgd { background: #f3e8ff; color: #7e22ce; }
+    .tag-spa { background: #ffedd5; color: #c2410c; }
+    .tag-spb { background: #fef9c3; color: #92400e; }
+    .tag-tch { background: #dcfce7; color: #15803d; }
+    .tag-non { background: #f3f4f6; color: #6b7280; }
+
+    /* 凡例 */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 12px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 4px 10px;
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .section-note {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .footer {
+      background: var(--text);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topbar">
+  <span class="topbar-logo">宮前平小PTA 2026 ｜ 会員スタイル比較表</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-meta">令和8年度 定時総会 参考資料</div>
+  <h1>会員スタイル比較表</h1>
+  <p class="hero-sub">今年度より、関わり方に応じた7つのスタイルから選択できるようになります。</p>
+</div>
+
+<div class="container">
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6;"></div>スタンダード</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#7c3aed;"></div>リーダー</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#a855f7;"></div>レジェンド</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f97316;"></div>サポーターA</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#eab308;"></div>サポーターB</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#22c55e;"></div>ティーチャー</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9ca3af;"></div>非会員</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="row-head"><div class="row-head-inner">比較項目</div></th>
+          <th class="col-std"><div class="th-inner"><span class="th-tag tag-std">会員</span><span class="th-name">スタンダード</span><span class="th-fee">¥3,600 / 年</span></div></th>
+          <th class="col-ldr"><div class="th-inner"><span class="th-tag tag-ldr">会員</span><span class="th-name">リーダー</span><span class="th-fee">¥3,600 / 年</span></div></th>
+          <th class="col-lgd"><div class="th-inner"><span class="th-tag tag-lgd">会員</span><span class="th-name">レジェンド</span><span class="th-fee">¥3,600 / 年</span></div></th>
+          <th class="col-spa"><div class="th-inner"><span class="th-tag tag-spa">会員</span><span class="th-name">サポーターA</span><span class="th-fee">¥5,400〜 / 年<br><span style="font-size:10px;">（¥3,600＋賛助¥1,800/口）</span></span></div></th>
+          <th class="col-spb"><div class="th-inner"><span class="th-tag tag-spb">会員</span><span class="th-name">サポーターB</span><span class="th-fee">¥10,000〜 / 年<br><span style="font-size:10px;">（1口¥10,000・何口でも）</span></span></div></th>
+          <th class="col-tch"><div class="th-inner"><span class="th-tag tag-tch">任意</span><span class="th-name">ティーチャー</span><span class="th-fee">¥0（教職員のみ）</span></div></th>
+          <th class="col-non"><div class="th-inner"><span class="th-tag tag-non">—</span><span class="th-name">非会員</span><span class="th-fee">¥0</span></div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">向いている方</div></td>
+          <td class="col-std">ちょっとしたお手伝いくらいならやれそうな方</td>
+          <td class="col-ldr">PTAの運営に携わりたい方。地域・子どもと面白いことしたい方</td>
+          <td class="col-lgd">過去に役員経験のある方</td>
+          <td class="col-spa">時間・労力は難しいが、せめてお金だけでも支援したいという方</td>
+          <td class="col-spb">PTAを支援したい地域の事業者</td>
+          <td class="col-tch">加入を希望する教職員の方</td>
+          <td class="col-non">PTAとは一切関わりたくないとお考えの方</td>
+        </tr>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">役務・募集</div></td>
+          <td class="col-std">係活動の募集対象（参加は任意）</td>
+          <td class="col-ldr">運営委員として活動</td>
+          <td class="col-lgd"><span class="no">役務免除</span><br><span class="req">※希望する場合は妨げない</span></td>
+          <td class="col-spa"><span class="no">役務免除</span></td>
+          <td class="col-spb"><span class="no">役務なし</span></td>
+          <td class="col-tch"><span class="no">任意参加</span></td>
+          <td class="col-non"><span class="no">なし</span></td>
+        </tr>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">議決権</div></td>
+          <td class="col-std"><span class="yes">あり</span></td>
+          <td class="col-ldr"><span class="yes">あり</span></td>
+          <td class="col-lgd"><span class="yes">あり</span></td>
+          <td class="col-spa"><span class="no">なし</span></td>
+          <td class="col-spb"><span class="no">なし</span></td>
+          <td class="col-tch"><span class="yes">あり</span></td>
+          <td class="col-non"><span class="no">なし</span></td>
+        </tr>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">PTA保険・慶弔</div></td>
+          <td class="col-std"><span class="yes">適用対象</span><br><span class="req">※申告制</span></td>
+          <td class="col-ldr"><span class="yes">適用対象</span><br><span class="req">※申告制</span></td>
+          <td class="col-lgd"><span class="yes">適用対象</span><br><span class="req">※申告制</span></td>
+          <td class="col-spa"><span class="yes">適用対象</span><br><span class="req">※申告制</span></td>
+          <td class="col-spb"><span class="no">なし</span></td>
+          <td class="col-tch"><span class="yes">適用対象</span><br><span class="req">※申告制</span></td>
+          <td class="col-non"><span class="no">なし</span></td>
+        </tr>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">入学・進級記念品等</div></td>
+          <td class="col-std">PTAが対応</td>
+          <td class="col-ldr">PTAが対応</td>
+          <td class="col-lgd">PTAが対応</td>
+          <td class="col-spa">PTAが対応</td>
+          <td class="col-spb"><span class="no">なし</span></td>
+          <td class="col-tch"><span class="no">なし</span></td>
+          <td class="col-non"><span class="warn">自前で対応</span><br><span class="req">内容は掲示板等で案内予定</span></td>
+        </tr>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">卒業記念</div></td>
+          <td class="col-std" colspan="4" style="text-align:center;">全児童対象の演出型に切り替え検討中（会員・非会員共通）</td>
+          <td class="col-spb"><span class="no">なし</span></td>
+          <td class="col-tch"><span class="no">なし</span></td>
+          <td class="col-non">全児童対象演出の対象</td>
+        </tr>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">特典・インセンティブ</div></td>
+          <td class="col-std">次年度以降の免除特典（リーダー就任後に適用）</td>
+          <td class="col-ldr"><span class="yes">次年度以降の役員・委員・係活動を免除</span><br><span class="req">（レジェンドスタイルへ）</span></td>
+          <td class="col-lgd"><span class="yes">役員・委員・係活動の永久免除</span></td>
+          <td class="col-spa">あらゆる役務・総会参加タスクからの解放</td>
+          <td class="col-spb">がくぷり上での謝辞掲載</td>
+          <td class="col-tch">教育活動に専念</td>
+          <td class="col-non"><span class="no">なし</span></td>
+        </tr>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">参加条件</div></td>
+          <td class="col-std">なし（入会意思の表明のみ）</td>
+          <td class="col-ldr">意向確認アンケートで参加意向あり＋運営方針への理解・賛同</td>
+          <td class="col-lgd">前年度または過去に1年間の役員役務を終了していること<br><span class="req">※毎年の入会意思確認で照合</span></td>
+          <td class="col-spa">なし</td>
+          <td class="col-spb">運営方針への理解・賛同</td>
+          <td class="col-tch">教職員であること（完全任意・活動記録不問）</td>
+          <td class="col-non">なし</td>
+        </tr>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">個人情報の学校共有</div></td>
+          <td class="col-std"><span class="yes">あり</span><br><span class="req">保険適用確認のため</span></td>
+          <td class="col-ldr"><span class="yes">あり</span><br><span class="req">保険適用確認のため</span></td>
+          <td class="col-lgd"><span class="yes">あり</span><br><span class="req">保険適用確認のため</span></td>
+          <td class="col-spa"><span class="yes">あり</span><br><span class="req">保険適用確認のため</span></td>
+          <td class="col-spb"><span class="no">なし</span></td>
+          <td class="col-tch"><span class="yes">あり</span><br><span class="req">保険適用確認のため</span></td>
+          <td class="col-non"><span class="yes">あり</span><br><span class="req">非会員確認のため最低限</span></td>
+        </tr>
+        <tr>
+          <td class="row-head"><div class="row-head-inner">会員資格停止時</div></td>
+          <td class="col-std">非会員として処理。再登録・会費支払い後に復帰可</td>
+          <td class="col-ldr">除名処分。再登録・会費支払い後に復帰可</td>
+          <td class="col-lgd">除名処分。再登録・会費支払い後に復帰可</td>
+          <td class="col-spa">除名処分。再登録・会費支払い後に復帰可</td>
+          <td class="col-spb"><span class="na">—</span></td>
+          <td class="col-tch">除名処分。再登録・会費支払い後に復帰可</td>
+          <td class="col-non"><span class="na">—</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-note">
+    ※ サポーターBは令和8年度は枠の設置のみ。実運用・詳細は次年度以降に整備予定。　※ ティーチャー区分は地方公務員法に基づき完全任意。活動記録は求めません。　※ 1世帯あたり1口（兄弟姉妹が何人在籍していても会費は1口分）。
+  </div>
+
+</div>
+
+<div class="footer">令和8年4月 ｜ 宮前平小学校PTA 定時総会 参考資料</div>
+
+</body>
+</html>

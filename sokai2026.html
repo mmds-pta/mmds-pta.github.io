@@ -522,6 +522,29 @@
     }
     .qa-item.open .qa-a { display: block; }
     .qa-item.open .qa-toggle { transform: rotate(180deg); }
+    .qa-category {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin: 28px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .qa-category:first-child { margin-top: 0; }
+    .qa-a ul { padding-left: 1.4em; margin-top: 6px; }
+    .qa-a ul li { margin-bottom: 4px; }
+    .qa-a .note {
+      margin-top: 8px;
+      background: #f0f9ff;
+      border-left: 3px solid var(--primary);
+      padding: 8px 12px;
+      border-radius: 0 4px 4px 0;
+      font-size: 12px;
+      color: #1e4a6e;
+      line-height: 1.7;
+    }
 
     /* ===== MGMT ITEMS ===== */
     .mgmt-card {
@@ -714,7 +737,7 @@
             <li>「入学時に自動加入」の慣例</li>
             <li>退会手続きが明示されていない</li>
             <li>年度更新の意思確認なし</li>
-            <li>総会は物理参加または紙面参加（含む電子投票）が前提</li>
+            <li>紙面参加・電子投票は実施済みだが、規約上の明文根拠が未整備</li>
             <li>役員は互選・選出方法が不明確</li>
             <li>校長・教頭・教務主任が役員として議決権を持つ</li>
             <li>学年委員は各クラス1名の選出要件あり</li>
@@ -803,7 +826,7 @@
             <tr class="style-legend">
               <td>レジェンド</td>
               <td>¥3,600</td>
-              <td><span class="tag-yes">役員活動</span></td>
+              <td><span class="tag-no" style="line-height:1.5;">役員・委員・係活動の永久免除<br><small style="font-weight:400;font-size:11px;">※本人が希望する場合は妨げない</small></span></td>
               <td><span class="tag-yes">あり</span></td>
               <td><span class="tag-yes">あり</span></td>
               <td><span class="tag-yes">あり</span></td>
@@ -843,7 +866,7 @@
           </tbody>
         </table>
       </div>
-      <div style="margin-top:10px;font-size:12px;color:var(--text-sub);">※ サポーターBは枠の設置のみ。実運用は次年度以降に整備予定。ティーチャーは地方公務員法に基づき完全任意・活動記録は求めない。</div>
+      <div style="margin-top:10px;font-size:12px;color:var(--text-sub);">※ サポーターBは枠の設置のみ。実運用は次年度以降に整備予定。ティーチャーは地方公務員法に基づき完全任意・活動記録は求めない。<br>※ 教職員へのPTA保険適用は、公務外における「PTAが主催・承認した活動」への参加時のみとなります。公務中の事故は対象外です。</div>
     </div>
 
     <!-- 承認3: 個人情報取扱規則 -->
@@ -905,7 +928,7 @@
         <div style="background:var(--stone-100);border-radius:var(--radius);padding:12px;font-size:12px;text-align:center;">
           <div style="font-size:22px;margin-bottom:6px;">🚫</div>
           <div style="font-weight:700;margin-bottom:4px;">飲食費ゼロ</div>
-          会合時の飲食費・懇親会費等は一切支出しない旨を明文化
+          会合時の飲食費・懇親会費等は原則として支出しない旨を明文化（役員会決議による例外を除く）
         </div>
         <div style="background:var(--stone-100);border-radius:var(--radius);padding:12px;font-size:12px;text-align:center;">
           <div style="font-size:22px;margin-bottom:6px;">📂</div>
@@ -934,12 +957,12 @@
         <div class="mgmt-title">がくぷり（会費徴収アプリ）の採用・運用方針</div>
       </div>
       <div class="mgmt-body">
-        第2回アンケートで <span class="data-point">67<small>%</small></span> が「がくぷり」を希望したことを受け、令和8年度より電子決済ツールとして採用します。非会員の方にも情報配信を開放する方針については、「会員費用の追加負担なし（定額契約）」「除外のための名簿照合コストが配信費用を大幅に上回る」「文科省・川崎市ガイドラインへの準拠」という3つの合理性から、運営委員会として判断しました。
+        第2回アンケートで <span class="data-point">67<small>%</small></span> が「がくぷり」を希望したことを受け、令和8年度より電子決済ツールとして採用します。非会員の方にも情報配信を開放する方針については、「会員費用の追加負担なし（1,000人以下は人数にかかわらず追加費用不要の上限制定額契約）」「除外のための名簿照合コストが配信費用を大幅に上回る」「文科省・川崎市ガイドラインへの準拠」という3つの合理性から、運営委員会として判断しました。
         <div class="pillars" style="margin-top:12px;">
           <div class="pillar">
             <div class="pillar-num">PILLAR 01</div>
             <div class="pillar-title">限界費用ゼロ</div>
-            <div class="pillar-body">定額契約のため、非会員を含めても追加費用は発生しない</div>
+            <div class="pillar-body">1,000人以下であれば人数にかかわらず追加費用が発生しない上限制の定額契約のため</div>
           </div>
           <div class="pillar">
             <div class="pillar-num">PILLAR 02</div>
@@ -967,7 +990,7 @@
         <div class="mgmt-title">学校との業務委託覚書の改定</div>
       </div>
       <div class="mgmt-body">
-        「給食費等との一括徴収」は文科省通知の趣旨に反するため廃止します。代わりに、以下2点を学校と覚書で明文化し、適法な協力関係を整備します。
+        「給食費等との一括徴収」は文科省通知に基づく方針整理として見直します。代わりに、以下2点を学校と覚書で明文化し、適法な協力関係を整備します。
         <table class="event-table" style="margin-top:12px;">
           <thead>
             <tr><th>委託内容</th><th>具体的な方法</th><th>法的根拠</th></tr>
@@ -1050,7 +1073,7 @@
           </div>
           <div style="background:var(--bg-white);border:1px solid var(--border);border-radius:var(--radius);padding:12px;font-size:12px;">
             <div style="font-weight:700;margin-bottom:4px;color:var(--text-sub);">面談ルール</div>
-            面談は複数名で対応・録音可・時間制限あり。要求が不当と判断した場合は毅然とお断りする。
+            面談は複数名で対応・対話内容を記録に残す（必要に応じてボイスレコーダーを使用）・時間制限あり。要求が不当と判断した場合は毅然とお断りする。
           </div>
         </div>
       </div>
@@ -1079,6 +1102,9 @@
       <div class="section-desc">クリックで回答を展開できます。</div>
     </div>
 
+    <!-- ── 入会・退会・任意性 ── -->
+    <div class="qa-category">入会・退会・任意性</div>
+
     <div class="qa-item">
       <div class="qa-q" onclick="toggleQA(this)">
         <div class="qa-icon">Q</div>
@@ -1086,18 +1112,43 @@
         <div class="qa-toggle">▼</div>
       </div>
       <div class="qa-a">
-        学校教育において差別されることは一切ありません。文科省通知・川崎市ガイドラインにも「非会員の子どもへの不利益の禁止」が明記されており、本PTAはこれを厳守します。なお、卒業記念品・コサージュ等の物品は会員の会費から拠出されているため、非会員の方には実費ご負担または自前でのご用意をお願いする考え方が最も公平と考えています。ただし個別配布によって子どもに見える差が生じることを避けるため、今年度より全児童を対象とした「体験型の演出（フラワーシャワー・フォトスポット等）」への転換を検討中です。いずれにせよ、子どもたちが悲しい思いをしないよう配慮した運用を進めます。また、がくぷりによる情報配信は全保護者に開放します。
+        学校教育において差別されることは一切ありません。文科省通知・川崎市ガイドラインにも「非会員の子どもへの不利益の禁止」が明記されており、本PTAはこれを厳守します。卒業記念品・コサージュ等についても、個別配布によって子どもに見える差が生じることを避けるため、今年度より全児童を対象とした「体験型の演出（フラワーシャワー・フォトスポット等）」への転換を検討しています。また、がくぷりによる情報配信は会員・非会員を問わず全保護者に開放します。
       </div>
     </div>
 
     <div class="qa-item">
       <div class="qa-q" onclick="toggleQA(this)">
         <div class="qa-icon">Q</div>
-        <div class="qa-q-text">会員費で運営するがくぷりを非会員に開放するのはなぜですか？</div>
+        <div class="qa-q-text">非会員ですが、コサージュや記念品はうちの子ももらえますか？</div>
         <div class="qa-toggle">▼</div>
       </div>
       <div class="qa-a">
-        ①がくぷりの契約は児童数ベースの定額制のため、非会員を含めても追加費用は発生しません。②非会員を除外するために名簿照合や配信リスト管理をすると、そのボランティア労力のほうがはるかに大きなコストになります。③未加入の方への情報発信は「加入促進のための広報活動」として正当な予算執行です。④文科省・川崎市ガイドラインの「情報格差をつくらない」原則に準拠した判断です。本方針は運営委員会として決定しており、総会にてご報告します。
+        令和8年度より、コサージュ等の個別配布から<strong>全児童を対象とした体験型の演出（フラワーシャワー・フォトスポット等）に転換</strong>する方向で検討しています。特定の子どもだけを対象から外すことは学校教育の現場にふさわしくなく、「会費を払う・払わない」の議論を超えて、地域の大人がみんなで子どもたちを支えるという広い視点で活動しています。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">年度途中で退会することはできますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        可能です。退会届を提出いただければいつでも退会できます。引き止めや理由の執拗な確認などは行いません。返金については三月十日までに申請が必要です。振込手数料等の実費は原則として退会者のご負担となりますが、手数料が返金額を上回る場合は会員様との協議の上、手続きを省略することがあります。
+      </div>
+    </div>
+
+    <!-- ── 会員スタイル制 ── -->
+    <div class="qa-category">会員スタイル制</div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">「会員スタイル制」とはどういうものですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        令和8年度より導入する新しい参加の仕組みです。保護者それぞれの生活状況・意欲に応じて7つのスタイルから選んでいただけます。スタンダード（標準参加）・リーダー（役員候補）・レジェンド（活動永久免除）・サポーターA（役務免除・費用のみ）・サポーターB（地域企業・団体）・ティーチャー（教職員任意枠）・非会員の7区分です。詳細は <a href="member_styles.html" style="color:var(--primary);font-weight:700;">会員スタイル一覧</a> をご覧ください。
       </div>
     </div>
 
@@ -1115,44 +1166,11 @@
     <div class="qa-item">
       <div class="qa-q" onclick="toggleQA(this)">
         <div class="qa-icon">Q</div>
-        <div class="qa-q-text">先生（ティーチャー区分）は強制加入になりますか？</div>
+        <div class="qa-q-text">「レジェンド」とは何ですか？誰でもなれますか？</div>
         <div class="qa-toggle">▼</div>
       </div>
       <div class="qa-a">
-        なりません。地方公務員法により、教職員のPTA加入は完全任意です。ティーチャー区分（¥0）はあくまで「加入を希望する先生が自発的に選ぶ枠」であり、活動記録も求めません。
-      </div>
-    </div>
-
-    <div class="qa-item">
-      <div class="qa-q" onclick="toggleQA(this)">
-        <div class="qa-icon">Q</div>
-        <div class="qa-q-text">年度初めに回答しなかった場合はどうなりますか？</div>
-        <div class="qa-toggle">▼</div>
-      </div>
-      <div class="qa-a">
-        未回答の場合は「非入会」として扱いますが、追いかけることはしません。ただし年3回（4月・9月・1月）にミマモルメ経由でご案内をお送りします。いつでも入会いただけますので、タイミングが合わなかった場合もご安心ください。
-      </div>
-    </div>
-
-    <div class="qa-item">
-      <div class="qa-q" onclick="toggleQA(this)">
-        <div class="qa-icon">Q</div>
-        <div class="qa-q-text">会費の使途はどのように確認できますか？</div>
-        <div class="qa-toggle">▼</div>
-      </div>
-      <div class="qa-a">
-        会員の方からの申請があれば帳簿の閲覧が可能です。また、監査委員による年1回の外部チェックを実施し、総会で報告します。会議・活動に直接関係しない飲食費や懇親会費については、原則として支出しない方針です。
-      </div>
-    </div>
-
-    <div class="qa-item">
-      <div class="qa-q" onclick="toggleQA(this)">
-        <div class="qa-icon">Q</div>
-        <div class="qa-q-text">兄弟姉妹が複数在籍している場合、会費は人数分かかりますか？</div>
-        <div class="qa-toggle">▼</div>
-      </div>
-      <div class="qa-a">
-        いいえ、兄弟姉妹が何人在籍されていても「1世帯あたり1口」の会費設定です。家庭の負担が人数によって増えることはありません。
+        過去に役員・委員として十分に本会の運営に貢献いただいた方を対象とした特別スタイルです。役員・委員・係活動が永久免除（OB特典）となり、引き続き議決権を持って本会に関わることができます。本人が希望する場合に活動へ参加することを妨げるものではありません。条件の詳細は規約第四条をご確認ください。
       </div>
     </div>
 
@@ -1170,11 +1188,69 @@
     <div class="qa-item">
       <div class="qa-q" onclick="toggleQA(this)">
         <div class="qa-icon">Q</div>
+        <div class="qa-q-text">先生（ティーチャー区分）は強制加入になりますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        なりません。地方公務員法により、教職員のPTA加入は完全任意です。ティーチャー区分（¥0）はあくまで「加入を希望する先生が自発的に選ぶ枠」であり、活動記録も求めません。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">フルタイムで働いていて、平日の集まりには出られません。入会できますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        もちろんです。サポーターAスタイルは役務を一切負担しないスタイルです。費用のみのご負担で会員として参加いただけます。また、運営全体においても、現代の多様な生活スタイルや働き方の実態に合わせた参加のあり方を引き続き模索してまいります。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">役員を断るために診断書や証明書が必要だと聞きましたが……。</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        本会では、プライバシーに踏み込む証明書の提出は一切求めていません。各ご家庭の事情を尊重し、役員の選出はあくまで「納得感のある選出プロセス」と、会員スタイル制による活動履歴の公平な管理に基づいて行います。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
         <div class="qa-q-text">ボランティアが集まらなかった場合、行事は中止になりますか？</div>
         <div class="qa-toggle">▼</div>
       </div>
       <div class="qa-a">
         必要最低限の人数が集まらない場合は、無理に実施するのではなく「外部委託」または「その年度の実施を見送る（縮小・廃止）」という判断を柔軟に行います。「前例があるから」という理由だけで無理な活動を強いることはありません。規約にも事業の撤退基準を明文化し、役員が責任を持って判断できる根拠を設けます。
+      </div>
+    </div>
+
+    <!-- ── がくぷり・決済・デジタル化 ── -->
+    <div class="qa-category">がくぷり・決済・デジタル化</div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">「がくぷり」とは何ですか？今回、何が変わるのですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        株式会社Lavan7（ラバンセブン）が提供するPTA向けの情報配信・運営支援サービスです。本会ではすでに情報配信ツールとして利用しており、令和8年度より<strong>会費決済機能を新たに導入</strong>します。決済機能の導入にあたっては、新しいアプリのインストールコスト・初期導入費用・決済手数料・セキュリティ水準など様々な観点から複数サービスを比較検討しました。すでに保護者の皆様がご利用中のサービスであるため、新たなアプリ導入の手間がなく、コスト・セキュリティ・使いやすさの観点から最も保護者負担が少ないと判断しています。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">会員費で運営するがくぷりを非会員に開放するのはなぜですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        主に3つの理由があります。①がくぷりの契約は1,000人以下であれば人数にかかわらず追加費用が発生しない上限制の定額契約であるため、非会員を含めても費用は変わりません。②非会員を除外するために名簿照合や配信リスト管理をすると、そのボランティア労力のほうがはるかに大きなコストになります。③文科省・川崎市ガイドラインの「情報格差をつくらない」原則に準拠した判断です。本方針は運営委員会として決定しており、総会にてご報告します。
       </div>
     </div>
 
@@ -1185,18 +1261,192 @@
         <div class="qa-toggle">▼</div>
       </div>
       <div class="qa-a">
-        システム利用料・決済手数料は年会費の中に含まれる形となります。がくぷりでの決済の場合、手数料は1件あたり190円です。役員による集金袋の回収・管理・未収対応といった膨大な事務負担がゼロになることを踏まえると、全体としての負担軽減効果の方が大きいと考えています。
+        決済手数料（1件あたり190円）は年会費の中に含まれる形で処理します。お支払いの際に別途加算されるものではありません。役員による集金袋の回収・管理・未収対応といった膨大な事務負担がゼロになることを踏まえると、全体としての負担軽減効果の方が大きいと考えています。
       </div>
     </div>
 
     <div class="qa-item">
       <div class="qa-q" onclick="toggleQA(this)">
         <div class="qa-icon">Q</div>
-        <div class="qa-q-text">期限までに支払いや登録を忘れてしまったらどうなりますか？</div>
+        <div class="qa-q-text">年度初めに回答しなかった場合はどうなりますか？</div>
         <div class="qa-toggle">▼</div>
       </div>
       <div class="qa-a">
-        期限を過ぎた場合は「入会辞退（非会員）」として処理するルールを検討しています。ただし、期限前にはアプリを通じてリマインド通知を行い、意図しない未加入が起きないよう配慮します。また、年3回（4月・9月・1月）の加入案内をミマモルメ経由でお送りするため、タイミングが合わなかった場合もいつでも入会いただけます。
+        未回答の場合は「非入会」として扱いますが、追いかけることはしません。期限前にはがくぷり経由でリマインド通知を行い、意図しない未加入が生じないよう配慮します。なお、随時入会を受け付けておりすし、年3回（4月・9月・1月）ご案内をお送りしますので、タイミングが合わなかった場合もご安心ください。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">兄弟姉妹が複数在籍している場合、会費は人数分かかりますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        いいえ、兄弟姉妹が何人在籍されていても「1世帯あたり1口」の会費設定です。家庭の負担が人数によって増えることはありません。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">デジタル化はいいですが、スマホ操作が苦手な人は排除されませんか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        決してそのようなことはありません。今回のデジタル化の目的は「スキルを求めること」ではなく、「誰でも簡単に、場所を問わず作業できるようにすること」です。会計管理用の専用端末は直感的に操作できるよう設定を簡略化しており、導入時には丁寧なレクチャーも行います。むしろ「デジタルが得意な人に負担が偏る」現状を解消するための改革です。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">デジタル化しても、結局夜中にメッセージが来て私生活が犠牲になるのでは？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        デジタル化は「24時間活動すること」を意味しません。連絡は原則として平日の一定時間内・土日は緊急時以外控えるといった、ボランティアとしての「健康的な距離感」をルールとして整備しています。
+      </div>
+    </div>
+
+    <!-- ── 会費・会計の透明性 ── -->
+    <div class="qa-category">会費・会計の透明性</div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">会費の使途はどのように確認できますか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        会員の方からの申請があれば帳簿の閲覧が可能です（書面による申請が必要）。また、監査委員による年1回の外部チェックを実施し、総会で報告します。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">会費が役員の飲み代や打ち上げ等に使われていませんか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        少なくとも令和6〜7年度において、私的な飲食費・親睦会費への支出は確認されておりません。令和8年度から私的な飲食費・贈答・親睦会費は原則として支出しないことを会計細則に明文化することでより透明性の高い運営を行ってまいります。（役員会の決議による例外を除く）。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">P連への分担金がもったいないです。脱退しないのですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        外部団体との連携には、PTA賠償責任保険（活動中の事故への備え）への加入や、一校では解決できない安全課題（通学路の改善要望など）を自治体へ届ける「数」の力というメリットがあります。現状ではコストとメリットを比較し加入を継続していますが、「会員の皆様の会費に見合う価値があるか」は常に見直してまいります。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">予備費が多すぎませんか？子どもに還元すべきでは？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        予備費は突発的な災害時の支援や学校設備の急な故障への対応など、緊急時のセーフティネットとして保持しています。過度な積み立ては本意ではありませんので、適正な保有額を役員会で精査し、必要な範囲で子どもたちへ還元する計画を立ててまいります。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">特定の業者ばかり使っているのはリベート（キックバック）があるからでは？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        癒着や不正な利益供与は一切ございません。特定の業者を継続して利用している場合は、「長年の信頼関係による柔軟な対応が可能」「学校の仕様を熟知している」といった活動の確実性を優先した結果です。価格の適正さを保つため、必要に応じて相見積もりを取り、会員の皆様の会費を大切に使う視点で選定を行っています。
+      </div>
+    </div>
+
+    <!-- ── 個人情報・プライバシー ── -->
+    <div class="qa-category">個人情報・プライバシー</div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">どのような個人情報を収集するのですか？住所も必要ですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        取得する情報は最小限にとどめています。会員氏名・連絡先（電話番号・メールアドレス）・お子様の氏名と学級・活動報告目的の写真・過去の活動履歴・会員スタイル区分です。住所は令和8年度より収集しません。連絡手段はメール・がくぷりに統一します。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">「活動履歴」を保存するのはなぜですか？ずっと残るのですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        役員・委員選出の公平性を担保するためです。保存期間はお子様の在学期間中および卒業後1年間に限定しており、その後は廃棄します。レジェンド（OB）スタイルの方については、本人の同意を得た上で退会・卒業後も保持できます。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">個人情報を学校に渡しているのですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        会費徴収は令和8年度よりがくぷりを通じて本会が独自に行います。学校と会員の個人情報を共有することはありません。学校と情報を共有するのは、PTA保険の適用可否の確認に必要な最小限の情報のみです（個人情報保護法第27条第5項第3号に基づく共同利用）。この共同利用については入会時の同意フォームで事前にお知らせし、個別の同意を取得します。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">会議や対話の内容を録音されているのですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        対話内容を正確に記録に残す目的で、必要に応じてボイスレコーダーを使用することがあります。これは議事録の正確性を確保し、後の確認・振り返りのためのものです。使用する場合は事前にお知らせします。
+      </div>
+    </div>
+
+    <!-- ── 学校との関係・その他 ── -->
+    <div class="qa-category">学校との関係・その他</div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">結局、先生の「使い走り」をさせられているだけではないですか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        PTAと学校は、子どもを支える対等なパートナーです。学校側も現在「働き方改革」を進めており、本会も「先生に任せきりにしないが、保護者が学校の業務を肩代わりもしない」という適切な距離感を保てるよう、協議を重ねています。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">冷暖房費や備品など、本来は学校（市）が税金で払うべきものをPTAが肩代わりしていませんか？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        非常に鋭いご指摘です。本来、公教育のインフラは行政が担うべきものです。本会では学校側と密に連携し、「公費で賄うべきもの」と「子どもたちの教育環境をより豊かにするためにPTAが支援するもの（プラスアルファ）」を明確に区別するよう努めています。
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-icon">Q</div>
+        <div class="qa-q-text">面倒な作業は業者に外注（アウトソーシング）すればいいのでは？</div>
+        <div class="qa-toggle">▼</div>
+      </div>
+      <div class="qa-a">
+        非常に重要なご指摘です。今回の会費徴収のがくぷり採用もある意味での「外注」です。専門性が必要な作業やあまりに大きな負担となる作業については、外注の検討を進めています。コストと効果のバランスを慎重に判断し、会員の皆様に諮ってまいります。
       </div>
     </div>
 
@@ -1217,7 +1467,7 @@
 <!-- ===== FOOTER ===== -->
 <div class="footer">
   <div>令和8年4月 ｜ 宮前平小学校PTA 定時総会 議案説明資料</div>
-  <div style="margin-top:4px;">本資料に関するご質問は総会当日、または会長（manabu_my@nyle.co.jp）までお問い合わせください。</div>
+  <div style="margin-top:4px;">本資料に関するご質問はPTAお問い合わせフォーム（https://forms.gle/hYEUUNhR4fJayhceA）までお問い合わせください。</div>
 </div>
 
 <!-- ===== SCRIPTS ===== -->

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>規約 新旧対照表｜宮前平小学校PTA 令和8年度</title>
+  <style>
+    @font-face { font-family: 'AY'; src: local('Yu Gothic Medium'), local('YuGothic-Medium'); font-weight: 400; }
+    @font-face { font-family: 'AY'; src: local('Yu Gothic Bold'), local('YuGothic-Bold'); font-weight: 700; }
+    :root {
+      --primary: #0077c7;
+      --text: #23221e;
+      --text-sub: #706e69;
+      --bg: #f8f7f6;
+      --white: #ffffff;
+      --border: #d6d3d0;
+      --radius: 6px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'AY','Yu Gothic','YuGothic','Hiragino Kaku Gothic ProN',sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar-logo { font-size: 13px; font-weight: 700; color: var(--primary); }
+    .hero {
+      background: linear-gradient(135deg,#003d6b 0%,#0077c7 70%);
+      color: #fff;
+      padding: 40px 32px 36px;
+    }
+    .hero-meta { font-size: 12px; opacity: .8; margin-bottom: 8px; letter-spacing: .05em; }
+    .hero h1 { font-size: 24px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+    .hero-sub { font-size: 14px; opacity: .85; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 16px 48px; }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .l-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      -webkit-overflow-scrolling: touch;
+    }
+    table { border-collapse: collapse; width: 100%; min-width: 800px; }
+    col.c0 { width: 90px; }
+    col.c1 { width: 25%; }
+    col.c2 { width: 34%; }
+    col.c3 { width: 20%; }
+    thead th {
+      background: #1e3a5f;
+      color: #fff;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-align: left;
+      border-right: 1px solid rgba(255,255,255,.15);
+    }
+    thead th:last-child { border-right: none; }
+    tr.section-row td {
+      background: #2e5898;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 16px;
+      letter-spacing: .04em;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+    tr.row-changed { background: #ffffff; }
+    tr.row-new     { background: #eff6ff; }
+    tr.row-none    { background: #f9fafb; }
+    tr.row-deleted { background: #fff5f5; }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      vertical-align: top;
+      font-size: 13px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    td:last-child { border-right: none; }
+    tr:last-child td { border-bottom: none; }
+    td.cell-num {
+      font-weight: 700;
+      font-size: 12px;
+      white-space: nowrap;
+      min-width: 80px;
+    }
+    .text-changed { color: #dc2626; }
+    .text-new     { color: #1d4ed8; }
+    .text-deleted { color: #991b1b; }
+    .text-none    { color: #9ca3af; font-style: italic; }
+    tr.row-none td:not(.cell-num) { color: #9ca3af; }
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-bottom: 4px;
+      letter-spacing: .04em;
+    }
+    .badge-changed { background: #fee2e2; color: #dc2626; }
+    .badge-new     { background: #dbeafe; color: #1d4ed8; }
+    .badge-none    { background: #e5e7eb; color: #6b7280; }
+    .badge-deleted { background: #fecaca; color: #991b1b; }
+    td.cell-reason { font-size: 12px; color: var(--text-sub); }
+    tr.row-none td.cell-reason { color: #c4c2bf; }
+    .renumber-note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      font-size: 12px;
+      color: #92400e;
+      margin: 12px 0;
+    }
+    .footer {
+      background: var(--text);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topbar">
+  <span class="topbar-logo">宮前平小PTA 2026 ｜ 規約 新旧対照表（全文）</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-meta">令和8年度 定時総会 議案資料</div>
+  <h1>規約 新旧対照表</h1>
+  <p class="hero-sub">全条文掲載版 ／ 2026年度改定案（会員スタイル制導入・電子総会正式化・教職員アドバイザー化 他）</p>
+</div>
+
+<div class="container">
+
+  <div class="legend">
+    <div class="legend-item"><div class="l-dot" style="background:#fee2e2;border:1px solid #fca5a5;"></div><span style="color:#dc2626;font-weight:700;">赤字</span>＝変更あり</div>
+    <div class="legend-item"><div class="l-dot" style="background:#dbeafe;border:1px solid #93c5fd;"></div><span style="color:#1d4ed8;font-weight:700;">青字</span>＝新設</div>
+    <div class="legend-item"><div class="l-dot" style="background:#e5e7eb;"></div>グレー背景＝変更なし</div>
+    <div class="legend-item"><div class="l-dot" style="background:#fff5f5;border:1px solid #fca5a5;"></div>削除</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <colgroup>
+        <col class="c0"><col class="c1"><col class="c2"><col class="c3">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>条番号</th>
+          <th>現行規約（原文）</th>
+          <th>2026年度 改定案</th>
+          <th>変更の理由・備考</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- ===== 第一章 ===== -->
+        <tr class="section-row"><td colspan="4">第一章　名称</td></tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第一条</td>
+          <td>川崎市立宮前平小学校PTAと称し、本部を宮前平小学校におく。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+
+        <!-- ===== 第二章 ===== -->
+        <tr class="section-row"><td colspan="4">第二章　目的と活動</td></tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第二条</td>
+          <td>本会は、教育基本法の精神にしたがって、父母、または、それに代わる保護者（以下、「保護者」という。）と教職員の協力により、児童の幸せな成長のために努力することを目的とし、次の活動をする。
+一、会員相互の教養を高め、親睦を図る。
+二、家庭、学校と地域社会との緊密な連絡によって、児童の生活を指導する。
+三、児童の教育環境の改善に努める。
+四、その他、目的を達成するために必要と認められる活動をする。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">本会の目的規定。全児童を対象とすることで非会員児童への差別指摘を回避する大義名分を維持。</td>
+        </tr>
+
+        <!-- ===== 第三章 ===== -->
+        <tr class="section-row"><td colspan="4">第三章　方針</td></tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第三条</td>
+          <td>本会は、第二条の目的を達成するために、次の方針にしたがって活動する。
+一、本会は、教育を本旨とする自主独立の民主団体で、他からの干渉は、いっさい受けない。
+二、本会は、いずれの政党、宗教、営利団体をも支持しない。
+三、本会は、学校の管理、運営、人事に干渉しない。
+四、本会は、児童の幸せのために活動する他の団体および機関と協力する。</td>
+          <td class="text-changed">本会は、第二条の目的を達成するために、次の方針にしたがって活動する。
+一、本会は、教育を本旨とする自主独立の民主団体で、他からの干渉は、いっさい受けない。
+二、本会は、いずれの政党、宗教、営利団体をも支持しない。ただし、本会の趣旨に賛同する地域事業主等とのパートナーシップはこの限りでない。
+三、本会は、学校の管理、運営、人事に干渉しない。
+四、本会は、児童の幸せのために活動する他の団体および機関と協力する。</td>
+          <td class="cell-reason">第二項のみ変更。地域事業者からの協賛金受入れを法的に整理。サポーターB（地域事業者）制度と連動。</td>
+        </tr>
+
+        <!-- ===== 第四章 ===== -->
+        <tr class="section-row"><td colspan="4">第四章　会員と会費</td></tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第四条</td>
+          <td>本会は、宮前平小学校の児童の保護者と教職員をもって組織する。
+本会への入会退会は自由を原則とするが、全員加入に努力する。
+会員は、すべて、平等の権利と義務を有する。</td>
+          <td class="text-changed">本会の会員は次の区分とし、年度ごとに入会の意思確認を行う。
+① スタンダード（年会費¥3,600）
+　募集対象（係など）、議決権あり
+② リーダー（年会費¥3,600）
+　委員活動、議決権あり
+③ レジェンド（年会費¥3,600）
+　役員・委員・係活動の永久免除（OB特典）、議決権あり
+　※本人が希望する場合は妨げない
+④ サポーターA（年会費¥5,400〜）
+　基本会費¥3,600＋賛助費¥1,800/口（何口でもOK）、役務免除、議決権なし
+⑤ サポーターB（¥10,000〜/口）
+　役務なし、議決権なし
+⑥ ティーチャー（¥0・完全任意）
+　教職員のみ、議決権あり
+⑦ 非会員（¥0）
+　議決権なし
+
+退会はいつでも可能とし、退会意思の表明（退会届の提出）をもって手続き完了とする。</td>
+          <td class="cell-reason">「役務（労力）」と「会費（金銭）」のトレードオフを会員自身が選択可能に。年度ごとの個別同意により強制加入を回避。退会手続きを明文化。ティーチャー区分は地方公務員法に基づき完全任意・活動記録は求めない。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第五条</td>
+          <td>本会の会費は、一世帯につき月額三百円とする。
+ただし、事情により、会費を免除することができる。</td>
+          <td class="text-changed">本会の会費は次のとおりとし、本会が指定する電子決済システムにより年額一括で徴収する。
+① スタンダード・リーダー・レジェンド：年額¥3,600
+② サポーターA：基本会費¥3,600＋賛助費¥1,800/口（何口でもOK）
+③ サポーターB：¥10,000/口（何口でもOK）
+④ ティーチャー：¥0（完全任意）
+⑤ 非会員：¥0
+
+具体的な電子決済システムは会計細則で指定する。</td>
+          <td class="cell-reason">月額表記を廃止し実態に合わせた年額へ。電子決済原則を規約に置くことで、将来の現金回帰を総会決議なしにできないよう担保。ツール名（がくぷり等）は細則に置き乗り換えを柔軟に対応。</td>
+        </tr>
+
+        <!-- ===== 第五章 ===== -->
+        <tr class="section-row"><td colspan="4">第五章　機関</td></tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第六条</td>
+          <td>本会に左記の機関をおく。
+一、総会
+二、役員会
+三、運営委員会
+四、常任委員会
+五、特別委員会</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">組織構成の規定。</td>
+        </tr>
+
+        <!-- ===== 第六章 ===== -->
+        <tr class="section-row"><td colspan="4">第六章　総会</td></tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第七条</td>
+          <td>総会は、全会員をもって構成する本会の最高議決機関で、会長がこれを招集する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">総会の定義。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第八条</td>
+          <td>定期総会は、年二回開き、次の事項を決議、または承認する。
+一、前年度事業報告および決算報告
+二、事業計画および予算案
+三、役員および会計監査の承認
+四、その他必要な事項</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">総会の決議事項。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第九条</td>
+          <td>総会の成立は、以下いずれかの方法により行う。
+一、会議形式の場合は、会員の三分の一以上の出席（委任状を含む）により成立する。
+二、紙面または電子投票形式（PTA支援ツール等のオンラインシステムを含む）の場合は、会員の三分の一以上の書面・電子回答の提出により成立する。
+議事は、出席者および回答者の過半数の承認をもって決議とする。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">電子投票・紙面参加はすでに規約上正式化済み。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十条</td>
+          <td>臨時総会は、運営委員会が必要と認めた場合、または、全会員の七分の一以上の要求があった場合に会長は、これを招集しなければならない。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">臨時総会の招集規定。</td>
+        </tr>
+
+        <!-- ===== 第七章 ===== -->
+        <tr class="section-row"><td colspan="4">第七章　役員会</td></tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十一条</td>
+          <td>役員会は、会長・副会長・会計・書記・区Ｐ（宮前区ＰＴＡ協議会担当）・組織委員長・学校長（以下「校長」と表記する）・教頭・教務主任をもって構成する。</td>
+          <td class="text-changed">役員会は、会長・副会長・会計・書記をもって構成する。
+校長・教頭・教務主任は役員会の構成員から除外する。</td>
+          <td class="cell-reason">学校（公務員）とPTA（任意団体）の責任の所在を明確に分離。教職員を経営・人事判断から解放。役員会は四役に集約。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十二条</td>
+          <td>本会に左記の役員をおく。
+一、会長　一名
+二、副会長　若干名
+三、会計　三名（保護者二名、教職員一名）
+四、書記　三名（保護者二名、教職員一名）
+五、区Ｐ（宮前区ＰＴＡ協議会担当）　一名
+六、組織委員長　一名</td>
+          <td class="text-changed">本会に左記の役員をおく。
+一、会長　一名
+二、副会長　若干名
+三、会計　二名（保護者のみ）
+四、書記　二名（保護者のみ）</td>
+          <td class="cell-reason">教職員役員を廃止し保護者による自主運営を明確化。会計・書記を実態に合わせて適正化。区P・組織委員長は運営委員会メンバーとして維持。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十三条</td>
+          <td>役員の任務は、次のとおりとする。
+一、会長は、本会を代表し、会務を統括する。
+二、副会長は、会長を補佐し、会長不在のときは、任務を代行する。
+三、会計は、金銭の収支を記録し、必要に応じ、会計報告を行う。
+四、書記は、会議の議事を記録し、本会運営の上の庶務を行う。
+五、区Ｐ（宮前区ＰＴＡ協議会担当）は、宮前区ＰＴＡ協議会と緊密な連絡をはかり、その活動に協力する。
+六、組織委員長は、組織委員と共に、会員の総意に基づき、本会の組織構成の適正化に努める。
+七、会長が必要と認めたとき、役員会を招集する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">任務規定は維持。第十二条の役員構成変更に伴い、五・六項の実態整合は運営委員会で別途整理。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十四条</td>
+          <td>一、役員の選出は、役員候補者推薦委員会（以下 推薦委員会とする）の推薦する候補者を総会にはかり決定する。ただし、PTA支援ツール等を用いた電子投票による承認もこれに準ずることができる。
+役員の任期は、一年とする。ただし、再選を妨げない。
+二、役員に欠員が生じた場合、その処置については運営委員会に一任する。</td>
+          <td class="text-changed">一、役員の選出は、本会の活動方針を理解し参画の意欲を持つ会員の中から、推薦委員会が選考した候補者を総会にはかり決定する。ただし、PTA支援ツール等を用いた電子投票による承認もこれに準ずることができる。
+役員の任期は一年とする。ただし、再選を妨げない。
+二、役員に欠員が生じた場合、その処置については運営委員会に一任する。</td>
+          <td class="cell-reason">「活動方針を理解し意欲を持つ者」から選考する旨を追記。推薦委員会による選考プロセスと連動させ、役員選出の質を担保。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十五条</td>
+          <td>本会の経費は、会費およびその他の収入をもってあてる。</td>
+          <td class="text-changed">本会の経費は、会費、地域パートナー協賛金、およびその他の収入をもってあてる。</td>
+          <td class="cell-reason">地域サポーター（サポーターB）からの協賛金収入を財源として明記。第三条第二項のパートナーシップ規定と連動。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十六条</td>
+          <td>本会の経理は、総会によって議決された予算によって行う。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">予算執行の原則規定。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十七条</td>
+          <td>本会の決算は、会計監査を経て、総会で承認を受ける。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">決算承認の規定。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十八条</td>
+          <td>会計帳簿は、会員の要請があればいつでも公開する。</td>
+          <td class="text-changed">会計帳簿等の閲覧を希望する会員は、会長に対し書面をもって申請しなければならない。閲覧の手順および方法については、別に定める会計細則によるものとする。</td>
+          <td class="cell-reason">「いつでも公開」という物理的に困難な表現を適正な申請手続きに変更。個人情報漏洩防止と担当者保護。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十九条</td>
+          <td>会計年度は、毎年四月一日から始まり、翌年三月三十一日に終わる。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">会計年度の規定。</td>
+        </tr>
+
+        <!-- ===== 第八章 ===== -->
+        <tr class="section-row"><td colspan="4">第八章　運営委員会</td></tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第二十条</td>
+          <td>運営委員会は、役員・各常任委員会委員長・特別委員会正副委員長・宮前平こども文化センター運営協議会委員・宮前平中学校区地域教育会議父母委員・校長・教頭・教務主任をもって構成する。</td>
+          <td class="text-changed">一、運営委員会は、役員・各常任委員会委員長・特別委員会正副委員長・宮前平こども文化センター運営協議会委員・宮前平中学校区地域教育会議父母委員をもって構成する。
+二、校長・教頭・教務主任は、アドバイザーとして運営委員会に出席し助言することができる。ただし、議決権は有しない。</td>
+          <td class="cell-reason">学校管理職を構成員から除外しアドバイザー化。教職員の地方公務員法上の職務専念義務への配慮。PTAの自律的意思決定を担保。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第二十一条</td>
+          <td>本会の任務は次のとおりとする。
+一、本会の事業の企画推進をはかり、総会に提出する議案報告書を作成する。
+二、本会の運営に関し、必要な細則は、規約に反しないかぎりにおいて、運営委員会の決議を経て定める。
+三、運営委員会は、細則を制定または改廃した場合には、その結果を次期総会に報告しなければならない。</td>
+          <td class="text-changed">本会の任務は次のとおりとする。
+一、本会の事業の企画推進をはかり、総会に提出する議案報告書を作成する。
+二、事業は会員の自発的参画を基礎として運営する。最低遂行人数に達しない場合、会長および運営委員会の判断で外部委託・縮小・廃止を行うことができる。
+三、本会の運営に関し、必要な細則は、規約に反しないかぎりにおいて、運営委員会の決議を経て定める。
+四、運営委員会は、細則を制定または改廃した場合には、その結果を次期総会に報告しなければならない。</td>
+          <td class="cell-reason">第二項（新設）：手挙げ制においてなり手不足時に、役員が勇気を持って事業をスリム化・撤退できる権限を明文化。</td>
+        </tr>
+
+        <!-- ===== 第九章 ===== -->
+        <tr class="section-row"><td colspan="4">第九章　常任委員会</td></tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第二十二条</td>
+          <td>本会は、左記の委員会をおき、各委員会に委員長をおく。
+一、学年委員会
+二、成人委員会
+三、広報委員会
+四、校外委員会</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">委員会の種類・名称は維持。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第二十三条</td>
+          <td>学年委員会は、各学級より保護者一名、教員若干名を互選し、その委員をもって委員会を構成する。</td>
+          <td class="text-changed">学年委員会は、募集に応じた会員をもって構成する。
+「各学級より保護者一名」の選出条件は廃止し、参加を希望する会員が自発的に構成する。
+学年委員会の役割はキラどき等の行事を中心とした活動に特化し、人数より活動意欲を優先した柔軟な構成とする。</td>
+          <td class="cell-reason">強制的な互選・クラスノルマを廃止。「やらされ感」を解消し自発的参加へ転換。キラどき特化により役割を明確化。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第二十四条</td>
+          <td>各学年委員は、学年、学級間の密接な連絡をはかり、児童の教育向上に協力する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">任務規定は維持。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第二十五条</td>
+          <td>成人委員会は、該当学年より保護者若干名、教員若干名を互選し、その委員をもって委員会を構成する。</td>
+          <td class="text-changed">成人委員会は、募集に応じた会員をもって構成する。選出および運営については第二十三条の規定を準用する。</td>
+          <td class="cell-reason">強制的な互選を廃止。自発的手挙げ制へ統一。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第二十六条</td>
+          <td>成人委員会は、会員相互の結びつきを深め、かつ社会教育の向上に努める。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">任務規定は維持。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第二十七条</td>
+          <td>広報委員会は、該当学年より保護者若干名、教員若干名を互選し、その委員をもって委員会を構成する。</td>
+          <td class="text-changed">広報委員会は、募集に応じた会員をもって構成する。選出および運営については第二十三条の規定を準用する。</td>
+          <td class="cell-reason">強制的な互選を廃止。教職員の構成員入りも廃止し先生をPTA実務から解放。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第二十八条</td>
+          <td>広報委員会は、本会の総ての活動についての広報を受け持ち、かつ会報を発行する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">任務規定は維持。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第二十九条</td>
+          <td>校外委員会は、左記の地区に会員の互選により若干名の校外委員と教員若干名で構成する。
+一、宮前平一丁目
+二、宮前平三丁目
+三、宮崎一丁目地区</td>
+          <td class="text-changed">校外委員会は、該当地区の募集に応じた会員をもって構成する。選出および運営については第二十三条の規定を準用する。
+対象地区：宮前平一丁目、宮前平三丁目、宮崎一丁目地区</td>
+          <td class="cell-reason">地域活動においてもノルマ制を廃止。自発的参加を基本とする。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三十条</td>
+          <td>校外委員会は、学校・家庭・地域同士の密接な連絡をはかり、児童の校外生活指導全般の推進にあたる。資源回収事業を行う。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">任務規定は維持。</td>
+        </tr>
+
+        <!-- ===== 第十章 ===== -->
+        <tr class="section-row"><td colspan="4">第十章　特別委員会</td></tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三十一条</td>
+          <td>本会に左記の特別委員会をおくことができる。
+一、推薦委員会
+二、予算委員会
+三、その他会長および運営委員会が必要と認めたもの</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">特別委員会の設置規定。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第三十二条</td>
+          <td>推薦委員会は、左記の委員をもって構成する。
+一、組織委員会より　計六名（運営委員会に所属する委員は除く）
+二、運営委員会より若干名
+三、教職員より一名</td>
+          <td class="text-changed">推薦委員会は、左記の委員をもって構成する。
+一、組織委員会より　計六名（運営委員会に所属する委員は除く）
+二、運営委員会より若干名</td>
+          <td class="cell-reason">教職員を推薦委員から削除。役員人事への関与から先生を解放。学校・PTA間の責任の所在を明確に分離。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三十三条</td>
+          <td>会長は推薦委員の氏名を公示する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三十四条</td>
+          <td>推薦委員長（正副）は委員の互選による。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三十五条</td>
+          <td>推薦委員会は、委員の三分の二以上の出席をもって成立し、出席者の過半数をもって議決する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三十六条</td>
+          <td>推薦委員会は、役員・会計監査・各常任委員会委員長・宮前平こども文化センター運営協議会委員・宮前平中学校区地域教育会議父母委員候補者を選考し、その承諾を得て、総会前（一週間）に全会員にその氏名を知らせる。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三十七条</td>
+          <td>原則として、推薦委員は、役員・会計監査候補者になることはできない。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三十八条</td>
+          <td>予算委員会は、左記の委員をもって構成する。
+一、役員
+二、学年委員長
+三、成人委員長
+四、広報委員長
+五、校外委員長
+六、組織委員長</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三十九条</td>
+          <td>予算委員会は、次年度の予算案を作成し、運営委員会に提出する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第四十条</td>
+          <td>予算委員会の委員長は、委員の互選による。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+
+        <!-- ===== 第十一章 ===== -->
+        <tr class="section-row"><td colspan="4">第十一章　会計監査</td></tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第四十一条</td>
+          <td>本会に二名（保護者）の会計監査をおく。</td>
+          <td class="text-changed">本会に会計監査をおく。会計監査は、当年度の役員・運営委員等以外の会員から選出する。
+運営委員会の判断により、会計事務所等の外部専門家に監査を委託することができる。その場合、内部監査との併用も可とする。</td>
+          <td class="cell-reason">監査の独立性を担保。過去の会計担当者・現役員からの分離を明記。外部会計事務所への委託も選択肢として明文化し、将来的な透明性強化の余地を確保。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第四十二条</td>
+          <td>会計監査は、年度の会計監査を行い、その結果を全会員に報告する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">監査の任務規定。</td>
+        </tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第四十三条</td>
+          <td>会計監査の選出は、推薦委員会の推薦による。任期は一年とし、再選を妨げない。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">—</td>
+        </tr>
+
+        <!-- ===== 第十二章 ===== -->
+        <tr class="section-row"><td colspan="4">第十二章　規約の改廃</td></tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第四十四条</td>
+          <td>規約の改廃は、総会において出席者の過半数の決議、またはPTA支援ツール等の電子投票による過半数の賛成をもって行うことができる。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">改正手続き。</td>
+        </tr>
+
+        <!-- ===== 第十三章 ===== -->
+        <tr class="section-row"><td colspan="4">第十三章　慶弔規定</td></tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第四十五条</td>
+          <td>この規定は、川崎市立宮前平小学校ＰＴＡ規定とし、児童、会員、教職員の慶弔に関して、会を代表して慶弔の意を表す。</td>
+          <td class="text-changed">【地域連携・通知事務の委託】
+アプリ未導入者等への重要事項の伝達および非会員への連絡について、学校設置者と締結する業務委託契約に基づき、学校の協力を受けて実施できる。</td>
+          <td class="cell-reason">旧慶弔規定の適用範囲を定めた条文を廃止し、学校との業務委託根拠規定に変更。地方公務員法に抵触させない「公的な業務委託」として整理。</td>
+        </tr>
+        <tr class="row-deleted">
+          <td class="cell-num"><span class="badge badge-deleted">削除</span><br>第四十六条</td>
+          <td class="text-deleted">慶祝
+一、教職員結婚　五千円
+二、教職員転退職　記念品</td>
+          <td class="text-deleted">（削除）
+教職員はティーチャー区分（会費¥0）のため、慶祝規定の適用対象から除外する。会費を納めていない方への支出は会費の目的外使用となるため廃止する。</td>
+          <td class="cell-reason">会費¥0のティーチャー区分との整合性を確保。公務員への個人給付リスクを回避。
+※この条文の削除により、以降の条番号が繰り上がる。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第四十七条</td>
+          <td>弔意
+一、児童　一万円と花輪
+二、会員（保護者）　一万円と花輪
+三、教職員　一万円と花輪　但し、花輪を贈るかどうかは、会長、校長合議の上考慮する。
+四、教職員家族　五千円
+教職員家族の範囲は、原則として、配偶者、本人の父母、養父母、子までとする。</td>
+          <td class="text-changed">弔意
+一、児童　一万円と花輪
+二、会員（保護者）　一万円と花輪
+花輪の供出の可否は、役員会で協議の上、会長が判断する。
+
+教職員および教職員家族への弔意規定は廃止する。</td>
+          <td class="cell-reason">教職員への弔意を廃止（会費¥0との整合）。花輪供出の判断を校長合議から役員会協議へ変更し、PTA内部で完結させる。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第四十八条</td>
+          <td>病気・負傷・災害見舞
+一、児童の病気、負傷　三千円　但し、連続二週間以上の入院を要するとき。
+二、教職員の病気、負傷　三千円　但し、連続二週間以上の入院を要するとき。
+三、会員、教職員、災害罹災の場合は、会長、校長が内容合議の上、決定する。
+最高額　一万円
+尚、災害罹災が広範囲に渡るときは、適用できない場合がある。</td>
+          <td class="text-changed">病気・負傷・災害見舞
+一、児童の病気、負傷　三千円　但し、連続二週間以上の入院を要するとき。
+二、会員（保護者）の病気、負傷　三千円　但し、連続二週間以上の入院を要するとき。
+三、会員の災害罹災の場合は、役員会で協議の上、会長が決定する。
+最高額　一万円
+尚、災害罹災が広範囲に渡るときは、適用できない場合がある。
+対象は会費を納める会員（保護者・児童）のみとし、会員からの申請に基づき支給する。
+
+教職員の病気・負傷・災害見舞規定は廃止する。</td>
+          <td class="cell-reason">教職員の見舞規定を廃止（会費¥0との整合）。決定プロセスを校長合議から役員会協議へ変更。申請制に移行しプライバシーを保護。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第四十九条</td>
+          <td>この規定以外、特別の事情あるときは、会長、校長合議の上考慮する。</td>
+          <td class="text-changed">この規定以外、特別の事情があるときは、役員会で協議の上考慮する。</td>
+          <td class="cell-reason">支出決定をPTA内部で完結させるため、校長（公務員）との合議制を廃止。</td>
+        </tr>
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第五十条</td>
+          <td>この規定は、昭和五十五年五月十日より実施する。</td>
+          <td class="text-changed">この規定は、令和八年度より実施する。</td>
+          <td class="cell-reason">施行日の更新。</td>
+        </tr>
+
+        <!-- ===== 第十四章 ===== -->
+        <tr class="section-row"><td colspan="4">第十四章　個人情報取扱規則</td></tr>
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第五十一条</td>
+          <td>この規則は、川崎市立宮前平小学校ＰＴＡ規定とし、別紙のとおり定める。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">別紙規則への委任。個人情報取扱規則の詳細は別途改正案にて承認を求める。</td>
+        </tr>
+        <tr class="row-new">
+          <td class="cell-num"><span class="badge badge-new">新設</span><br>第五十二条</td>
+          <td>（新設条文）</td>
+          <td class="text-new">【個人情報の履歴管理】
+会員の役職歴・会員区分を次年度以降の名簿に引き継ぎ管理できる。
+なお、個人情報の保存期間は原則として卒業後一年とするが、役職歴に基づく免除資格（レジェンド等）の管理に必要な範囲では、本人の同意を得た上で退会・卒業後も保持することができる。</td>
+          <td class="cell-reason">永年免除（レジェンド）・次年度免除を正確に運用するためのデータ保持根拠を明確化。卒業後1年廃棄の原則と、OB免除資格管理の例外を整合させる。</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="renumber-note">
+    ⚠️ <strong>条番号について：</strong>第四十六条（教職員慶祝規定）を削除するため、以降の条番号が一つずつ繰り上がります。最終的な条番号の整理は、本改正の承認後に付則として反映します。
+  </div>
+
+</div>
+
+<div class="footer">令和8年4月 ｜ 宮前平小学校PTA 定時総会 議案資料　※本対照表は総会での審議・承認後に正式規約として発効します。</div>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人情報取扱規則 新旧対照表｜宮前平小学校PTA 令和8年度</title>
+  <style>
+    @font-face { font-family: 'AY'; src: local('Yu Gothic Medium'), local('YuGothic-Medium'); font-weight: 400; }
+    @font-face { font-family: 'AY'; src: local('Yu Gothic Bold'), local('YuGothic-Bold'); font-weight: 700; }
+    :root {
+      --primary: #0077c7;
+      --text: #23221e;
+      --text-sub: #706e69;
+      --bg: #f8f7f6;
+      --white: #ffffff;
+      --border: #d6d3d0;
+      --radius: 6px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'AY','Yu Gothic','YuGothic','Hiragino Kaku Gothic ProN',sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar-logo { font-size: 13px; font-weight: 700; color: var(--primary); }
+    .hero {
+      background: linear-gradient(135deg,#003d6b 0%,#0077c7 70%);
+      color: #fff;
+      padding: 40px 32px 36px;
+    }
+    .hero-meta { font-size: 12px; opacity: .8; margin-bottom: 8px; letter-spacing: .05em; }
+    .hero h1 { font-size: 24px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+    .hero-sub { font-size: 14px; opacity: .85; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 16px 48px; }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .l-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      -webkit-overflow-scrolling: touch;
+    }
+    table { border-collapse: collapse; width: 100%; min-width: 800px; }
+    col.c0 { width: 90px; }
+    col.c1 { width: 25%; }
+    col.c2 { width: 34%; }
+    col.c3 { width: 20%; }
+    thead th {
+      background: #1e3a5f;
+      color: #fff;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-align: left;
+      border-right: 1px solid rgba(255,255,255,.15);
+    }
+    thead th:last-child { border-right: none; }
+    tr.section-row td {
+      background: #2e5898;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 16px;
+      letter-spacing: .04em;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+    tr.row-changed { background: #ffffff; }
+    tr.row-new     { background: #eff6ff; }
+    tr.row-none    { background: #f9fafb; }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      vertical-align: top;
+      font-size: 13px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    td:last-child { border-right: none; }
+    tr:last-child td { border-bottom: none; }
+    td.cell-num {
+      font-weight: 700;
+      font-size: 12px;
+      white-space: nowrap;
+      min-width: 80px;
+    }
+    .text-changed { color: #dc2626; }
+    .text-new     { color: #1d4ed8; }
+    .text-none    { color: #9ca3af; font-style: italic; }
+    tr.row-none td:not(.cell-num) { color: #9ca3af; }
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-bottom: 4px;
+      letter-spacing: .04em;
+    }
+    .badge-changed { background: #fee2e2; color: #dc2626; }
+    .badge-new     { background: #dbeafe; color: #1d4ed8; }
+    .badge-none    { background: #e5e7eb; color: #6b7280; }
+    td.cell-reason { font-size: 12px; color: var(--text-sub); }
+    tr.row-none td.cell-reason { color: #c4c2bf; }
+    .footer {
+      background: var(--text);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topbar">
+  <span class="topbar-logo">宮前平小PTA 2026 ｜ 個人情報取扱規則 新旧対照表</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-meta">令和8年度 定時総会 議案資料</div>
+  <h1>個人情報取扱規則 新旧対照表</h1>
+  <p class="hero-sub">全条文掲載版 ／ 2026年度改正案（会員スタイル制・廃棄ルール整備・共同利用整備・非会員情報取扱い明確化 他）</p>
+</div>
+
+<div class="container">
+
+  <div class="legend">
+    <div class="legend-item"><div class="l-dot" style="background:#fee2e2;border:1px solid #fca5a5;"></div><span style="color:#dc2626;font-weight:700;">赤字</span>＝変更あり</div>
+    <div class="legend-item"><div class="l-dot" style="background:#dbeafe;border:1px solid #93c5fd;"></div><span style="color:#1d4ed8;font-weight:700;">青字</span>＝新設</div>
+    <div class="legend-item"><div class="l-dot" style="background:#e5e7eb;"></div>グレー背景＝変更なし</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <colgroup>
+        <col class="c0"><col class="c1"><col class="c2"><col class="c3">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>条番号</th>
+          <th>現行規則（原文）</th>
+          <th>2026年度 改正案</th>
+          <th>変更の理由・備考</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- ===== 第1節 ===== -->
+        <tr class="section-row"><td colspan="4">第一節　目的・定義・管理体制（第一条〜第六条）</td></tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第一条<br>（目的）</td>
+          <td>この規則は、川崎市立宮前平小学校PTA（以下「本会」と称す）の保有する個人情報について、その適正管理に必要な事項を定めることにより本会の適正かつ円滑な運営を図り、個人の権利と利益を保護することを目的とする。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">規則の目的規定。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第二条<br>（責務）</td>
+          <td>本会は個人情報の重要性を認識し、個人情報保護法および本規則に基づき、本会で取扱う個人情報の取得、利用、管理を適正に行う。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">基本的な責務の宣言。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第三条<br>（定義）</td>
+          <td>個人情報とは、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と容易に照合することができそれにより特定の個人を識別することができることとなるものを含む。）をいう。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">個人情報保護法に基づく定義。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第四条<br>（管理者）</td>
+          <td>本会における個人情報の管理者は会長とする。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">管理責任者の規定。</td>
+        </tr>
+
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第五条<br>（取扱者）</td>
+          <td>本会における個人情報の取扱者は、役員および会長が指定する本会の構成員とする。</td>
+          <td class="text-changed">本会における個人情報の取扱者は、役員、および特定の業務を遂行するために会長が指名した本会の構成員（以下「業務担当者」という）とし、業務上必要な範囲内に限り取り扱うものとする。</td>
+          <td class="cell-reason">「会長の指名で誰でも見られる」という解釈を排除。権限を「特定の業務」と「必要な範囲」に限定し、管理体制の厳密さを明確化。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第六条<br>（守秘義務）</td>
+          <td>個人情報の管理者および取扱者は、職務上知り得た情報を、みだりに他人へ知らせ、不当な目的に使用してはならない。その職を退いた後も同様とする。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">退任後も含む守秘義務の規定。</td>
+        </tr>
+
+        <!-- ===== 第2節 ===== -->
+        <tr class="section-row"><td colspan="4">第二節　取得・利用目的（第七条〜第九条）</td></tr>
+
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第七条<br>（適切な取得）</td>
+          <td>個人情報を取得する際は、あらかじめ利用目的を定め、公開する。また円滑なPTA活動をおこなうために以下の情報を取得する。
+1．会員の氏名、連絡先（住所、電話番号、メールアドレス）
+2．会員の子どもの氏名・クラス
+3．必要に応じ、会員や会員の子どもなどの写真</td>
+          <td class="text-changed">個人情報を取得する際は、あらかじめ利用目的を定め、公開する。また円滑なPTA活動をおこなうために以下の情報を取得する。
+一、会員の氏名、連絡先（電話番号、メールアドレス）
+二、会員の子どもの氏名、学年・学級
+三、活動報告を目的とし、個人の識別を主眼としない範囲での会員および児童の写真
+四、本会における過去の活動履歴（役員・委員等の経験の有無）
+五、会員スタイル区分（スタンダード・リーダー・レジェンド・サポーターA/B・ティーチャー・非会員）</td>
+          <td class="cell-reason">住所は実務上取得しないため改正案から削除（情報収集の最小化・個情法の比例原則に沿った対応）。会員スタイル制度の導入に伴い、活動履歴（役職歴）と会員スタイル区分の取得を明記。レジェンド免除管理・サポーター区分管理の法的根拠として必要。写真利用の目的を明示し肖像権トラブルを回避。</td>
+        </tr>
+
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第八条<br>（利用目的）</td>
+          <td>取得した個人情報は、以下の目的のために利用する。
+1．PTA活動に関わる連絡および文書等の発送など必要な活動
+2．会員名簿、委員会名簿、校外地区班名簿の作成
+3．本会が発行する会報誌等</td>
+          <td class="text-changed">取得した個人情報は、以下の目的のために利用する。
+一、PTA活動に関わる連絡および文書等の発送など必要な活動
+二、会員名簿、委員会名簿、校外地区班名簿の作成
+三、本会が発行する会報誌等
+四、次年度以降の役員・委員選出における公平性確保のための資料作成
+五、会員スタイル区分および免除資格（レジェンド等）の適切な管理・次年度への引き継ぎ
+六、学校へのPTA保険適用確認に関する事務の委託（第十三条に定める共同利用の範囲内）</td>
+          <td class="cell-reason">四〜六を追加。会員スタイル管理・免除資格管理を利用目的に明記。学校へのPTA保険確認事務を「目的外利用」と言われないよう予め明定。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第九条<br>（利用制限）</td>
+          <td>本会は、あらかじめ本人の同意を得ないで、第8条により特定された利用目的の範囲を超えて個人情報を取扱わないものとする。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">利用目的の制限規定。</td>
+        </tr>
+
+        <!-- ===== 第3節 ===== -->
+        <tr class="section-row"><td colspan="4">第三節　保管・管理・提供（第十条〜第十三条）</td></tr>
+
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十条<br>（管理・廃棄）</td>
+          <td>個人情報は、管理者または取扱者が適正に管理する。また、不要となった個人情報は、適正かつ速やかに廃棄するものとする。</td>
+          <td class="text-changed">一、個人情報は、管理者または取扱者が適正に管理する。また、不要となった個人情報は、適正かつ速やかに廃棄するものとする。
+二、前項に関わらず、役職歴に基づく免除資格（レジェンド等）の管理に必要な活動履歴については、当該児童の在学期間中および卒業後一年に限り継続して保持することができる。ただし、本人の同意を得た場合はこの限りでない。
+三、廃棄の方法は次のとおりとする。
+　（一）電子データ：完全消去または物理破壊
+　（二）紙文書：溶解処理。溶解処理証明書を保管する。
+　（三）USBメモリ等の記録媒体：物理破壊
+四、定期廃棄は毎年三月に実施するものとし、廃棄の記録を五年間保持する。</td>
+          <td class="cell-reason">廃棄ルールを大幅に具体化。電帳法対応・監査可能性の確保。レジェンドOB管理との整合のため「在学中＋卒業後一年」の例外規定を設置。毎年3月定期廃棄・廃棄記録5年保持を明文化。</td>
+        </tr>
+
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十一条<br>（保管・持出）</td>
+          <td>1．個人情報は、それを取り扱う電子機器・電子媒体に、ウィルス対策ソフトを入れるなど適切な状態を維持し保管する。
+2．紙文書の個人情報は鍵付き書庫へ保管する事とし、本校外への持出はしない。
+3．本会は、PTA支援ツール等のクラウドサービスに個人情報を保管する場合がある。この際は、セキュリティ対策が講じられているサービスを選定し、契約書等により管理義務を明記する。</td>
+          <td class="text-changed">一、個人情報は、適切なウィルス対策等を講じた電子機器等により適切に保管する。
+二、紙文書の個人情報は鍵付き書庫へ保管することとし、校外への持ち出しは原則として行わない。
+三、本会は、PTA支援ツール等のクラウドサービスを利用する場合がある。この際は、適切なセキュリティ対策が講じられているサービスを選定し、適切に管理するものとする。</td>
+          <td class="cell-reason">表記の現代化・漢数字統一。「本校外への持出はしない」から「校外への持ち出しは原則として行わない」に緩和し、例外的な持ち出し（必要な場合）を認める余地を確保。</td>
+        </tr>
+
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十二条<br>（第三者提供の制限）</td>
+          <td>個人情報は次の場合を除き、あらかじめ本人の同意を得ないで第三者への提供をおこなわないものとする。
+1．法令に基づく場合
+2．人の生命・身体または財産保護のために必要な場合であって、本人の同意を得ることが困難であるとき
+3．公衆衛生の向上または児童の健全育成の推進に必要がある場合であって、本人の同意を得ることが困難であるとき
+4．国の機関もしくは地方公共団体またはその委託を受けたものが、法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき
+5．本会が業務委託する外部サービスに提供する場合で、委託契約において個人情報保護義務を課しているとき</td>
+          <td class="text-changed">個人情報は次の場合を除き、あらかじめ本人の同意を得ないで第三者への提供をおこなわないものとする。
+一、法令に基づく場合
+二、人の生命、身体または財産保護のために必要な場合
+三、公衆衛生の向上または児童の健全育成の推進に必要がある場合
+四、公的機関の事務遂行に対して協力する必要がある場合
+五、本会が業務委託する外部サービスに提供する場合</td>
+          <td class="cell-reason">表記の整理・漢数字統一。個人情報保護法の趣旨を損なわない範囲で条文を簡潔化。</td>
+        </tr>
+
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十三条<br>（共同利用）</td>
+          <td>本会は、川崎市立宮前平小学校と本規則に定める使用目的の範囲内に限り、取得した個人情報を共同利用することがある。</td>
+          <td class="text-changed">一、本会は、川崎市立宮前平小学校と、会員よりあらかじめ同意を得た範囲内において、個人情報を共同利用する（個人情報保護法第二十七条第五項第三号に基づく共同利用）。
+二、共同利用する情報の範囲は、会員氏名、児童氏名、学年・学級、会員・非会員のステータスとし、その目的はPTA保険適用確認および児童の安全確保に限るものとする。
+三、非会員の個人情報については、PTA保険の適用対象外であることの確認のみを目的として最小限の情報を学校と共有する。それ以外の目的には使用しない。
+四、前各項に定める共同利用については、入会時に本会が提示する「入会同意および個人情報取扱確認フォーム」において、その旨を本人に対して事前に通知し、個別の同意を取得するものとする。</td>
+          <td class="cell-reason">個情法27条5項3号（共同利用条件）を明記し適法化。会員・非会員ステータスの共有を明示。非会員情報は保険確認目的のみと限定し目的外利用を排除。入会時の同意フォームとセットで運用する設計。</td>
+        </tr>
+
+        <!-- ===== 第4節 ===== -->
+        <tr class="section-row"><td colspan="4">第四節　権利行使・苦情・その他（第十四条〜第十八条）</td></tr>
+
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>第十四条<br>（開示等）</td>
+          <td>本会は、本人から個人情報の開示、訂正、追加、削除、利用停止を求められたときは、法令に沿ってこれに応じる。</td>
+          <td class="text-changed">一、本会は、本人から個人情報の開示、訂正、追加、削除、利用停止を求められたときは、法令に沿ってこれに応じる。
+二、情報の削除または利用停止の請求により、本人または児童の照合が困難となった場合、本会からの案内や保険・慶弔対応等の事務手続きが履行できなくなることがある。本会はこの点をあらかじめ本人に説明するものとする。</td>
+          <td class="cell-reason">権利行使に伴う事務上の限界を明文化。「情報を消すと保険が使えなくなる場合がある」という事実を事前説明義務として規定し、不当な扱いという批判を回避。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十五条<br>（漏えい対策）</td>
+          <td>個人情報を漏えい（紛失含む）した恐れがあることを把握した場合は、直ちに管理者へ報告する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">漏洩時の報告規定。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十六条<br>（研修）</td>
+          <td>本会は、個人情報の管理者・取扱者に対して定期的に、個人データの取扱いに関する留意事項について、研修を実施するものとする。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">教育・研修に関する規定。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十七条<br>（苦情処理）</td>
+          <td>本会は、個人情報の取扱いに関する苦情の適切かつ迅速な処理に努める。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">苦情対応の規定。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十八条<br>（改正）</td>
+          <td>本会の「川崎市立宮前平小学校PTA個人情報取扱規則」は、総会において改正する。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">改正手続きの規定。</td>
+        </tr>
+
+        <!-- ===== 第5節 ===== -->
+        <tr class="section-row"><td colspan="4">第五節　外部サービス（第十九条〜第二十一条）</td></tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第十九条<br>（外部サービスの導入目的）</td>
+          <td>本会は、PTA活動の運営上必要と認められる場合に、情報共有および会員の負担軽減を目的として、外部支援サービス（例：がくぷり等）を導入するものとする。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">がくぷり等の外部サービス導入の目的規定。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第二十条<br>（外部サービスの選定基準）</td>
+          <td>外部支援サービスは、次の各号の基準を満たすものとする。
+1．個人情報保護対策が講じられていること。
+2．会員が容易に利用できる操作性を有すること。
+3．サービス提供者が利用規約およびプライバシーポリシーを公開していること。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">サービス選定基準の規定。</td>
+        </tr>
+
+        <tr class="row-none">
+          <td class="cell-num"><span class="badge badge-none">変更なし</span><br>第二十一条<br>（運用・報告手続）</td>
+          <td>外部支援サービスの導入または変更にあたっては、運営委員会において協議のうえ、適切な方法により会員へ周知および報告を行うものとする。
+重要な変更または費用負担を伴う場合は、必要に応じて総会（紙面または電子投票を含む）に諮ることができるものとする。</td>
+          <td class="text-none">（変更なし）</td>
+          <td class="cell-reason">導入決定プロセスの透明化規定。</td>
+        </tr>
+
+        <!-- ===== 第6節 新設 ===== -->
+        <tr class="section-row"><td colspan="4">第六節　非会員の情報取扱い（第二十二条・新設）</td></tr>
+
+        <tr class="row-new">
+          <td class="cell-num"><span class="badge badge-new">新設</span><br>第二十二条<br>（非会員の情報取扱いと情報配信）</td>
+          <td>（新設条文）</td>
+          <td class="text-new">一、本会は、非会員の保護者に対しても、がくぷり等の情報配信ツールを通じて学校・PTA関連情報を提供することがある。
+二、非会員に対して取得する情報は、配信に必要な最小限（氏名、連絡先、児童の在籍情報）に限り、PTA活動の案内・情報共有以外の目的には使用しない。
+三、非会員への情報配信は、文部科学省通知および川崎市ガイドラインの「情報格差を生じさせない」原則に基づき実施するものとし、非会員の個人情報は会員の個人情報と同等の保護基準のもとで管理する。
+四、非会員が情報配信の停止を希望する場合は、会長に対し申出を行うことができる。本会は合理的な期間内にこれに対応する。</td>
+          <td class="cell-reason">がくぷりによる全保護者への配信開放に伴い、非会員の個人情報取扱いの根拠規定を新設。文科省通知・川崎市GLへの準拠を明記。配信停止権を明示し非会員の権利を保護。</td>
+        </tr>
+
+        <!-- ===== 付則 ===== -->
+        <tr class="section-row"><td colspan="4">付則</td></tr>
+
+        <tr class="row-changed">
+          <td class="cell-num"><span class="badge badge-changed">変更</span><br>付則<br>（施行日）</td>
+          <td>本規則は、令和3年4月1日より施行する。
+令和7年10月1日改正</td>
+          <td class="text-changed">本規則は、令和三年四月一日より施行する。
+令和八年度　○月○日改正</td>
+          <td class="cell-reason">施行日・最新改正日の更新。総会承認後に日付を確定する。</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer">令和8年4月 ｜ 宮前平小学校PTA 定時総会 議案資料　※本対照表は総会での審議・承認後に正式規則として発効します。</div>
+
+</body>
+</html>
