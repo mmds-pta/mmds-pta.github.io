@@ -69,7 +69,7 @@
       -webkit-overflow-scrolling: touch;
     }
     table { border-collapse: collapse; width: 100%; min-width: 800px; }
-    col.c0 { width: 90px; }
+    col.c0 { width: 62px; }
     col.c1 { width: 25%; }
     col.c2 { width: 34%; }
     col.c3 { width: 20%; }
@@ -112,7 +112,7 @@
       font-weight: 700;
       font-size: 12px;
       white-space: nowrap;
-      min-width: 80px;
+      min-width: 52px;
     }
     .text-changed { color: #dc2626; }
     .text-new     { color: #1d4ed8; }
@@ -150,6 +150,88 @@
       padding: 24px;
       font-size: 12px;
       margin-top: 32px;
+    }
+
+    /* ===== Mobile-first responsive ===== */
+    @media (max-width: 680px) {
+      body { font-size: 13px; }
+
+      .topbar { padding: 0 12px; height: 44px; }
+      .topbar-logo {
+        font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .hero { padding: 22px 16px 18px; }
+      .hero h1 { font-size: 18px; }
+      .hero-sub { font-size: 12px; }
+
+      .container { padding: 14px 10px 32px; }
+
+      .legend { gap: 6px; }
+      .legend-item { font-size: 11px; padding: 4px 8px; }
+
+      .table-wrap {
+        border: none;
+        border-radius: 0;
+        overflow-x: visible;
+        margin: 0 -10px;
+      }
+
+      table, tbody { display: block; min-width: unset; width: 100%; }
+      colgroup, thead { display: none; }
+
+      /* section-row: full-width banner */
+      tr.section-row { display: block; border-radius: 0; }
+      tr.section-row td {
+        display: block;
+        border-radius: 0;
+        padding: 9px 14px;
+      }
+
+      /* data rows: card style */
+      tr:not(.section-row) {
+        display: block;
+        margin: 0 0 10px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      td {
+        display: block;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 9px 12px;
+        font-size: 12px;
+      }
+      tr:not(.section-row) td:last-child { border-bottom: none; }
+      tr:last-child td { border-bottom: 1px solid var(--border); }
+      tr:last-child td:last-child { border-bottom: none; }
+
+      /* column label via data-label attribute */
+      td[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--text-sub);
+        letter-spacing: .06em;
+        margin-bottom: 4px;
+      }
+
+      td.cell-num {
+        min-width: unset;
+        white-space: normal;
+        background: rgba(0,0,0,.025);
+        padding: 8px 12px;
+      }
+
+      .renumber-note { font-size: 11px; margin: 10px 0; }
+
+      .footer { padding: 16px 12px; font-size: 11px; }
     }
   </style>
 </head>
@@ -691,5 +773,19 @@
 
 <div class="footer">令和8年4月 ｜ 宮前平小学校PTA 定時総会 議案資料　※本対照表は総会での審議・承認後に正式規約として発効します。</div>
 
+<script>
+  // モバイル用カード表示のため、各 td に列ヘッダーを data-label として付与
+  (function () {
+    var headers = Array.from(document.querySelectorAll('thead th')).map(function (th) {
+      return th.textContent.trim();
+    });
+    document.querySelectorAll('tbody tr:not(.section-row)').forEach(function (tr) {
+      Array.from(tr.cells).forEach(function (td, i) {
+        // 1列目（条番号）はラベル不要、2列目以降に付与
+        if (i > 0 && headers[i]) td.setAttribute('data-label', headers[i]);
+      });
+    });
+  })();
+</script>
 </body>
 </html>
