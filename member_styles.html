@@ -205,6 +205,82 @@
       font-size: 12px;
       margin-top: 32px;
     }
+
+    /* ===== Mobile-first responsive ===== */
+    @media (max-width: 680px) {
+      body { font-size: 13px; }
+
+      .topbar { padding: 0 12px; height: 44px; }
+      .topbar-logo {
+        font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .hero { padding: 22px 16px 18px; }
+      .hero h1 { font-size: 18px; }
+      .hero-sub { font-size: 12px; }
+
+      .container { padding: 14px 10px 32px; }
+      .legend { gap: 6px; }
+      .legend-item { font-size: 11px; padding: 4px 8px; }
+
+      /* テーブルを非表示にしてカードを表示 */
+      .table-wrap { display: none; }
+      #mobile-cards { display: block; }
+
+      .section-note { font-size: 11px; }
+      .footer { padding: 16px 12px; font-size: 11px; }
+
+      /* カードレイアウト */
+      #mobile-cards { margin: 0; }
+
+      .mc-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin-bottom: 14px;
+        background: var(--white);
+      }
+      .mc-hdr {
+        padding: 12px 14px;
+        border-bottom: 2px solid var(--border);
+        text-align: center;
+      }
+      .mc-card.col-std .mc-hdr { background: var(--std); }
+      .mc-card.col-ldr .mc-hdr { background: var(--ldr); }
+      .mc-card.col-lgd .mc-hdr { background: var(--lgd); }
+      .mc-card.col-spa .mc-hdr { background: var(--spa); }
+      .mc-card.col-spb .mc-hdr { background: var(--spb); }
+      .mc-card.col-tch .mc-hdr { background: var(--tch); }
+      .mc-card.col-non .mc-hdr { background: var(--non); }
+
+      .mc-row {
+        display: flex;
+        border-bottom: 1px solid var(--border);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .mc-row:last-child { border-bottom: none; }
+      .mc-lbl {
+        flex: 0 0 90px;
+        padding: 9px 10px;
+        background: var(--stone);
+        font-weight: 700;
+        font-size: 11px;
+        color: var(--text-sub);
+        border-right: 1px solid var(--border);
+      }
+      .mc-val {
+        flex: 1;
+        padding: 9px 10px;
+        text-align: left;
+      }
+    }
+
+    /* デスクトップではカードを非表示 */
+    #mobile-cards { display: none; }
   </style>
 </head>
 <body>
@@ -305,7 +381,7 @@
         </tr>
         <tr>
           <td class="row-head"><div class="row-head-inner">特典・インセンティブ</div></td>
-          <td class="col-std">次年度以降の免除特典（リーダー就任後に適用）</td>
+          <td class="col-std"><span class="no">なし</span></td>
           <td class="col-ldr"><span class="yes">次年度以降の役員・委員・係活動を免除</span><br><span class="req">（レジェンドスタイルへ）</span></td>
           <td class="col-lgd"><span class="yes">役員・委員・係活動の永久免除</span></td>
           <td class="col-spa">あらゆる役務・総会参加タスクからの解放</td>
@@ -335,12 +411,12 @@
         </tr>
         <tr>
           <td class="row-head"><div class="row-head-inner">会員資格停止時</div></td>
-          <td class="col-std">非会員として処理。再登録・会費支払い後に復帰可</td>
-          <td class="col-ldr">除名処分。再登録・会費支払い後に復帰可</td>
-          <td class="col-lgd">除名処分。再登録・会費支払い後に復帰可</td>
-          <td class="col-spa">除名処分。再登録・会費支払い後に復帰可</td>
+          <td class="col-std">がくぷり上で未入会／非会員という区分に変更。入会確認フォームから入会申し込み後、がくぷり上で年会費支払い後に未入会／非会員区分から削除。</td>
+          <td class="col-ldr">がくぷり上で未入会／非会員という区分に変更。入会確認フォームから入会申し込み後、がくぷり上で年会費支払い後に未入会／非会員区分から削除。</td>
+          <td class="col-lgd">がくぷり上で未入会／非会員という区分に変更。入会確認フォームから入会申し込み後、がくぷり上で年会費支払い後に未入会／非会員区分から削除。</td>
+          <td class="col-spa">がくぷり上で未入会／非会員という区分に変更。入会確認フォームから入会申し込み後、がくぷり上で年会費支払い後に未入会／非会員区分から削除。</td>
           <td class="col-spb"><span class="na">—</span></td>
-          <td class="col-tch">除名処分。再登録・会費支払い後に復帰可</td>
+          <td class="col-tch">がくぷり上で未入会／非会員という区分に変更。入会確認フォームから入会申し込み後、がくぷり上で年会費支払い後に未入会／非会員区分から削除。</td>
           <td class="col-non"><span class="na">—</span></td>
         </tr>
       </tbody>
@@ -348,12 +424,86 @@
   </div>
 
   <div class="section-note">
-    ※ サポーターBは令和8年度は枠の設置のみ。実運用・詳細は次年度以降に整備予定。　※ ティーチャー区分は地方公務員法に基づき完全任意。活動記録は求めません。　※ 1世帯あたり1口（兄弟姉妹が何人在籍していても会費は1口分）。
+    ※ サポーターBは令和8年度は枠の設置のみ。実運用・詳細は次年度以降に整備予定。　※ ティーチャー区分は地方公務員法に基づき完全任意。活動記録は求めません。　※ 1世帯あたり1口（兄弟姉妹が何人在籍していても会費は1口分）。<br>
+    ※ がくぷり上での利用料について、スタンダード・リーダー・レジェンドは180円、サポーターAは270円となります。会費にプラスする形ではなく年会費に含む形なので金額は変わりません。
   </div>
 
 </div>
 
 <div class="footer">令和8年4月 ｜ 宮前平小学校PTA 定時総会 参考資料</div>
 
+<script>
+  (function () {
+    var table  = document.querySelector('.table-wrap table');
+    var wrap   = document.querySelector('.table-wrap');
+    if (!table || !wrap) return;
+
+    // thead の各スタイル列のヘッダー情報を取得（row-head th を除く）
+    var headerThs = Array.from(table.querySelectorAll('thead th:not(.row-head)'));
+    var numCols   = headerThs.length; // 7
+
+    // tbody の行から「項目名」と「各列の値(innerHTML)」を収集
+    // colspan を展開して virtual grid を構築
+    var bodyRows = Array.from(table.querySelectorAll('tbody tr'));
+    var colData  = headerThs.map(function () { return []; }); // colData[colIdx] = [{label, html}]
+
+    bodyRows.forEach(function (tr) {
+      var cells     = Array.from(tr.cells);
+      var rowHeadTd = cells.find(function (td) { return td.classList.contains('row-head'); });
+      var dataTds   = cells.filter(function (td) { return !td.classList.contains('row-head'); });
+      var label     = rowHeadTd
+        ? (rowHeadTd.querySelector('.row-head-inner') || rowHeadTd).textContent.trim()
+        : '';
+
+      // colspan を展開
+      var expanded = [];
+      dataTds.forEach(function (td) {
+        var cs = td.colSpan || 1;
+        for (var i = 0; i < cs; i++) expanded.push(td.innerHTML);
+      });
+
+      for (var c = 0; c < numCols; c++) {
+        colData[c].push({ label: label, html: expanded[c] || '' });
+      }
+    });
+
+    // カードコンテナを作成してテーブルの直後に挿入
+    var container = document.createElement('div');
+    container.id  = 'mobile-cards';
+
+    headerThs.forEach(function (th, i) {
+      var card     = document.createElement('div');
+      card.className = 'mc-card';
+      var colorCls = Array.from(th.classList).find(function (c) { return c.startsWith('col-'); });
+      if (colorCls) card.classList.add(colorCls);
+
+      // カードヘッダー
+      var hdr   = document.createElement('div');
+      hdr.className = 'mc-hdr';
+      var inner = th.querySelector('.th-inner');
+      if (inner) hdr.innerHTML = inner.innerHTML;
+      card.appendChild(hdr);
+
+      // 各比較項目の行
+      colData[i].forEach(function (item) {
+        var row = document.createElement('div');
+        row.className = 'mc-row';
+        var lbl = document.createElement('div');
+        lbl.className = 'mc-lbl';
+        lbl.textContent = item.label;
+        var val = document.createElement('div');
+        val.className = 'mc-val';
+        val.innerHTML = item.html;
+        row.appendChild(lbl);
+        row.appendChild(val);
+        card.appendChild(row);
+      });
+
+      container.appendChild(card);
+    });
+
+    wrap.parentNode.insertBefore(container, wrap.nextSibling);
+  })();
+</script>
 </body>
 </html>
