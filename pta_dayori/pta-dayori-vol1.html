@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宮前平小PTAだより 第1号｜令和8年6月</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2b2620;
+    --ink-soft: #6f6354;
+    --paper: #faf7f1;
+    --line: #e3dccf;
+    --persimmon: #d95d2b;
+    --persimmon-deep: #b34518;
+    --leaf: #4f7d3a;
+    --leaf-soft: #eef2e6;
+    --sky: #38678a;
+    --sky-soft: #e8eef3;
+    --sun-soft: #faeeda;
+    --plum: #8e4a6b;
+    --plum-soft: #f3e9ee;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.95;
+    font-size: 15px;
+  }
+  h1, h2, h3 { font-weight: 800; }
+
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px 72px; }
+
+  /* ===== Masthead ===== */
+  header { padding: 40px 0 12px; }
+  .issue-line {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 11px; letter-spacing: .22em; color: var(--ink-soft); font-weight: 500;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 10px;
+  }
+  .issue-line b { color: var(--persimmon-deep); font-weight: 700; }
+  h1 {
+    margin-top: 26px;
+    font-size: clamp(34px, 9.5vw, 46px);
+    letter-spacing: .06em; line-height: 1.3;
+  }
+  h1 small {
+    display: block; font-size: 13px; font-weight: 700;
+    letter-spacing: .3em; color: var(--persimmon); margin-bottom: 6px;
+  }
+  .motto {
+    margin-top: 18px;
+    font-weight: 700;
+    font-size: 17px; letter-spacing: .1em;
+    color: var(--ink);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .motto::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  /* ===== Photo slots =====
+     写真の使い方：このHTMLと同じフォルダに下記ファイル名で画像を置くと表示されます。
+     - photo-undokai.jpg   … 運動会の様子（メイン）
+     - photo-undokai-2.jpg … 運動会サブ（任意）
+     置かれていない間は、薄いプレースホルダー枠が表示されます。 */
+  figure.photo { position: relative; overflow: hidden; border-radius: 4px; background:
+      repeating-linear-gradient(45deg, #efe9dd 0 10px, #f6f1e7 10px 20px); }
+  figure.photo::before {
+    content: attr(data-label);
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    font-size: 11px; letter-spacing: .2em; color: #b3a78f; font-weight: 500;
+  }
+  figure.photo img {
+    position: relative; display: block; width: 100%; height: 100%;
+    object-fit: cover; z-index: 1;
+  }
+  figure.photo figcaption {
+    position: absolute; left: 0; bottom: 0; z-index: 2;
+    background: rgba(43,38,32,.78); color: #fff;
+    font-size: 11px; letter-spacing: .08em; padding: 4px 12px;
+  }
+  .photo-main { aspect-ratio: 4 / 3; margin: 28px 0 0; }
+  .photo-sub { aspect-ratio: 16 / 9; margin: 24px 0 0; }
+  .event .photo { aspect-ratio: 16 / 9; margin: 12px 0 2px; }
+  /* 流しそうめん画像：上部に写る校名看板をフレーム外にクロップ */
+  .crop-top img { transform: scale(1.28); transform-origin: 50% 100%; }
+  .ai-note { font-size: 10px; color: #a89b84; letter-spacing: .04em; margin-top: 4px; }
+
+  /* ===== Sections ===== */
+  .section { margin-top: 72px; }
+  .sec-head { margin-bottom: 20px; }
+  .sec-no {
+    font-size: 12px; font-weight: 700; letter-spacing: .26em;
+    color: var(--persimmon); display: block; margin-bottom: 4px;
+  }
+  .sec-head h2 {
+    font-size: clamp(22px, 6vw, 28px); line-height: 1.45; letter-spacing: .04em;
+  }
+  .sec-rule { width: 44px; height: 3px; background: var(--persimmon); margin-top: 14px; }
+
+  p.body + p.body { margin-top: 14px; }
+  .em { background: linear-gradient(transparent 64%, #f5d8a8 64%); font-weight: 700; }
+
+  /* ===== Hero stat ===== */
+  .stat {
+    margin: 30px 0; padding: 26px 0;
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+    display: flex; align-items: center; gap: 20px;
+  }
+  .stat-num {
+    font-weight: 900;
+    font-size: clamp(64px, 18vw, 88px); line-height: 1; color: var(--persimmon);
+    letter-spacing: -0.02em; white-space: nowrap;
+  }
+  .stat-num small { font-size: .3em; color: var(--ink); letter-spacing: .1em; }
+  .stat-caption { font-size: 13.5px; font-weight: 500; line-height: 1.8; }
+  .thanks {
+    margin-top: 24px; padding: 18px 20px;
+    background: var(--sun-soft); border-radius: 4px;
+    font-size: 14px; font-weight: 500;
+  }
+  .thanks b { font-weight: 700; }
+
+  /* ===== Mini stats (アンケート) ===== */
+  .mini-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--line); border: 1px solid var(--line); border-radius: 4px;
+    overflow: hidden; margin: 22px 0;
+  }
+  .mini-stat { background: #fff; padding: 18px 14px; text-align: center; }
+  .mini-stat .num {
+    font-weight: 900; font-size: 30px; line-height: 1.2; color: var(--sky);
+    display: block;
+  }
+  .mini-stat .num small { font-size: 14px; font-weight: 700; }
+  .mini-stat .label { font-size: 11.5px; color: var(--ink-soft); font-weight: 500; line-height: 1.6; display: block; margin-top: 4px; }
+
+  /* ===== Event list ===== */
+  .event-list { display: grid; gap: 14px; margin-top: 4px; }
+  .event {
+    background: #fff; border: 1px solid var(--line); border-radius: 4px;
+    padding: 22px 22px 20px; position: relative;
+  }
+  .event::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    border-radius: 4px 0 0 4px; background: var(--accent, var(--persimmon));
+  }
+  .event h3 { font-size: 18px; letter-spacing: .04em; }
+  .event .status {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .18em;
+    color: var(--accent, var(--persimmon));
+    border: 1px solid currentColor; border-radius: 2px;
+    padding: 1px 10px; margin-bottom: 10px;
+  }
+  .event p { font-size: 13.5px; color: var(--ink-soft); margin-top: 6px; }
+  .recruit {
+    margin-top: 14px; padding: 12px 14px;
+    background: var(--paper); border-radius: 4px;
+    font-size: 13px; font-weight: 500; color: var(--ink);
+    border-left: 3px solid var(--accent, var(--persimmon));
+  }
+  .recruit b { font-weight: 900; color: var(--accent, var(--persimmon)); }
+  .ev-imo { --accent: var(--persimmon); }
+  .ev-somen { --accent: var(--sky); }
+  .ev-hoshi { --accent: var(--plum); }
+  .ev-jitensha { --accent: var(--leaf); }
+  .ev-miso { --accent: #a8842c; }
+
+  /* ===== Panels ===== */
+  .panel {
+    background: #fff; border: 1px solid var(--line); border-radius: 4px;
+    padding: 26px 22px;
+  }
+  .panel-label {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .2em;
+    color: #fff; padding: 3px 14px; border-radius: 2px; margin-bottom: 14px;
+  }
+  .panel h3 { font-size: 19px; line-height: 1.6; margin-bottom: 12px; letter-spacing: .03em; }
+  .panel p { font-size: 14px; }
+  .panel p + p { margin-top: 10px; }
+  .note {
+    margin-top: 16px; padding: 14px 16px;
+    border-radius: 4px; font-size: 13px; font-weight: 500;
+    background: var(--paper);
+  }
+  .note + .note { margin-top: 10px; }
+  .note b { font-weight: 700; }
+
+  .checks { list-style: none; margin-top: 14px; }
+  .checks li {
+    position: relative; padding: 10px 0 10px 22px; font-size: 14px; font-weight: 500;
+    border-bottom: 1px dashed var(--line);
+  }
+  .checks li:last-child { border-bottom: none; }
+  .checks li::before {
+    content: ""; position: absolute; left: 2px; top: 1.05em;
+    width: 8px; height: 8px; background: var(--leaf);
+  }
+
+  /* ===== 資源回収 ===== */
+  .friday {
+    margin-top: 18px; display: grid; gap: 14px;
+  }
+  .friday-chip {
+    background: var(--leaf); color: #fff; border-radius: 4px;
+    padding: 16px 20px; text-align: center;
+  }
+  .friday-chip .big {
+    font-weight: 800;
+    font-size: 22px; display: block; letter-spacing: .12em;
+  }
+  .friday-chip .small { font-size: 11px; letter-spacing: .24em; font-weight: 500; }
+  .friday-text { font-size: 14px; }
+
+  /* ===== Digest ===== */
+  .digest { border-top: 1px solid var(--ink); }
+  .digest-item {
+    padding: 16px 2px; border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .digest-item b {
+    font-weight: 700;
+    display: block; font-size: 15px; margin-bottom: 2px;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    margin-top: 80px; padding-top: 24px; border-top: 2px solid var(--ink);
+  }
+  footer .pub { font-size: 12.5px; color: var(--ink-soft); line-height: 1.9; }
+  footer .pub b { color: var(--ink); font-size: 15px; }
+  .footer-motto {
+    margin-top: 14px;
+    font-weight: 700;
+    color: var(--persimmon-deep); font-size: 14px; letter-spacing: .12em;
+  }
+
+  /* ===== Tablet / Desktop enhancement ===== */
+  @media (min-width: 720px) {
+    body { font-size: 16px; }
+    .wrap { max-width: 760px; }
+    .photo-gallery { display: grid; grid-template-columns: 1.6fr 1fr; gap: 14px; }
+    .photo-gallery .photo-main, .photo-gallery .photo-sub { margin: 0; aspect-ratio: auto; height: 320px; }
+    .event-list { grid-template-columns: 1fr 1fr; }
+    .event.wide { grid-column: 1 / -1; }
+    .friday { grid-template-columns: auto 1fr; align-items: center; }
+    .panel { padding: 32px 34px; }
+    footer { display: flex; justify-content: space-between; align-items: flex-end; }
+    .footer-motto { margin-top: 0; }
+  }
+  @media print {
+    body { background: #fff; }
+    .section { margin-top: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="issue-line">
+      <span>MIYAMAEDAIRA ELEMENTARY SCHOOL PTA</span>
+      <span><b>第1号</b>｜令和8年6月</span>
+    </div>
+    <h1><small>PTA NEWSLETTER</small>宮前平小<br>PTAだより</h1>
+    <p class="motto">やれるときに、やれることを。</p>
+  </header>
+
+  <!-- ===== 運動会 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">01 — REPORT</span>
+      <h2>運動会、40名を超える<br>ボランティアに支えられて。</h2>
+      <div class="sec-rule"></div>
+    </div>
+
+    <div class="photo-gallery">
+      <figure class="photo photo-main" data-label="PHOTO：運動会の様子">
+        <img src="photo-undokai.png" alt="運動会でのボランティア活動の様子" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='photo-undokai.jpg'}else{this.remove()}">
+        <figcaption>当日の様子</figcaption>
+      </figure>
+      <figure class="photo photo-sub" data-label="PHOTO：サブカット">
+        <img src="photo-undokai-2.png" alt="運動会の様子" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='photo-undokai-2.jpg'}else{this.remove()}">
+      </figure>
+    </div>
+
+    <div class="stat">
+      <div class="stat-num">40<small>名以上</small></div>
+      <p class="stat-caption">目標40名の当日ボランティア募集に、<br>40名を超える保護者のみなさまが<br>応えてくださいました。</p>
+    </div>
+
+    <p class="body">今年度のPTAは、加入やお手伝いを一人ひとりの意思にお任せする運営に切り替えたことから、委員・係の人数が大きく減り、行事のお手伝いも「できる範囲で」に見直しています。運動会も、学校と相談のうえ、メンズクラブのみなさまのご協力もいただきながら、PTAがサポートする範囲を整理しました。</p>
+    <p class="body">3月の離退任式で初めて試みた単発ボランティア募集では、数名の方がお手伝いくださいました。今回はその10倍近い40名規模の募集。「集まるだろうか」という心配をよそに、当日は腕章をつけた<span class="em">40名以上のボランティアのみなさん</span>が、トイレや授乳室の見回りなどを担ってくださり、運動会をしっかり支えることができました。</p>
+    <div class="thanks"><b>ご協力いただいたみなさまに、深く感謝申し上げます。</b><br>「やれるときに、やれることを」——この形が確かに機能することを実感した一日でした。</div>
+  </section>
+
+  <!-- ===== ボランティアアンケート ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">02 — FEEDBACK</span>
+      <h2>ボランティアアンケートから、<br>来年へ。</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <p class="body">運動会ボランティアにご参加いただいたみなさまにアンケートを実施し、34名の方にご回答いただきました。概ね問題なく運営できた一方で、たくさんの気づきとアイデアもいただきました。</p>
+
+    <div class="mini-stats">
+      <div class="mini-stat">
+        <span class="num">34<small>名</small></span>
+        <span class="label">アンケート回答数</span>
+      </div>
+      <div class="mini-stat">
+        <span class="num">100<small>%</small></span>
+        <span class="label">「当日の役割は<br>問題なく進められた」</span>
+      </div>
+    </div>
+
+    <p class="body">いただいたご意見からは、来年度に向けたブラッシュアップのヒントがいくつも見えてきました。一部をご紹介します。</p>
+    <div class="digest" style="margin-top:18px">
+      <div class="digest-item"><b>おむつ替えスペース</b>おむつ替えのためにトイレに並ばれる方の姿がありました。授乳室の活用など、学校とも相談しながら、小さなお子さま連れでも快適に安心して応援できる環境づくりを進めます。</div>
+      <div class="digest-item"><b>事前資料の充実</b>「指示書をもう少し具体的に」「立ち位置や引き継ぎ方法がわかると安心」との声を多くいただきました。来年度はマニュアルと当日の説明を充実させます。</div>
+      <div class="digest-item"><b>当日の案内表示</b>トイレや出入口の掲示をもっと大きく・わかりやすく。掲示でカバーできる案内は掲示に任せ、人にしかできない対応に集中できる形を目指します。</div>
+      <div class="digest-item"><b>シフトの工夫</b>担当時間とお子さんの競技が重なってしまったケースがありました。プログラムに合わせた割り振りなど、調整の仕方を見直します。</div>
+    </div>
+    <div class="thanks" style="margin-top:20px"><b>率直なご意見をありがとうございました。</b><br>「またこのような機会があれば」という嬉しい声もいただきました。一つひとつ運営で共有し、来年度につなげていきます。</div>
+  </section>
+
+  <!-- ===== 体験学習 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">03 — UPCOMING</span>
+      <h2>これからのお楽しみ、<br>体験学習の予定。</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <p class="body" style="margin-bottom:22px">今年度は、子どもたちが楽しめる体験イベントを計画中です。地域のみなさまやメンズクラブのお力もお借りしながら準備を進めています。詳細が決まり次第、順次お知らせします。</p>
+
+    <div class="event-list">
+      <div class="event ev-imo wide">
+        <span class="status">秋ごろ予定</span>
+        <h3>焼き芋会</h3>
+        <figure class="photo" data-label="IMAGE">
+          <img src="img-yakiimo.png" alt="焼き芋会のイメージ" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='img-yakiimo.jpg'}else{this.remove()}">
+        </figure>
+        <p class="ai-note">※画像はあくまでイメージです。（生成AIで作成）</p>
+        <p>ほくほくの焼き芋をみんなで。地域の方と一緒に準備します。</p>
+        <div class="recruit"><b>お声がけください</b>｜キャンプグッズをお持ちの方、火おこしが得意な方がいらっしゃったら、ぜひお力をお貸しください。</div>
+      </div>
+      <div class="event ev-somen wide">
+        <span class="status">企画中</span>
+        <h3>流しそうめん会</h3>
+        <figure class="photo crop-top" data-label="IMAGE">
+          <img src="img-somen.png" alt="流しそうめん会のイメージ" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='img-somen.jpg'}else{this.remove()}">
+        </figure>
+        <p class="ai-note">※画像はあくまでイメージです。（生成AIで作成）</p>
+        <p>夏の風物詩を校内で体験。お楽しみに！</p>
+        <div class="recruit"><b>お声がけください</b>｜竹を切ったり割ったり、アウトドアでの調理が得意な方がいらっしゃったら、ぜひお力をお貸しください。</div>
+      </div>
+      <div class="event ev-hoshi">
+        <span class="status">企画中</span>
+        <h3>星座観測会</h3>
+        <figure class="photo" data-label="IMAGE">
+          <img src="img-hoshi.png" alt="星座観測会のイメージ" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='img-hoshi.jpg'}else{this.remove()}">
+        </figure>
+        <p class="ai-note">※画像はあくまでイメージです。（生成AIで作成）</p>
+        <p>夜空を見上げて星座さがし。特別な夜になりそうです。</p>
+      </div>
+      <div class="event ev-jitensha">
+        <span class="status">時期未定</span>
+        <h3>自転車講習</h3>
+        <figure class="photo" data-label="IMAGE">
+          <img src="img-jitensha.png" alt="自転車講習のイメージ" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='img-jitensha.jpg'}else{this.remove()}">
+        </figure>
+        <p class="ai-note">※画像はあくまでイメージです。（生成AIで作成）</p>
+        <p>自転車の交通違反への「青切符」導入を受け、学校や地域と相談しながら実施を検討しています。</p>
+      </div>
+      <div class="event ev-miso wide">
+        <span class="status">ご意見募集</span>
+        <h3>味噌作り体験会</h3>
+        <figure class="photo" data-label="IMAGE">
+          <img src="img-miso.png" alt="味噌作り体験会のイメージ" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='img-miso.jpg'}else{this.remove()}">
+        </figure>
+        <p class="ai-note">※画像はあくまでイメージです。（生成AIで作成）</p>
+        <p>有料となりますが、味噌作りの体験会情報もあります。「やってみたい！」という方がいれば検討します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 給食試食会 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">04 — COMEBACK</span>
+      <h2>給食試食会が<br>帰ってきます。</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="panel">
+      <span class="panel-label" style="background:var(--sky)">全学年で実施の方向</span>
+      <h3>子どもたちの「いつもの給食」を、<br>保護者のみなさまにも。</h3>
+      <p>コロナ禍で中止が続いていた給食試食会について、学校より「全学年での実施に向けて準備中」とのお話がありました。実施の際には、配膳や集金のお手伝いを単発ボランティアとして募集する予定です。</p>
+      <div class="note"><b>募集のご案内</b>は、決まり次第がくぷりでお届けします。「この日なら手伝えるかも」という気軽な気持ちで大丈夫です。</div>
+    </div>
+  </section>
+
+  <!-- ===== 清掃 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">05 — VOLUNTEER</span>
+      <h2>「委員」ではなく、<br>「やれる日だけ」の清掃へ。</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="panel">
+      <span class="panel-label" style="background:var(--leaf)">スポット募集予定</span>
+      <h3>参加できるときだけ、手を貸してください。</h3>
+      <p>これまで運営サポート係・成人委員・広報委員のみなさまが担ってきた校内の清掃は、今年度から学校と分担しながら、単発ボランティアを募って続けていくことになりました。決まった委員・係を置かないかわりに、参加できるときだけ手を貸していただく形です。</p>
+      <ul class="checks">
+        <li>例年実施している水飲み場の清掃</li>
+        <li>ピロティ上部の窓清掃（アイデアの一つとして検討中）</li>
+      </ul>
+      <div class="note"><b>ご意見募集</b>｜「ここもきれいにしたほうがいいのでは？」という場所があれば、ぜひお寄せください。</div>
+      <div class="note"><b>日程</b>が決まりましたら、がくぷりで募集します。</div>
+    </div>
+  </section>
+
+  <!-- ===== 資源回収 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">06 — REQUEST</span>
+      <h2>資源回収は、<br>みんなでちょっとずつ。</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="panel">
+      <span class="panel-label" style="background:var(--plum)">保護者のみなさまへお願い</span>
+      <h3>特定の誰かの仕事から、<br>みんなの心がけへ。</h3>
+      <p>今年度、PTAの委員・係は昨年の4分の1以下になりました。これまで校外委員のみなさまにお願いしていた資源回収ポイントの見守り（散らかりの片づけ、回収日以外に出ていないかの確認など）も、特定の方にご負担いただくのではなく、保護者のみなさま全体のマナーアップでカバーしていければと考えています。</p>
+      <div class="friday">
+        <div class="friday-chip">
+          <span class="small">毎週</span>
+          <span class="big">金曜日の朝</span>
+          <span class="small">は資源回収の日</span>
+        </div>
+        <p class="friday-text">お近くの資源回収ポイントが散らかっていないか、少しだけ気にかけていただき、気づいたら直していただければとても助かります。みなさんの心がけで、自分たちの住む街がもっと住みやすくなりますように。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 会長から一言 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">07 — MESSAGE</span>
+      <h2>会長から一言。</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="panel">
+      <p>この4月、宮小PTAは大きく変わりました。加入の任意化、スタイル制の導入、そして完全ボランティア運営への舵きり。何度ものアンケートにご協力くださったみなさまに、心より感謝申し上げます。</p>
+      <p>急にいろいろなことを変えることになり、令和7年度の役員のみなさまには多大なご迷惑をおかけしました。保護者のみなさまにはご不便・ご迷惑をおかけしていますが、新しく生まれ変わる一歩を踏み出した宮小PTAを、これからも温かく見守っていただければ嬉しく思います。</p>
+      <p>PTAの適正運用への第一歩を踏み出し、運動会の「会長のことば」も終わって、いまは少しひと息ついているところです。来年はどんなネタを仕込もうかな、とぼんやり考えています。「こんなのやってほしい！」というアイデアがあれば、ぜひ気軽にお寄せください。</p>
+      <p style="text-align:right; font-weight:700; margin-top:18px">宮前平小学校PTA会長</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="pub">
+      <b>宮前平小学校PTA</b><br>
+      PTAだより 第1号｜令和8年6月発行
+    </div>
+    <div class="footer-motto">やれるときに、やれることを。</div>
+  </footer>
+
+</div>
+</body>
+</html>
