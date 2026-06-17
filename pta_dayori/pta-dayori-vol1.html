@@ -87,6 +87,23 @@
   }
   .photo-main { aspect-ratio: 4 / 3; margin: 28px 0 0; }
   .photo-sub { aspect-ratio: 16 / 9; margin: 24px 0 0; }
+  /* 全体表示（トリミングなし） */
+  .photo-full { aspect-ratio: auto; min-height: 120px; background: none; border: 1px solid var(--line); }
+  .photo-full img { position: relative; height: auto; object-fit: contain; }
+  .photo-full::before { content: none; }
+  /* 委員・係 人数比較テーブル */
+  .ctable-wrap { margin-top: 26px; }
+  .ctable-cap { font-size: 13px; color: var(--ink-soft); font-weight: 500; margin: 16px 0 6px; }
+  .ctable { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .ctable th, .ctable td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+  .ctable thead th { background: var(--ink); color: #fff; font-weight: 700; border-bottom: none; }
+  .ctable thead th:not(:first-child) { text-align: center; width: 26%; }
+  .ctable td:not(:first-child) { text-align: center; font-weight: 700; }
+  .ctable .r7 { color: var(--ink-soft); }
+  .ctable .r8 { color: var(--persimmon); }
+  .ctable .grp td { background: var(--paper-deep); font-weight: 700; font-size: 12.5px; letter-spacing: .06em; color: var(--ink-soft); }
+  .ctable .total td { border-top: 2px solid var(--ink); border-bottom: none; font-weight: 800; }
+  .ctable .total .r8 { font-size: 16px; }
   .event .photo { aspect-ratio: 16 / 9; margin: 12px 0 2px; }
   /* 流しそうめん画像：上部に写る校名看板をフレーム外にクロップ */
   .crop-top img { transform: scale(1.28); transform-origin: 50% 100%; }
@@ -218,6 +235,92 @@
   .friday-chip .small { font-size: 11px; letter-spacing: .24em; font-weight: 500; }
   .friday-text { font-size: 14px; }
 
+  /* ===== Schedule (清掃日程) ===== */
+  .schedule { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 18px 0 12px; }
+  .sch-item {
+    background: var(--leaf-soft); border: 1px solid var(--line); border-radius: 4px;
+    padding: 12px 6px; text-align: center;
+  }
+  .sch-date { display: block; font-weight: 900; font-size: 17px; color: var(--leaf); letter-spacing: .01em; }
+  .sch-day { display: block; font-size: 11px; color: var(--ink-soft); font-weight: 700; margin-top: 2px; }
+  .sch-time { font-size: 13.5px; }
+  .sch-time b { color: var(--leaf); }
+
+  /* ===== きらドキ ===== */
+  .kira-date {
+    display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .kira-date .d { font-weight: 900; font-size: clamp(30px,8vw,40px); color: var(--persimmon); letter-spacing: .02em; }
+  .kira-date .label { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .kira-num { font-weight: 900; color: var(--persimmon); }
+
+  /* ===== Profile cards (教員・運営委員紹介) ===== */
+  .profile-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 6px; }
+  .pcard {
+    position: relative;
+    background: var(--sun-soft);
+    border: 1px solid #f0e2c8; border-radius: 18px;
+    padding: 22px 22px 24px;
+  }
+  .pcard-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .pcard .role {
+    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em;
+    color: var(--persimmon-deep);
+    background: #fff; border: 1.5px solid #f0c98e; border-radius: 999px;
+    padding: 4px 16px;
+  }
+  .pcard .avatar {
+    width: 44px; height: 44px; border-radius: 12px; flex: none; overflow: hidden;
+    background: #fff; border: 1px solid #f0e2c8;
+    display: grid; place-items: center; font-size: 22px; color: #c4b48f;
+  }
+  .cat-label {
+    font-size: 14px; font-weight: 800; letter-spacing: .06em; color: var(--persimmon-deep);
+    margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--line);
+  }
+  .cat-label:first-of-type { margin-top: 8px; }
+  .pcard .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .pcard .pname {
+    font-weight: 800; font-size: 24px; letter-spacing: .03em; margin: 4px 0 14px;
+  }
+  .pcard .pname .suffix { font-size: 14px; font-weight: 700; color: var(--ink-soft); margin-left: 4px; }
+
+  /* 教員カード：写真左 + 情報右、メッセージは下段全幅 */
+  .profile-grid--solo { grid-template-columns: 1fr; }
+  .pcard-photo .pcard-main { display: flex; gap: 20px; align-items: flex-start; }
+  .pcard-photo .pphoto {
+    width: 200px; height: 200px; flex: none; border-radius: 8px; overflow: hidden;
+    background: #fff; border: 1px solid #f0e2c8;
+  }
+  .pcard-photo .pphoto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pcard-photo .pinfo { flex: 1; min-width: 0; }
+  .pcard-photo .pinfo .role {
+    background: none; border: none; padding: 0; color: var(--ink-soft);
+    font-size: 14px; font-weight: 700; letter-spacing: .04em;
+  }
+  .pcard-photo .pinfo .pname { margin: 6px 0 14px; }
+  .pcard-photo .field { margin-top: 0; }
+  .pcard-photo .bubble .ftitle svg { display: none; }
+  @media (max-width: 480px) {
+    .pcard-photo .pcard-main { flex-direction: column; }
+    .pcard-photo .pphoto { width: 100%; height: auto; aspect-ratio: 1 / 1; max-width: 240px; }
+  }
+  .pcard .field { margin-top: 14px; }
+  .pcard .field:first-of-type { margin-top: 0; }
+  .pcard .ftitle {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 700; color: var(--persimmon); margin-bottom: 4px;
+  }
+  .pcard .ftitle svg { width: 15px; height: 15px; flex: none; }
+  .pcard .fbody { font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.8; }
+  .pcard .bubble {
+    background: #fff; border-radius: 12px; padding: 14px 16px; margin-top: 16px;
+  }
+  .pcard .bubble .ftitle { color: var(--ink-soft); font-weight: 700; }
+  .pcard .bubble .fbody { font-weight: 500; }
+  @media (min-width: 720px) { .profile-grid { grid-template-columns: 1fr 1fr; } }
+
   /* ===== Digest ===== */
   .digest { border-top: 1px solid var(--ink); }
   .digest-item {
@@ -269,41 +372,71 @@
       <span><b>第1号</b>｜令和8年6月</span>
     </div>
     <h1><small>PTA NEWSLETTER</small>宮前平小<br>PTAだより</h1>
-    <p class="motto">やれるときに、やれることを。</p>
+    <p class="motto">やれるときに、やれることを、たのしんで！</p>
   </header>
 
   <!-- ===== 運動会 ===== -->
+  <!-- ===== 始動 ===== -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-no">01 — REPORT</span>
+      <span class="sec-no">01 — START</span>
+      <h2>令和8年度、<br>新しいPTAが始動しています！</h2>
+      <div class="sec-rule"></div>
+    </div>
+
+    <figure class="photo photo-full" data-label="PHOTO：令和8年度 運営メンバー">
+      <img src="img-r8pta.png" alt="令和8年度のPTA運営メンバー" onerror="this.remove()">
+      <figcaption>令和8年度 運営メンバー</figcaption>
+    </figure>
+
+    <p class="body" style="margin-top:24px">この4月、加入の任意化・スタイル制の導入・完全ボランティア運営への舵きりとともに、生まれ変わった宮小PTAが動き出しました。「やれるときに、やれることを、たのしんで」を合言葉に、新しい運営メンバーで一年を進めていきます。どうぞよろしくお願いいたします。</p>
+
+    <div class="ctable-wrap">
+      <p class="ctable-cap">▼ 委員・係の人数（委員長は除く）</p>
+      <table class="ctable">
+        <thead><tr><th>役職</th><th>R7年度</th><th>R8年度</th></tr></thead>
+        <tbody>
+        <tr class="grp"><td colspan="3">委員</td></tr>
+        <tr><td>学年委員</td><td class="r7">22名</td><td class="r8">0名</td></tr>
+        <tr><td>広報委員</td><td class="r7">8名</td><td class="r8">1名</td></tr>
+        <tr><td>成人委員</td><td class="r7">8名</td><td class="r8">0名</td></tr>
+        <tr><td>組織委員</td><td class="r7">14名</td><td class="r8">2名</td></tr>
+        <tr><td>校外委員</td><td class="r7">17名</td><td class="r8">1名</td></tr>
+        <tr><td>運営サポートリーダー</td><td class="r7">2名</td><td class="r8">1名</td></tr>
+        <tr class="grp"><td colspan="3">係</td></tr>
+        <tr><td>運営サポート係</td><td class="r7">15名</td><td class="r8">4名</td></tr>
+        <tr><td>運動会係リーダー</td><td class="r7">2名</td><td class="r8">0名</td></tr>
+        <tr><td>運動会係</td><td class="r7">19名</td><td class="r8">3名</td></tr>
+        <tr><td>ベルマーク係リーダー</td><td class="r7">2名</td><td class="r8">0名</td></tr>
+        <tr><td>ベルマーク係</td><td class="r7">15名</td><td class="r8">5名</td></tr>
+        <tr><td>キラどき係</td><td class="r7">59名</td><td class="r8">11名</td></tr>
+        <tr><td>パトロール係</td><td class="r7">19名</td><td class="r8">3名</td></tr>
+        <tr class="total"><td>合計</td><td class="r7">202名</td><td class="r8">31名</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">02 — REPORT</span>
       <h2>運動会、40名を超える<br>ボランティアに支えられて。</h2>
       <div class="sec-rule"></div>
     </div>
 
-    <div class="photo-gallery">
-      <figure class="photo photo-main" data-label="PHOTO：運動会の様子">
-        <img src="photo-undokai.png" alt="運動会でのボランティア活動の様子" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='photo-undokai.jpg'}else{this.remove()}">
-        <figcaption>当日の様子</figcaption>
-      </figure>
-      <figure class="photo photo-sub" data-label="PHOTO：サブカット">
-        <img src="photo-undokai-2.png" alt="運動会の様子" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='photo-undokai-2.jpg'}else{this.remove()}">
-      </figure>
-    </div>
-
-    <div class="stat">
-      <div class="stat-num">40<small>名以上</small></div>
-      <p class="stat-caption">目標40名の当日ボランティア募集に、<br>40名を超える保護者のみなさまが<br>応えてくださいました。</p>
-    </div>
+    <figure class="photo photo-sub" data-label="PHOTO：運動会の様子">
+      <img src="photo-undokai-2.jpeg" alt="運動会の様子" onerror="this.remove()">
+    </figure>
 
     <p class="body">今年度のPTAは、加入やお手伝いを一人ひとりの意思にお任せする運営に切り替えたことから、委員・係の人数が大きく減り、行事のお手伝いも「できる範囲で」に見直しています。運動会も、学校と相談のうえ、メンズクラブのみなさまのご協力もいただきながら、PTAがサポートする範囲を整理しました。</p>
     <p class="body">3月の離退任式で初めて試みた単発ボランティア募集では、数名の方がお手伝いくださいました。今回はその10倍近い40名規模の募集。「集まるだろうか」という心配をよそに、当日は腕章をつけた<span class="em">40名以上のボランティアのみなさん</span>が、トイレや授乳室の見回りなどを担ってくださり、運動会をしっかり支えることができました。</p>
-    <div class="thanks"><b>ご協力いただいたみなさまに、深く感謝申し上げます。</b><br>「やれるときに、やれることを」——この形が確かに機能することを実感した一日でした。</div>
+    <div class="thanks"><b>ご協力いただいたみなさまに、深く感謝申し上げます。</b><br>「やれるときに、やれることを、たのしんで」——この形が確かに機能することを実感した一日でした。</div>
   </section>
 
   <!-- ===== ボランティアアンケート ===== -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-no">02 — FEEDBACK</span>
+      <span class="sec-no">03 — FEEDBACK</span>
       <h2>ボランティアアンケートから、<br>来年へ。</h2>
       <div class="sec-rule"></div>
     </div>
@@ -333,7 +466,7 @@
   <!-- ===== 体験学習 ===== -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-no">03 — UPCOMING</span>
+      <span class="sec-no">04 — UPCOMING</span>
       <h2>これからのお楽しみ、<br>体験学習の予定。</h2>
       <div class="sec-rule"></div>
     </div>
@@ -373,7 +506,7 @@
         <span class="status">制作検討中</span>
         <h3>宮小PTAトレーナー復活！（予定）</h3>
         <figure class="photo" data-label="IMAGE">
-          <img src="img-trainer.png" alt="宮小PTAトレーナーのイメージ" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='img-trainer.jpg'}else{this.remove()}">
+          <img src="img_trainer.png" alt="宮小PTAトレーナーのイメージ" onerror="this.remove()">
         </figure>
         <p class="ai-note">※画像はあくまでイメージです。（生成AIで作成）</p>
         <p>過去にPTAとして制作していたトレーナーについて、「またやってほしい」という声をいただいており、現在制作を検討しています。</p>
@@ -393,14 +526,14 @@
   <!-- ===== 給食試食会 ===== -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-no">04 — COMEBACK</span>
-      <h2>給食試食会が<br>帰ってきます。</h2>
+      <span class="sec-no">05 — COMEBACK</span>
+      <h2>給食試食会が帰ってきます。</h2>
       <div class="sec-rule"></div>
     </div>
     <div class="panel">
       <span class="panel-label" style="background:var(--sky)">全学年で実施の方向</span>
       <h3>子どもたちの「いつもの給食」を、<br>保護者のみなさまにも。</h3>
-      <p>コロナ禍で中止が続いていた給食試食会について、学校より「全学年での実施に向けて準備中」とのお話がありました。実施の際には、配膳や集金のお手伝いを単発ボランティアとして募集する予定です。</p>
+      <p>コロナ禍で実施できなかった給食試食会について、学校に確認したところ、<span class="em">今年度のみ全学年を対象に実施</span>することになりました（来年度からは、また1年生のみの開催に戻ります）。実施の際には、配膳や集金のお手伝いを単発ボランティアとして募集する予定です。</p>
       <div class="note"><b>募集のご案内</b>は、決まり次第がくぷりでお届けします。「この日なら手伝えるかも」という気軽な気持ちで大丈夫です。</div>
     </div>
   </section>
@@ -408,27 +541,51 @@
   <!-- ===== 清掃 ===== -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-no">05 — VOLUNTEER</span>
+      <span class="sec-no">06 — VOLUNTEER</span>
       <h2>「委員」ではなく、<br>「やれる日だけ」の清掃へ。</h2>
       <div class="sec-rule"></div>
     </div>
     <div class="panel">
       <span class="panel-label" style="background:var(--leaf)">スポット募集予定</span>
       <h3>参加できるときだけ、手を貸してください。</h3>
-      <p>これまで運営サポート係・成人委員・広報委員のみなさまが担ってきた校内の清掃は、今年度から学校と分担しながら、単発ボランティアを募って続けていくことになりました。決まった委員・係を置かないかわりに、参加できるときだけ手を貸していただく形です。</p>
+      <p>これまで運営サポート係・成人委員・広報委員のみなさまが担ってきた校内の清掃は、今年度から学校と分担しながら、単発ボランティアを募って続けていくことになりました。決まった委員・係を置かないかわりに、参加できるときだけ手を貸していただく形です。子どもたちの生活環境の改善をサポートできる機会です。</p>
+      <div class="schedule">
+        <div class="sch-item"><span class="sch-date">2026.7.16</span><span class="sch-day">木</span></div>
+        <div class="sch-item"><span class="sch-date">2026.12.22</span><span class="sch-day">火</span></div>
+        <div class="sch-item"><span class="sch-date">2027.3.12</span><span class="sch-day">金</span></div>
+      </div>
+      <p class="sch-time">いずれも <b>14:30〜15:30（1時間程度）</b> を想定しています。</p>
       <ul class="checks">
         <li>例年実施している水飲み場の清掃</li>
         <li>ピロティ上部の窓清掃（アイデアの一つとして検討中）</li>
       </ul>
-      <div class="note"><b>ご意見募集</b>｜「ここもきれいにしたほうがいいのでは？」という場所があれば、ぜひお寄せください。</div>
-      <div class="note"><b>日程</b>が決まりましたら、がくぷりで募集します。</div>
+      <div class="note"><b>のちほどがくぷりで募集します。</b>「ちょっと手伝ってもいいよ」という方は、ぜひご協力をお願いいたします。</div>
+      <div class="note">※清掃場所や内容は変わる可能性があります。「ここもきれいにしたほうがいいのでは？」という場所があれば、ぜひお寄せください。</div>
+    </div>
+  </section>
+
+  <!-- ===== きらドキフェスティバル ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">07 — FESTIVAL</span>
+      <h2>きらドキフェスティバル、<br>一緒に盛り上げませんか？</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="panel">
+      <span class="panel-label" style="background:var(--persimmon)">ボランティア募集予定</span>
+      <div class="kira-date">
+        <span class="d">11/28</span>
+        <span class="label">開催！（予定）</span>
+      </div>
+      <p>昨年度、内容を大幅に刷新した「きらドキフェスティバル」。今年もボランティアのみなさまのお力で運営したいと考えています。のちほどがくぷりで<span class="kira-num">60名程度</span>を募集しますので、一緒に盛り上げてくださる方はぜひご協力をお願いいたします🙏</p>
+      <p>もちろん、校庭・体育館で開催するアトラクションには、保護者のみなさまにもぜひ参加していただきたいと考えています！</p>
     </div>
   </section>
 
   <!-- ===== 資源回収 ===== -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-no">06 — REQUEST</span>
+      <span class="sec-no">08 — REQUEST</span>
       <h2>資源回収は、<br>みんなでちょっとずつ。</h2>
       <div class="sec-rule"></div>
     </div>
@@ -447,10 +604,1012 @@
     </div>
   </section>
 
+  <!-- ===== 教員紹介 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-no">09 — TEACHERS</span>
+      <h2>教員紹介。</h2>
+      <div class="sec-rule"></div>
+    </div>
+    
+    
+    
+    <p class="body" style="margin-bottom:18px">今年度、子どもたちを見守ってくださる教職員のみなさんをご紹介します。</p>
+    <h3 class="cat-label">管理職・教務</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_01.png" alt="後藤 香織" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">校長</span>
+            <div class="pname">後藤 香織<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">色々なお店をまわって、美味しいご飯のお供を探すこと</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">「笑顔で挨拶」をモットーに、今日も楽しく明日が待たれる学校づくりを進めます。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_02.png" alt="藤波 研二" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">教頭</span>
+            <div class="pname">藤波 研二<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">ジョギング</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">子どもたちも教職員も「笑顔がはずむ」宮前平小となるよう頑張ります！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_03.png" alt="井上 侑飛" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">教務主任</span>
+            <div class="pname">井上 侑飛<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">登山、自転車</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">今年は運動するぞ〜！！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_04.png" alt="根岸 祐華子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">支援教育Co</span>
+            <div class="pname">根岸 祐華子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">〇〇ランキングのテレビなどで、便利で良い品をリサーチすること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">1年間、よろしくお願いします！</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">1年生</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_05.png" alt="坂田 佑実" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">1年1組</span>
+            <div class="pname">坂田 佑実<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">アイロンビーズ</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">毎日が楽しくなるよう、子どもたちと一緒にがんばります！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_06.png" alt="岡田 笑澄" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">1年2組</span>
+            <div class="pname">岡田 笑澄<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">お風呂上がりにアイスを食べること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">今年もよろしくお願いします！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_07.png" alt="坂東 七々海" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">1年3組</span>
+            <div class="pname">坂東 七々海<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">家族旅行✈</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">１年間よろしくお願いします。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_08.png" alt="三川 幸子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">1年4組</span>
+            <div class="pname">三川 幸子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">新ドラマチェック</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">子どもたちの笑顔や頑張りから、多くのことを学んでいます。</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">2年生</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_09.png" alt="多田 樹里" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">2年1組</span>
+            <div class="pname">多田 樹里<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">ぽこあポケモン</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">たくさんお話しましょう！１年間よろしくお願いします！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_10.png" alt="川﨑 竣太" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">2年2組</span>
+            <div class="pname">川﨑 竣太<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">家の近所を散歩すること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">初めまして、愛知県から参りました。明るく元気に頑張ります。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_11.png" alt="山崎 優" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">2年3組</span>
+            <div class="pname">山崎 優<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">ガチャガチャ！キャラクター大好きです！</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">今年も2年生の子どもたちと過ごせるのが嬉しいです。子どもたちと楽しみながら過ごしていきたいです！</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">3年生</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_12.png" alt="岡崎 愛" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">3年1組</span>
+            <div class="pname">岡崎 愛<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">おいしいカレー屋さんを見つけること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">毎日げんきにがんばります！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_13.png" alt="永田 結" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">3年2組</span>
+            <div class="pname">永田 結<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">アニメをみること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">一生懸命頑張りますので、よろしくお願いいたします！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_14.png" alt="多田 篤史" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">3年3組</span>
+            <div class="pname">多田 篤史<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">美味しいラーメン屋さんを探すこと</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">宮前平小学校のみなさんは、元気いっぱいで毎日が楽しいです！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_15.png" alt="一圓 愛実" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">3年4組</span>
+            <div class="pname">一圓 愛実<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">スポーツ観戦(NEC川崎レッドロケッツが好きです！)</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">元気いっぱい頑張ります！よろしくお願いします。</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">4年生</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_16.png" alt="湯浅 俊輔" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">4年1組</span>
+            <div class="pname">湯浅 俊輔<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">歴史ドラマ「豊臣兄弟」を観て、気になった出来事や人物について調べ学習すること。</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">好きな教科も苦手な教科も、いっしょに楽しみましょう！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_17.png" alt="大前 美咲" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">4年2組</span>
+            <div class="pname">大前 美咲<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">お腹が満たされる1品料理を作ること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">分からないことが沢山あると思いますが、精一杯頑張ります！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_18.png" alt="横田 若葉" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">4年3組</span>
+            <div class="pname">横田 若葉<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">年長の娘と一緒にシル活</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">宮小1年目になります。初心を大切に子どもたちと日々を楽しみます！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_19.png" alt="白井 紀子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">4年4組</span>
+            <div class="pname">白井 紀子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">時短で美味しい料理を作ること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">多摩区の中野島小から来ました。明るい皆さんと過ごす毎日が楽しみです！</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">5年生</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_20.png" alt="岩田 孔" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">5年1組</span>
+            <div class="pname">岩田 孔<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">髪の毛を伸ばす。</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">健康第一ですよ。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_21.png" alt="竹内 美羽" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">5年2組</span>
+            <div class="pname">竹内 美羽<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">銭湯巡りとかき氷</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">みなさんと一緒に楽しい思い出をたくさんつくりたいです！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_22.png" alt="岩本 吉平" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">5年3組</span>
+            <div class="pname">岩本 吉平<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">筋トレです。</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">「何事も楽しんだもん勝ち」子どもたちと笑顔いっぱいの一年にします！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_23.png" alt="西脇 更紗" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">5年4組</span>
+            <div class="pname">西脇 更紗<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">くちぱっち！シール集め！</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">夢はフロリダのディズニーワールドへ行くことです！</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">6年生</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_24.png" alt="古市 光洋" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">6年1組</span>
+            <div class="pname">古市 光洋<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">テニスをして身体を動かすこと</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">6年生を笑顔で送り出せるように頑張ります！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_25.png" alt="中島 亜希" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">6年2組</span>
+            <div class="pname">中島 亜希<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">野球の試合とテニスの試合を見ること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">6年生が最後まで安心して過ごせるよう支えていきます。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_26.png" alt="蓬萊 康弘" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">6年3組</span>
+            <div class="pname">蓬萊 康弘<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">ミュージカル観劇・パン屋さんめぐり</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">6年生が”宮小でよかった”と思って卒業できるように支援していきます。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_27.png" alt="橋本 有紀子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">6年4組</span>
+            <div class="pname">橋本 有紀子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">音楽を聴くこと、カフェめぐり</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">６年生一人一人がダイヤモンドの輝きで卒業できるよう、サポートしていきます！</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">ニコニコ級</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_28.png" alt="杉本 響" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">ニコニコ級1組</span>
+            <div class="pname">杉本 響<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">自転車に乗って遠くに出かけることです。</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">支援級の児童一人ひとりの良さを見つけられるよう頑張ります。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_29.png" alt="菅原 香織" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">ニコニコ級2組</span>
+            <div class="pname">菅原 香織<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">おさんぽ</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">一緒に学習したり、遊んだりしながら子どもたちと向き合い、安心して楽しめるクラスにしたいと思います。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_30.png" alt="中江 奏太" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">ニコニコ級3組</span>
+            <div class="pname">中江 奏太<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">寝ること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">笑顔で楽しく頑張っていきましょう！よろしくお願いします！！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_31.png" alt="鶴見 美奈子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">ニコニコ級4組</span>
+            <div class="pname">鶴見 美奈子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">Mrs GREEN APPLEと野球観戦</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">健康第一で頑張ります！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_32.png" alt="布施木 篤志" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">ニコニコ級5組</span>
+            <div class="pname">布施木 篤志<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">バスケをする</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">１年間、よろしくお願いします。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_33.png" alt="坂野 孝男" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">ニコニコ級6組</span>
+            <div class="pname">坂野 孝男<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">自転車</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">宜しくお願いします。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_34.png" alt="城野 丞司" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">ニコニコ級7組</span>
+            <div class="pname">城野 丞司<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">ロードバイク</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">弱虫ペダルを見てロードバイクを始めました！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_35.png" alt="村上 あゆみ" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">ニコニコ級8組</span>
+            <div class="pname">村上 あゆみ<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">Mrs.GREEN APPLE🍏サウナ♨️スポーツ観戦🏀</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">みんなと一緒に素敵な１年を過ごしていきたいと思います！！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_36.png" alt="高野 真理" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">個別支援・TT</span>
+            <div class="pname">高野 真理<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">推し活と動物の動画鑑賞</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">宮前平小2年目になりました。子供達とたくさん笑える1年にしたいです。</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">専科・教科</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_37.png" alt="福井 なつ美" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">音楽専科</span>
+            <div class="pname">福井 なつ美<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">バターシュガーの美味しいクレープ屋さんを探すこと！</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">子どもたちの「楽しい！」に寄り添い、音の世界を一緒に広げていきます。1年間宜しくお願いいたします！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_38.png" alt="福岡 正行" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">体育専科</span>
+            <div class="pname">福岡 正行<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">ONE OK ROCK(ワンオクロック)</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">5,6年生の体育を担当します。たくさん動いて学んで、元気に過ごしましょう！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_39.png" alt="久保 由美子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">図工専科</span>
+            <div class="pname">久保 由美子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">読書</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">電車の中で児童書を読み、子どもたちにクイズを出すのが楽しみです。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_40.png" alt="原 由紀子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">書写専科</span>
+            <div class="pname">原 由紀子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">美味しいパンケーキ屋さんめぐり</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">健康に気をつけて、笑顔いっぱいの1年になるよう頑張ります。</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">通級指導教室</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_41.png" alt="諏合 美保子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">通級指導教室</span>
+            <div class="pname">諏合 美保子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">旅行</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">スポーツ観戦で叫ぶことが好きです</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_42.png" alt="中村 清佳" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">通級指導教室</span>
+            <div class="pname">中村 清佳<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">シール集め</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">よろしくお願いします。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_43.png" alt="大類 良知" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">通級指導教室</span>
+            <div class="pname">大類 良知<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">ゴルフ</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">ボールが真っ直ぐに飛んだときは、とても嬉しいです。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_44.png" alt="深山 菜津美" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">通級指導教室</span>
+            <div class="pname">深山 菜津美<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">ヤマザキ春のパン祭りのシールを集めること</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">宮前平小２年目になりました。今年も宮小のみんなの活躍を見るのが楽しみです。よろしくお願いします。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_45.png" alt="伊東 祐子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">通級指導教室</span>
+            <div class="pname">伊東 祐子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">美術館と博物館巡り</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">今年度もよろしくお願いします！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_46.png" alt="相沢 庸子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">通級指導教室</span>
+            <div class="pname">相沢 庸子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">社交ダンス</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">ワルツを踊るのが夢です</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_47.png" alt="木村 咲南" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">通級指導教室</span>
+            <div class="pname">木村 咲南<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">面白いアニメ探し</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">よろしくお願いします！</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="cat-label">スタッフ</h3>
+    <div class="profile-grid profile-grid--solo">
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_48.png" alt="吉田 美起" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">初任研担当</span>
+            <div class="pname">吉田 美起<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">高校サッカー観戦</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">今年はいろいろな学年の子どもたちと過ごせるのが楽しみです。よろしくお願いします。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_49.png" alt="金子 満里子" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">初任研補佐補充</span>
+            <div class="pname">金子 満里子<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">青汁、都道府県調べ、ウルトラマン</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">元気いっぱいな子どもたちに私も元気をもらっています！よろしくお願いします！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_50.png" alt="野﨑 萌" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">養護教諭</span>
+            <div class="pname">野﨑 萌<span class="suffix">先生</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">朝一番のストレッチ</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">子どもたちの健康と笑顔を支えていきます！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_51.png" alt="魚住 帆菜" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">栄養職員</span>
+            <div class="pname">魚住 帆菜<span class="suffix">さん</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">ピラティス</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">みんなが安心しておいしく食べられる給食を届けたいと思います！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_52.png" alt="藤井 崇弘" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">事務職員</span>
+            <div class="pname">藤井 崇弘<span class="suffix">さん</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">インスタグラムで土日の出かけ先を探すこと</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">よろしくお願いします。</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_53.png" alt="平野 美晴" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">事務職員</span>
+            <div class="pname">平野 美晴<span class="suffix">さん</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">野球観戦、アイドル(乃木坂46、SEVENTEEN)</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">皆さんが楽しい学校生活を送れるように頑張りたいです</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_54.png" alt="小野澤 崇" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">用務員</span>
+            <div class="pname">小野澤 崇<span class="suffix">さん</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">山登り</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">物を大事に使って下さい</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_55.png" alt="小泉 ちはる" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">用務員</span>
+            <div class="pname">小泉 ちはる<span class="suffix">さん</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">面白い小説を探すこと</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">よろしくお願いします！</p>
+        </div>
+      </div>
+      <div class="pcard pcard-photo">
+        <div class="pcard-main">
+          <div class="pphoto"><img src="teachers_56.png" alt="栗山 佳" onerror="this.closest('.pphoto').style.display='none'"></div>
+          <div class="pinfo">
+            <span class="role">事務支援員</span>
+            <div class="pname">栗山 佳<span class="suffix">さん</span></div>
+            <div class="field">
+              <div class="ftitle"><svg viewBox="0 0 24 24" fill="#d95d2b"><path d="M12 21s-7.5-4.7-10-9.3C.5 8.4 2 5 5.3 5c2 0 3.3 1.2 4.2 2.4C10.4 6.2 11.7 5 13.7 5 17 5 18.5 8.4 17 11.7 14.5 16.3 12 21 12 21z"/></svg>ハマっていること</div>
+              <p class="fbody">アニメ鑑賞</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble">
+          <div class="ftitle">一言メッセージ</div>
+          <p class="fbody">一年間よろしくお願いします。</p>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  </section>
+
+
   <!-- ===== 会長から一言 ===== -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-no">07 — MESSAGE</span>
+      <span class="sec-no">10 — MESSAGE</span>
       <h2>会長から一言。</h2>
       <div class="sec-rule"></div>
     </div>
@@ -467,7 +1626,7 @@
       <b>宮前平小学校PTA</b><br>
       PTAだより 第1号｜令和8年6月発行
     </div>
-    <div class="footer-motto">やれるときに、やれることを。</div>
+    <div class="footer-motto">やれるときに、やれることを、たのしんで！</div>
   </footer>
 
 </div>
