@@ -239,10 +239,18 @@
   .schedule { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 18px 0 12px; }
   .sch-item {
     background: var(--leaf-soft); border: 1px solid var(--line); border-radius: 4px;
-    padding: 12px 6px; text-align: center;
+    padding: 12px 6px; text-align: center; min-width: 0;
   }
-  .sch-date { display: block; font-weight: 900; font-size: 17px; color: var(--leaf); letter-spacing: .01em; }
+  .sch-date {
+    display: block; font-weight: 900; color: var(--leaf); letter-spacing: 0;
+    font-size: clamp(13px, 3.6vw, 17px); white-space: nowrap;
+  }
   .sch-day { display: block; font-size: 11px; color: var(--ink-soft); font-weight: 700; margin-top: 2px; }
+  @media (max-width: 380px) {
+    .schedule { grid-template-columns: 1fr; }
+    .sch-item { display: flex; justify-content: center; align-items: baseline; gap: 8px; padding: 9px 10px; }
+    .sch-day { margin-top: 0; }
+  }
   .sch-time { font-size: 13.5px; }
   .sch-time b { color: var(--leaf); }
 
@@ -522,7 +530,7 @@
         <span class="status">制作検討中</span>
         <h3>宮小PTAトレーナー復活！（予定）</h3>
         <figure class="photo" data-label="IMAGE">
-          <img src="img-trainer.png" alt="宮小PTAトレーナーのイメージ" onerror="this.remove()">
+          <img src="img-trainer.jpg" alt="宮小PTAトレーナーのイメージ" onerror="this.remove()">
         </figure>
         <p class="ai-note">※画像はあくまでイメージです。（生成AIで作成）</p>
         <p>過去にPTAとして制作していたトレーナーについて、「またやってほしい」という声をいただいており、現在制作を検討しています。</p>
