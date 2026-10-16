@@ -1,489 +1,487 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="ds/styles.css">
-  <script src="ds/ds_bundle.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>北陸の事業承継・M&amp;A｜地域事業承継サクセッション（石川・富山・福井）</title>
+  <meta name="description" content="石川・富山・福井の会社のための事業承継・M&amp;Aサービス。人材紹介「北陸転職」で築いた北陸1,000社とのつながりと、M&amp;A通算200件以上の成約実績から、あなたの会社にふさわしい買い手をご紹介します。着手金0円・完全成果報酬。">
+  <meta name="theme-color" content="#0e1a4f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-    body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Figtree", sans-serif; font-size: 15px; line-height: 1.95; letter-spacing: .03em; -webkit-font-smoothing: antialiased; }
-    a { color: var(--color-accent-700); text-underline-offset: 3px; }
-    a:hover { color: var(--color-accent-600); }
-    p { margin: 0; }
-    h1, h2, h3 { font-family: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif; }
-    summary { list-style: none; }
-    summary::-webkit-details-marker { display: none; }
-    details[open] .plus-v { opacity: 0; }
-    details > div { animation: fadeDown .35s cubic-bezier(.2,.7,.2,1) both; }
-    @keyframes fadeDown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
-    @keyframes riseIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-    @keyframes bloom { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
-    @keyframes drift { 0% { transform: translate(0,0) rotate(0); } 50% { transform: translate(4px,-6px) rotate(6deg); } 100% { transform: translate(0,0) rotate(0); } }
-    @keyframes dotPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.5); } }
-    @keyframes barGrow { from { width: 0; } }
-    [data-reveal] { opacity: 0; }
-    [data-reveal].in { animation: riseIn .7s cubic-bezier(.2,.7,.2,1) both; }
-    [data-reveal="bloom"].in { animation: bloom .9s cubic-bezier(.2,.7,.2,1) both; }
-    [data-reveal].in [data-blob] { animation: drift 9s ease-in-out infinite; }
-    [data-reveal].in [data-dot] { animation: dotPulse 3s ease-in-out infinite; transform-origin: center; }
-    [data-reveal].in [data-bar] { animation: barGrow 1.2s cubic-bezier(.2,.7,.2,1) .3s both; }
-    .cover-in > * { animation: riseIn .8s cubic-bezier(.2,.7,.2,1) both; }
-    .cover-in > :nth-child(1) { animation-delay: .05s; }
-    .cover-in > :nth-child(2) { animation: bloom 1s cubic-bezier(.2,.7,.2,1) .15s both; }
-    .cover-in > :nth-child(3) { animation-delay: .4s; }
-    .cover-in > :nth-child(4) { animation-delay: .5s; }
-    .cover-in > :nth-child(5) { animation-delay: .6s; }
-    .cover-in > :nth-child(6) { animation-delay: .75s; }
-    .cover-in [data-blob] { animation: drift 9s ease-in-out infinite; }
-    .cover-in [data-dot] { animation: dotPulse 3s ease-in-out infinite; }
-    .btn { transition: transform .25s cubic-bezier(.2,.7,.2,1), background .2s; }
-    .btn:hover { transform: translateY(-2px); }
-    .btn:hover .arr { transform: translateX(3px); }
-    .arr { transition: transform .25s cubic-bezier(.2,.7,.2,1); }
-    .grid-ph img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
-    .grid-ph:hover img { transform: scale(1.04); }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      [data-reveal], .cover-in > * { opacity: 1 !important; animation: none !important; }
-      [data-blob], [data-dot], [data-bar], details > div { animation: none !important; }
-    }
-  </style>
-</helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@700;900&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preload" as="image" href="assets/img/kv.jpg">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
 
-<div id="top" style="max-width:440px;margin:0 auto;background:var(--color-neutral-100);min-height:100vh;box-shadow:var(--shadow-sm);overflow-x:clip">
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="./" aria-label="地域事業承継サクセッション 北陸 トップ">
+        <img class="brand__logo" src="assets/img/logo.png" alt="地域事業承継 Regional Business Successions" width="140" height="40">
+        <span class="brand__tag">北陸</span>
+      </a>
 
-  <!-- ── 表紙 ── -->
-  <header data-screen-label="表紙" class="cover-in" style="padding:28px 24px 0;text-align:center">
-    <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600">MIYAMAEDAIRA ELEMENTARY SCHOOL PTA</p>
-    <figure style="position:relative;width:72%;max-width:280px;aspect-ratio:1/1;margin:24px auto 0">
-      <div aria-hidden="true" data-blob style="position:absolute;left:-18%;bottom:-6%;width:46%;height:46%;border-radius:62% 38% 55% 45% / 48% 60% 40% 52%;background:var(--color-accent-100)"></div>
-      <div style="position:absolute;inset:0;overflow:hidden;border-radius:56% 44% 52% 48% / 48% 58% 42% 52%;background:var(--color-surface)"><img class="{{ photoClass }}" src="photos/p01.jpg" alt="流しそうめん会のようす" style="width:100%;height:100%;object-fit:cover"></div>
-      <span aria-hidden="true" data-dot style="position:absolute;right:2%;top:10%;width:10px;height:10px;border-radius:50%;background:var(--color-accent)"></span>
-    </figure>
-    <p style="font-family:'Figtree',sans-serif;font-size:12px;letter-spacing:.18em;color:var(--color-accent-700);margin-top:30px;font-weight:600">vol.02</p>
-    <h1 style="font-weight:700;font-size:34px;line-height:1.3;letter-spacing:.08em;margin:4px 0 0">PTAだより</h1>
-    <p style="font-size:13px;font-weight:500;color:var(--color-neutral-700);margin-top:6px;letter-spacing:.08em">宮前平小学校PTA｜第2号｜令和8年10月発行</p>
-    <p style="margin-top:22px;font-weight:700;font-size:14px;color:var(--color-accent-700);letter-spacing:.06em">やれるときに、やれることを、たのしんで！</p>
+      <nav class="global-nav" id="global-nav" aria-label="ページ内メニュー">
+        <ul class="global-nav__list">
+          <li><a href="#reasons">選ばれる理由</a></li>
+          <li><a href="#compare">他社比較</a></li>
+          <li><a href="#price">料金</a></li>
+          <li><a href="#message">代表</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a class="header-tel" href="tel:0120615755">
+          <span class="header-tel__num">0120-615-755</span>
+          <span class="header-tel__note">9:00–19:00／年中無休・秘密厳守</span>
+        </a>
+        <a class="btn btn--primary btn--sm header-cta__btn" href="#contact">無料で相談してみる</a>
+        <a class="icon-btn icon-btn--tel" href="tel:0120615755" aria-label="電話で相談する（0120-615-755）">
+          <span aria-hidden="true">☎</span>
+        </a>
+        <button class="icon-btn icon-btn--menu" type="button" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開く">
+          <span class="icon-btn__bar" aria-hidden="true"></span>
+          <span class="icon-btn__bar" aria-hidden="true"></span>
+          <span class="icon-btn__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <!-- ── 目次 ── -->
-  <nav aria-label="目次" data-reveal style="padding:48px 24px 0">
-    <p style="text-align:center;font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600">CONTENTS</p>
-    <ol style="list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--color-neutral-300)">
-      <li><a href="#k1" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">01</span><span style="flex:1">流しそうめん会を実施しました</span></a></li>
-      <li><a href="#k2" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">02</span><span style="flex:1">町内会の防災訓練をサポート</span></a></li>
-      <li><a href="#k3" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">03</span><span style="flex:1">学校の応援、いろいろな方法があります</span><span class="tag tag-accent" style="font-weight:700;font-size:11px">募集中</span></a></li>
-      <li><a href="#k4" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">04</span><span style="flex:1">かわさきTEKTEKの応援状況</span></a></li>
-      <li><a href="#k5" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">05</span><span style="flex:1">給食試食会のボランティア</span><span class="tag tag-accent" style="font-weight:700;font-size:11px">募集中</span></a></li>
-      <li><a href="#k6" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">06</span><span style="flex:1">PTAポイントの使い道</span><span class="tag tag-accent" style="font-weight:700;font-size:11px">ご意見募集</span></a></li>
-      <li><a href="#k7" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">07</span><span style="flex:1">委員会のあり方を考えます</span><span class="tag tag-accent" style="font-weight:700;font-size:11px">ご意見募集</span></a></li>
-      <li><a href="#k8" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">08</span><span style="flex:1">会計監査を3校で「相互監査」に</span></a></li>
-      <li><a href="#k9" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">09</span><span style="flex:1">次年度のPTA役員</span><span class="tag tag-accent" style="font-weight:700;font-size:11px">募集中</span></a></li>
-      <li><a href="#k10" style="display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 4px;border-bottom:1px solid var(--color-neutral-300);color:var(--color-text);text-decoration:none;font-weight:500;font-size:14px;line-height:1.5" style-hover="color:var(--color-accent-700)"><span style="font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;color:var(--color-accent);width:22px;flex:none">10</span><span style="flex:1">会長から一言</span></a></li>
-    </ol>
-  </nav>
+  <main id="main">
 
-  <!-- ── 01 ── -->
-  <section id="k1" data-screen-label="01 流しそうめん" style="padding:80px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">01</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">REPORT</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0;text-wrap:pretty">流しそうめん会を<br>実施しました！</h2>
-    </div>
-
-    <figure data-reveal="bloom" style="position:relative;width:78%;aspect-ratio:1/1;margin:32px 0 0">
-      <div aria-hidden="true" data-blob style="position:absolute;right:-22%;bottom:-6%;width:44%;height:44%;border-radius:40% 60% 55% 45% / 55% 45% 55% 45%;background:var(--color-accent-100)"></div>
-      <div style="position:absolute;inset:0;overflow:hidden;border-radius:48% 52% 60% 40% / 55% 45% 55% 45%;background:var(--color-surface)"><img class="{{ photoClass }}" src="photos/p06.jpg" alt="流しそうめん会の様子" style="width:100%;height:100%;object-fit:cover"></div>
-      <span aria-hidden="true" data-dot style="position:absolute;right:-6%;top:14%;width:10px;height:10px;border-radius:50%;background:var(--color-accent)"></span>
-    </figure>
-
-    <p style="margin-top:32px;font-weight:700">前号で「企画中」とお知らせした流しそうめん会を、10月4日（日）に実施しました。</p>
-    <p style="margin-top:14px">竹のといを流れてくるそうめんを、子どもたちが夢中ですくう姿があちこちで見られました。準備・当日の運営にご協力いただいたボランティアのみなさま、参加してくださったみなさま、ありがとうございました。</p>
-
-    <h3 style="font-weight:700;font-size:17px;line-height:1.6;letter-spacing:.04em;margin:40px 0 8px">竹運びから片付けまで、みんなで</h3>
-    <p style="font-size:14px">竹を運び、割って、磨いて、組み立てて。準備から片付けまで、子どもたちも一緒に取り組みました。</p>
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px">
-      <figure class="grid-ph" style="margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-md)"><img class="{{ photoClass }}" src="photos/p02.jpg" alt="竹を運ぶ様子" style="width:100%;height:100%;object-fit:cover"></figure>
-      <figure class="grid-ph" style="margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-md)"><img class="{{ photoClass }}" src="photos/p03.jpg" alt="竹を割る様子" style="width:100%;height:100%;object-fit:cover"></figure>
-      <figure class="grid-ph" style="margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-md)"><img class="{{ photoClass }}" src="photos/p04.jpg" alt="竹を磨く様子" style="width:100%;height:100%;object-fit:cover"></figure>
-      <figure class="grid-ph" style="margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-md)"><img class="{{ photoClass }}" src="photos/p05.jpg" alt="組み立ての様子" style="width:100%;height:100%;object-fit:cover"></figure>
-      <figure class="grid-ph" style="margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-md)"><img class="{{ photoClass }}" src="photos/p07.jpg" alt="当日の様子" style="width:100%;height:100%;object-fit:cover"></figure>
-      <figure class="grid-ph" style="margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-md)"><img class="{{ photoClass }}" src="photos/p08.jpg" alt="片付けの様子" style="width:100%;height:100%;object-fit:cover"></figure>
-    </div>
-
-    <div data-reveal style="margin-top:40px;background:var(--color-bg);border-radius:var(--radius-lg);padding:26px 22px;text-align:center">
-      <div style="width:84px;height:84px;margin:0 auto;border-radius:50%;overflow:hidden;background:var(--color-surface)"><img class="{{ photoClass }}" src="photos/p09.jpg" alt="横山農園" style="width:100%;height:100%;object-fit:cover"></div>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:16px">SPECIAL THANKS</p>
-      <p style="font-weight:700;font-size:18px;line-height:1.5;margin-top:4px">マルヨコファーム<span style="display:block;font-size:13px;font-weight:500;color:var(--color-neutral-700)">（横山農園）さん</span></p>
-      <p style="margin-top:14px;font-size:14px;text-align:left"><b>今回使った竹は、横山農園さんからご提供いただきました。</b>地域のみなさまのお力添えがあってこそ実現できた企画です。心より御礼申し上げます。</p>
-      <ul style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:16px 0 0;padding:0;list-style:none">
-        <li class="tag" style="background:var(--color-neutral-100);color:var(--color-neutral-800);font-size:12px;font-weight:500;padding:5px 12px">宮前区犬蔵</li>
-        <li class="tag" style="background:var(--color-neutral-100);color:var(--color-neutral-800);font-size:12px;font-weight:500;padding:5px 12px">1680年代創業</li>
-        <li class="tag" style="background:var(--color-neutral-100);color:var(--color-neutral-800);font-size:12px;font-weight:500;padding:5px 12px">直売所あり</li>
-      </ul>
-    </div>
-
-    <h3 style="font-weight:700;font-size:17px;line-height:1.6;letter-spacing:.04em;margin:40px 0 10px">横山農園さんってどんな農園？</h3>
-    <p>1946年から80年にわたり、農薬・化学肥料・動物性堆肥を使用せず、自然の力を生かした農業を実践しています。各地の気候やその土地の土に合った野菜や果物を育て、自然栽培・自然農法・有機栽培を中心とした農産物を生産しています。</p>
-    <p style="margin-top:14px">農園では直売所も営んでおり、季節の野菜や果物のほか、農園の梅干し、梅ジュース、ジャムなどの加工品も販売しています。</p>
-  </section>
-
-  <!-- ── 02 ── -->
-  <section id="k2" data-screen-label="02 防災訓練" style="padding:88px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">02</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">COMMUNITY</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0;text-wrap:pretty">町内会の防災訓練を<br>PTAもサポート</h2>
-    </div>
-
-    <figure data-reveal="bloom" style="position:relative;width:78%;aspect-ratio:1/1;margin:32px 0 0 auto">
-      <div aria-hidden="true" data-blob style="position:absolute;left:-22%;top:-4%;width:44%;height:44%;border-radius:55% 45% 40% 60% / 45% 55% 45% 55%;background:var(--color-accent-100)"></div>
-      <div style="position:absolute;inset:0;overflow:hidden;border-radius:58% 42% 45% 55% / 45% 60% 40% 55%;background:var(--color-surface)"><img class="{{ photoClass }}" src="photos/p10.jpg" alt="防災訓練の様子" style="width:100%;height:100%;object-fit:cover"></div>
-      <span aria-hidden="true" data-dot style="position:absolute;left:-4%;bottom:16%;width:10px;height:10px;border-radius:50%;background:var(--color-accent)"></span>
-    </figure>
-
-    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin:32px 0 24px">
-      <p style="font-family:'Figtree',sans-serif;font-weight:600;font-size:56px;line-height:1;color:var(--color-accent);letter-spacing:-.02em">10<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:16px;margin-left:4px;color:var(--color-text)">名以上</span></p>
-      <p style="font-size:13px;line-height:1.7;color:var(--color-neutral-700)">校外委員さんをはじめ、<br>保護者のみなさんが参加</p>
-    </div>
-
-    <p>町内会の防災訓練を、PTAとしてサポートしました。いざというとき子どもたちを守るのは、学校と家庭、そして地域のつながりです。顔の見える関係を日ごろからつくっておくことが、いちばんの備えになります。</p>
-    <p style="margin-top:14px">ご参加いただいたみなさま、ありがとうございました。</p>
-
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:28px">
-      <figure class="grid-ph" style="margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-md)"><img class="{{ photoClass }}" src="photos/p11.jpg" alt="防災訓練の様子" style="width:100%;height:100%;object-fit:cover"></figure>
-      <figure class="grid-ph" style="margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-md)"><img class="{{ photoClass }}" src="photos/p12.jpg" alt="防災訓練の様子" style="width:100%;height:100%;object-fit:cover"></figure>
-      <figure class="grid-ph" style="margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-md)"><img class="{{ photoClass }}" src="photos/p13.jpg" alt="防災訓練の様子" style="width:100%;height:100%;object-fit:cover"></figure>
-    </div>
-  </section>
-
-  <!-- ── 03 ── -->
-  <section id="k3" data-screen-label="03 学校の応援" style="padding:88px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">03</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">SUPPORT</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0;text-wrap:pretty">学校の応援、<br>いろいろな方法があります</h2>
-    </div>
-
-    <figure style="margin:30px 0 0;aspect-ratio:3/2;overflow:hidden;background:var(--color-surface);border-radius:var(--radius-lg)"><img src="photos/p14.jpg" alt="紙ベルマークからwebベルマーク・インクカートリッジ回収へシフトする図" style="width:100%;height:100%;object-fit:cover"></figure>
-
-    <p style="margin-top:30px">ベルマークを切って、数えて、仕分けて。これまで多くの時間と手間をかけてきた紙のベルマーク活動について、もっと負担の少ない応援のかたちに重心を移せないか、話し合いをはじめました。</p>
-    <p style="margin-top:14px">実は宮小では、手間のかからない応援の方法をすでにいくつも導入しています。また、<b style="color:var(--color-accent-700)">「学校ふるさと応援寄附金」</b>という制度もあります。こういう方法もあるので、よかったら、くらいの気持ちで知っておいていただけたらうれしいです。</p>
-
-    <div style="margin-top:32px;text-align:center">
-      <p style="font-size:12px;font-weight:500;color:var(--color-neutral-700)">これまで中心だった</p>
-      <p style="font-weight:700;font-size:17px;margin-top:2px">紙のベルマーク</p>
-      <div aria-hidden="true" style="display:flex;justify-content:center;padding:10px 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></div>
-    </div>
-    <div style="background:var(--color-bg);border-radius:var(--radius-lg);padding:22px 22px 10px">
-      <p style="text-align:center;font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600">ALREADY</p>
-      <p style="text-align:center;font-weight:700;font-size:15px;margin-top:2px">すでに導入している応援のかたち</p>
-      <ul style="list-style:none;margin:10px 0 0;padding:0">
-        <li style="padding:14px 0;border-top:1px solid var(--color-neutral-300)"><p style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><b style="font-size:16px">Webベルマーク</b><span class="tag tag-neutral" style="font-weight:700;font-size:11px">導入済み</span></p><p style="font-size:14px;line-height:1.8;color:var(--color-neutral-700);margin-top:2px">対象のネットショップでのお買いものが、そのまま学校の支援に。</p></li>
-        <li style="padding:14px 0;border-top:1px solid var(--color-neutral-300)"><p style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><b style="font-size:16px">インクカートリッジ回収</b><span class="tag tag-neutral" style="font-weight:700;font-size:11px">導入済み</span></p><p style="font-size:14px;line-height:1.8;color:var(--color-neutral-700);margin-top:2px">使用済みのインクカートリッジを回収してリサイクル。環境にもやさしく、学校の支援につながります。</p><p style="font-size:14px;font-weight:700;color:var(--color-accent-700);margin-top:4px">職員室前の回収箱に入れるだけでOK</p></li>
-        <li style="padding:14px 0;border-top:1px solid var(--color-neutral-300)"><p style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><b style="font-size:16px">かわさきTEKTEK</b><span class="tag tag-neutral" style="font-weight:700;font-size:11px">導入済み</span></p><p style="font-size:14px;line-height:1.8;color:var(--color-neutral-700);margin-top:2px">歩いてたまったポイントを学校に寄付（次の記事で詳しく）。</p></li>
-      </ul>
-    </div>
-    <div data-reveal style="margin-top:12px;background:var(--color-accent-100);border-radius:var(--radius-lg);padding:22px 22px 12px">
-      <p style="text-align:center;font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600">ONE MORE</p>
-      <p style="text-align:center;font-weight:700;font-size:15px;margin-top:2px">こんな方法もあります</p>
-      <p style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px"><b style="font-size:16px">学校ふるさと応援寄附金</b><span class="tag" style="background:var(--color-accent);color:var(--color-bg);font-weight:700;font-size:11px">よかったら</span></p>
-      <p style="font-size:14px;line-height:1.8;color:var(--color-neutral-700);margin-top:8px">ふるさと納税の制度を活用して、学校を直接応援できる川崎市の制度です。ふるさと納税を考えている方は、選択肢のひとつにどうぞ。</p>
-      <ul style="list-style:none;margin:14px 0 0;padding:0">
-        <li style="padding:12px 0;border-top:1px solid var(--color-accent-200);font-size:14px;line-height:1.8;color:var(--color-neutral-700)"><b style="display:block;color:var(--color-text)">学校を指定できる</b>申し込み時に、応援したい川崎市立学校（宮前平小）を指定できます。</li>
-        <li style="padding:12px 0;border-top:1px solid var(--color-accent-200);font-size:14px;line-height:1.8;color:var(--color-neutral-700)"><b style="display:block;color:var(--color-text)">税額控除の対象</b>個人からの寄附は、通常のふるさと納税と同様に、所得税・個人住民税の税額控除の対象です。</li>
-        <li style="padding:12px 0;border-top:1px solid var(--color-accent-200);font-size:14px;line-height:1.8;color:var(--color-neutral-700)"><b style="display:block;color:var(--color-text)">返礼品はなし</b>寄附に対するお礼の品は用意されていません。</li>
-      </ul>
-    </div>
-    <p style="font-size:13px;color:var(--color-neutral-700);margin-top:18px;text-align:center">紙のベルマークの今後については、まだ話し合いの段階です。<br>決まりましたら、あらためてお知らせします。</p>
-
-    <div data-reveal style="margin-top:40px;background:var(--color-bg);border-radius:var(--radius-lg);padding:26px 22px">
-      <p style="text-align:center;font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600">VOLUNTEER</p>
-      <p style="text-align:center;font-weight:700;font-size:17px;line-height:1.6;margin-top:2px">仕分けボランティアを募集しています</p>
-      <p style="font-size:14px;margin-top:14px">集まったベルマークとインクカートリッジの仕分け作業です。各回1時間ほど、11:00〜12:00くらいを目処に行います。</p>
-      <ol style="list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:8px">
-        <li style="display:flex;align-items:center;gap:14px;background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px"><span style="flex:none;width:64px;text-align:center"><span style="display:block;font-family:'Figtree',sans-serif;font-weight:600;font-size:22px;line-height:1;color:var(--color-accent)">10/22</span><span style="display:block;font-size:11px;color:var(--color-neutral-700);margin-top:3px">木曜日</span></span><span style="flex:1;font-weight:700;font-size:14px;line-height:1.5">インクカートリッジ仕分け</span><span class="tag tag-accent" style="font-weight:700;font-size:11px;flex:none">3名</span></li>
-        <li style="display:flex;align-items:center;gap:14px;background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px"><span style="flex:none;width:64px;text-align:center"><span style="display:block;font-family:'Figtree',sans-serif;font-weight:600;font-size:22px;line-height:1;color:var(--color-accent)">11/12</span><span style="display:block;font-size:11px;color:var(--color-neutral-700);margin-top:3px">木曜日</span></span><span style="flex:1;font-weight:700;font-size:14px;line-height:1.5">紙ベルマーク仕分け</span><span class="tag tag-accent" style="font-weight:700;font-size:11px;flex:none">5名</span></li>
-        <li style="display:flex;align-items:center;gap:14px;background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px"><span style="flex:none;width:64px;text-align:center"><span style="display:block;font-family:'Figtree',sans-serif;font-weight:600;font-size:22px;line-height:1;color:var(--color-accent)">12/17</span><span style="display:block;font-size:11px;color:var(--color-neutral-700);margin-top:3px">木曜日</span></span><span style="flex:1;font-weight:700;font-size:14px;line-height:1.5">紙ベルマーク仕分け</span><span class="tag tag-accent" style="font-weight:700;font-size:11px;flex:none">5名</span></li>
-      </ol>
-      <ul style="list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--color-neutral-300)">
-        <li style="display:flex;gap:16px;padding:12px 4px;border-bottom:1px solid var(--color-neutral-300);font-size:14px"><span style="width:4em;flex:none;color:var(--color-neutral-700);font-size:13px">時間</span><b>11:00〜12:00くらい（1時間目処）</b></li>
-        <li style="display:flex;gap:16px;padding:12px 4px;border-bottom:1px solid var(--color-neutral-300);font-size:14px"><span style="width:4em;flex:none;color:var(--color-neutral-700);font-size:13px">申込</span><b>がくぷりでご案内中</b></li>
-      </ul>
-      <p style="font-size:13px;color:var(--color-neutral-700);margin-top:14px;text-align:center">1回だけの参加も大歓迎です。</p>
-    </div>
-  </section>
-
-  <!-- ── 04 ── -->
-  <section id="k4" data-screen-label="04 TEKTEK" style="padding:88px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">04</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">TEKTEK</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0;text-wrap:pretty">歩いて宮小を応援！<br>かわさきTEKTEK</h2>
-    </div>
-
-    <p style="margin-top:30px">川崎市の健康アプリ「かわさきTEKTEK」では、歩いてたまったポイントを学校への応援金として寄付できます。宮前平小が受け取れる応援金は<b style="color:var(--color-accent-700)">年間12万円が上限</b>です。</p>
-
-    <div data-reveal style="margin-top:28px;background:var(--color-bg);border-radius:var(--radius-lg);padding:26px 22px">
-      <div role="img" aria-label="上限12万円のうち、10月8日時点で21,490円（17.9%）。昨年度は80,576円（67%）。">
-        <p style="text-align:center;font-size:13px;color:var(--color-neutral-700)">上限12万円のうち</p>
-        <p style="text-align:center;font-family:'Figtree',sans-serif;font-weight:600;font-size:56px;line-height:1;color:var(--color-accent);margin-top:4px;letter-spacing:-.02em">17.9<span style="font-size:24px">%</span></p>
-        <div style="position:relative;height:14px;background:var(--color-accent-200);border-radius:999px;margin-top:20px">
-          <div data-bar style="position:absolute;inset:0 auto 0 0;width:17.9%;background:var(--color-accent);border-radius:999px"></div>
-          <div style="position:absolute;top:-5px;bottom:-5px;left:67.1%;width:3px;border-radius:2px;background:var(--color-neutral-800)"></div>
+    <!-- ===== S01 FV ===== -->
+    <section class="fv" id="fv" aria-labelledby="fv-title">
+      <div class="fv__visual">
+        <img class="fv__img" src="assets/img/kv.jpg" alt="金沢駅 鼓門（イメージ）" width="1600" height="1059" fetchpriority="high">
+      </div>
+      <div class="fv__content">
+        <p class="fv__pill">北陸特化の事業承継・M&amp;A｜石川・富山・福井</p>
+        <h1 class="fv__title" id="fv-title">
+          北陸の会社の<br class="u-pc">“承継先”を、<br>
+          <span class="fv__title-grad">北陸に特化して</span><br class="u-pc">見つける。
+        </h1>
+        <p class="fv__lead">人材紹介「北陸転職」で築いた北陸1,000社とのつながりと、M&amp;A通算200件以上の成約実績。その両方から、あなたの会社にふさわしい買い手をご紹介します。</p>
+        <ul class="fv__badges" aria-label="実績">
+          <li class="badge"><span class="badge__label">北陸での実績</span><span class="badge__value"><span class="num">10</span><span class="unit">年以上</span></span></li>
+          <li class="badge"><span class="badge__label">北陸の取引先</span><span class="badge__value"><span class="num">1,000</span><span class="unit">社+</span></span></li>
+          <li class="badge"><span class="badge__label">M&amp;A通算成約</span><span class="badge__value"><span class="num">200</span><span class="unit">件+</span></span></li>
+          <li class="badge"><span class="badge__label">着手金</span><span class="badge__value"><span class="num">0</span><span class="unit">円</span></span></li>
+        </ul>
+        <div class="fv__ctas">
+          <a class="btn btn--primary btn--lg" href="#contact">無料で相談してみる<span class="btn__arrow" aria-hidden="true">›</span></a>
+          <a class="btn btn--ghost btn--lg" href="tel:0120615755">電話で相談（秘密厳守）</a>
         </div>
-        <div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:12px;line-height:1.6;color:var(--color-neutral-700)">
-          <span>今年度 21,490円<br>（10月8日時点）</span>
-          <span style="text-align:right">昨年度 80,576円<br>（67%）</span>
+        <p class="fv__note">※ 売却を決めていなくてもOK／社名を伏せたご相談も可能です　※ 数字は[2026年10月時点]</p>
+      </div>
+    </section>
+
+    <!-- ===== S02 お悩み ===== -->
+    <section class="section section--tint worries" aria-labelledby="worries-title">
+      <div class="section__inner">
+        <header class="section-head">
+          <p class="eyebrow" lang="en">WORRIES</p>
+          <h2 class="section-title" id="worries-title">こんなお悩み、<br class="u-sp">ありませんか？</h2>
+        </header>
+
+        <ul class="worries__list">
+          <li class="worry"><img class="worry__face" src="assets/img/face1.png" alt="" width="88" height="88" loading="lazy"><p class="worry__bubble">後継者がいない。<br class="u-pc">会社をたたむしかないのか…</p></li>
+          <li class="worry"><img class="worry__face" src="assets/img/face2.png" alt="" width="88" height="88" loading="lazy"><p class="worry__bubble">狭い地域だから、取引先や<br class="u-pc">社員に知られたくない</p></li>
+          <li class="worry"><img class="worry__face" src="assets/img/face3.png" alt="" width="88" height="88" loading="lazy"><p class="worry__bubble">県外の会社に売ったら、<br class="u-pc">社員の雇用はどうなる？</p></li>
+          <li class="worry"><img class="worry__face" src="assets/img/face4.png" alt="" width="88" height="88" loading="lazy"><p class="worry__bubble">大手仲介に相談したら<br class="u-pc">規模が小さいと断られた</p></li>
+          <li class="worry"><img class="worry__face" src="assets/img/face5.png" alt="" width="88" height="88" loading="lazy"><p class="worry__bubble">付き合いのある銀行には<br class="u-pc">正直、相談しづらい</p></li>
+          <li class="worry"><img class="worry__face" src="assets/img/face6.png" alt="" width="88" height="88" loading="lazy"><p class="worry__bubble">承継しても、次の幹部や<br class="u-pc">人手が足りるか不安</p></li>
+        </ul>
+
+        <figure class="data-card">
+          <div class="data-card__text">
+            <p class="eyebrow eyebrow--sm" lang="en">DATA</p>
+            <p class="data-card__title">北陸3県はいずれも<br class="u-pc">全国平均（50.1%）を上回り、<br class="u-pc"><strong>2社に1社以上</strong>が後継者不在。</p>
+            <figcaption class="data-card__source u-pc-block">出典：帝国データバンク「全国『後継者不在率』動向調査（2025年）」（2025年11月21日）および同社各県版調査。後継者の有無が判明した全国約27万社（2023年10月〜2025年10月）が対象。</figcaption>
+          </div>
+          <dl class="bars">
+            <div class="bar-row"><dt>石川県</dt><dd><span class="bar-row__track"><span class="bar-row__value" style="--v:55.5"></span></span><span class="bar-row__num">55.5%</span></dd></div>
+            <div class="bar-row"><dt>富山県</dt><dd><span class="bar-row__track"><span class="bar-row__value" style="--v:59.1"></span></span><span class="bar-row__num">59.1%</span></dd></div>
+            <div class="bar-row"><dt>福井県</dt><dd><span class="bar-row__track"><span class="bar-row__value" style="--v:55.3"></span></span><span class="bar-row__num">55.3%</span></dd></div>
+            <div class="bar-row bar-row--avg"><dt>全国</dt><dd><span class="bar-row__track"><span class="bar-row__value" style="--v:50.1"></span></span><span class="bar-row__num">50.1%</span></dd></div>
+          </dl>
+          <p class="data-card__source u-sp-block">出典：帝国データバンク「全国『後継者不在率』動向調査（2025年）」（2025年11月21日）および同社各県版調査。後継者の有無が判明した全国約27万社（2023年10月〜2025年10月）が対象。</p>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== S03 買い手を紹介できる理由 ===== -->
+    <section class="section why" aria-labelledby="why-title">
+      <div class="section__inner">
+        <header class="section-head">
+          <p class="eyebrow" lang="en">WHY WE CAN</p>
+          <h2 class="section-title" id="why-title">なぜ、北陸<br class="u-sp">（石川・富山・福井）の会社に<br>ふさわしい買い手を<br class="u-sp">紹介できるのか。</h2>
+          <span class="section-bar" aria-hidden="true"></span>
+          <p class="section-lead">北陸の事業承継を、地元で支え続けたい。そのために私たちは、北陸の企業とのつながりとM&amp;Aの成約実績を積み重ねてきました。だから、条件だけでなく“相性”まで見た買い手をご紹介できます。</p>
+        </header>
+
+        <ul class="points">
+          <li class="point">
+            <h3 class="point__label">北陸のネットワーク</h3>
+            <p class="point__value"><span class="num">1,000</span><span class="unit">社</span></p>
+            <p class="point__text">人材紹介サービス「北陸転職」で、10年以上にわたり北陸の企業の採用を支援してきました。経営者と直接やりとりしてきたからこそ、各社の事業の方向性や社風、拡大意欲まで把握しています。</p>
+          </li>
+          <li class="point point--accent">
+            <h3 class="point__label">M&amp;Aの成約実績</h3>
+            <p class="point__value"><span class="num">200</span><span class="unit">件以上</span></p>
+            <p class="point__text">通算200件以上の成約で培った買い手情報。どんな会社が、どんな条件で北陸の会社を求めているかを把握しています。</p>
+          </li>
+          <li class="point">
+            <h3 class="point__label">北陸に根ざした専任体制</h3>
+            <p class="point__value point__value--text">北陸特化</p>
+            <p class="point__text">JMAA認定アドバイザーが、地域の商習慣や関係性に配慮しながら成約まで伴走します。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== S04 選ばれる6つの理由 ===== -->
+    <section class="section section--tint reasons" id="reasons" aria-labelledby="reasons-title">
+      <div class="section__inner">
+        <header class="section-head">
+          <p class="eyebrow" lang="en">REASONS</p>
+          <h2 class="section-title" id="reasons-title">地域事業承継<br class="u-sp">サクセッションが<br>選ばれる6つの理由</h2>
+          <span class="section-bar" aria-hidden="true"></span>
+        </header>
+
+        <ol class="reason-list">
+          <li class="reason">
+            <p class="reason__num">理由その1</p>
+            <h3 class="reason__title">北陸に特化した事業承継・M&amp;A</h3>
+            <p class="reason__text">石川・富山・福井の会社のための、事業承継・M&amp;Aサービスです。お取引先1,000社以上とのつながりから、県内・北陸内で相性のよい承継先を探します。</p>
+            <div class="reason__visual reason__visual--map">
+              <img class="reason__map" src="assets/img/map.png" alt="" width="234" height="269" loading="lazy">
+            </div>
+          </li>
+          <li class="reason">
+            <p class="reason__num">理由その2</p>
+            <h3 class="reason__title">最低報酬150万円〜</h3>
+            <p class="reason__text">手元に残るお金をしっかり守ります。</p>
+            <div class="reason__visual">
+              <div class="fee-cards">
+                <p class="fee-card"><span class="fee-card__label">譲渡額1,000万円以下<br>の手数料</span><span class="fee-card__value"><span class="num">150</span><span class="unit">万円</span></span></p>
+                <p class="fee-card"><span class="fee-card__label">譲渡額1億円以下<br>の手数料</span><span class="fee-card__value"><span class="num">500</span><span class="unit">万円</span></span></p>
+              </div>
+              <p class="reason__note">※ 金額は税別</p>
+            </div>
+          </li>
+          <li class="reason">
+            <p class="reason__num">理由その3</p>
+            <h3 class="reason__title">完全成果報酬型</h3>
+            <p class="reason__text">ご相談から成約まで費用はかかりません。<br class="u-sp">リスクを負わずに第一歩を踏み出せます。</p>
+            <div class="reason__visual">
+              <div class="fee-cards">
+                <p class="fee-card"><span class="fee-card__label">着手金・相談料<br>中間費用</span><span class="fee-card__value"><span class="num">0</span><span class="unit">円</span></span></p>
+                <p class="fee-card"><span class="fee-card__label">調査・評価<br>書類作成</span><span class="fee-card__value"><span class="num">0</span><span class="unit">円</span></span></p>
+              </div>
+            </div>
+          </li>
+          <li class="reason">
+            <p class="reason__num">理由その4</p>
+            <h3 class="reason__title">社員や取引先に知られずに進められる</h3>
+            <p class="reason__text">面談・資料・連絡の全工程で秘密を守ります。<br class="u-sp">社名を伏せた打診から始められます。</p>
+            <div class="reason__visual">
+              <img class="reason__icon reason__icon--lock" src="assets/img/lock.png" alt="" width="129" height="154" loading="lazy">
+            </div>
+          </li>
+          <li class="reason">
+            <p class="reason__num">理由その5</p>
+            <h3 class="reason__title">北陸の商習慣を熟知</h3>
+            <p class="reason__text">北陸で10年以上、地元企業と向き合ってきた知見と、<br class="u-pc">地域ならではの関係性や慣習を踏まえてご提案します。</p>
+            <div class="reason__visual">
+              <span class="idea idea--pc" aria-hidden="true">
+                <span class="idea__cuff idea__cuff--l"></span><span class="idea__cuff idea__cuff--r"></span>
+                <img src="assets/img/idea.svg" alt="" width="156" height="156" loading="lazy">
+              </span>
+              <span class="idea idea--sp" aria-hidden="true">
+                <span class="idea__cuff idea__cuff--l"></span><span class="idea__cuff idea__cuff--r"></span>
+                <img src="assets/img/idea-sp.svg" alt="" width="122" height="122" loading="lazy">
+              </span>
+            </div>
+          </li>
+          <li class="reason">
+            <p class="reason__num">理由その6</p>
+            <h3 class="reason__title">JMAA認定コンサルが伴走</h3>
+            <p class="reason__text">JMAA認定アドバイザーが、初回のご相談から<br class="u-sp">成約まで一貫して担当します。</p>
+            <div class="reason__visual">
+              <img class="reason__icon reason__icon--hand" src="assets/img/hand.png" alt="" width="171" height="135" loading="lazy">
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== S05 他社比較 ===== -->
+    <section class="section compare" id="compare" aria-labelledby="compare-title">
+      <div class="section__inner">
+        <header class="section-head">
+          <p class="eyebrow" lang="en">COMPARE</p>
+          <h2 class="section-title" id="compare-title">地域事業承継<br class="u-sp">サクセッションは、<br class="u-sp">ここが違う。</h2>
+          <span class="section-bar" aria-hidden="true"></span>
+          <p class="section-lead section-lead--center">主な相談先の料金とサポート体制を、<br class="u-sp">公開情報をもとに整理しました。</p>
+        </header>
+
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <caption class="u-visually-hidden">主な相談先の料金とサポート体制の比較</caption>
+            <thead>
+              <tr>
+                <td class="compare-table__blank"></td>
+                <th scope="col" class="is-ours">地域事業承継<br>サクセッション</th>
+                <th scope="col">全国大手<br class="u-sp">M&amp;A仲介</th>
+                <th scope="col">M&amp;A<br class="u-sp">マッチングサイト</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">着手金</th>
+                <td class="is-ours">0円</td>
+                <td>0円〜100万円程度<br>（会社により異なる）</td>
+                <td>0円</td>
+              </tr>
+              <tr>
+                <th scope="row">中間金</th>
+                <td class="is-ours">0円</td>
+                <td>0円〜300万円程度<br>（会社により異なる）</td>
+                <td>0円</td>
+              </tr>
+              <tr>
+                <th scope="row">最低報酬<small>（成約時の報酬の最低額）</small></th>
+                <td class="is-ours">150万円</td>
+                <td>2,000万〜2,500万円</td>
+                <td>なし<br>（専門家サポートは有料：50万円〜）</td>
+              </tr>
+              <tr>
+                <th scope="row">買い手探し・交渉</th>
+                <td class="is-ours">担当アドバイザーが対応</td>
+                <td>担当アドバイザーが対応</td>
+                <td>当事者同士で行う<br>（有料サポートあり）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">※ 全国大手M&amp;A仲介：大手3社の公開情報をもとに整理（2024年4月時点の第三者調査より）。M&amp;Aマッチングサイト：大手サイトの公開料金（2026年10月確認）。金額はいずれも税別で、各社の料金改定により変わる場合があります。</p>
+      </div>
+    </section>
+
+    <!-- ===== S06 中間CTA ===== -->
+    <section class="mid-cta" aria-labelledby="mid-cta-title">
+      <div class="mid-cta__inner">
+        <p class="eyebrow eyebrow--pink" lang="en">FREE VALUATION</p>
+        <h2 class="mid-cta__title" id="mid-cta-title">まずは、会社の<br>“いまの価値”を知ることから。</h2>
+        <p class="mid-cta__lead">企業価値の無料算定・ご相談は秘密厳守。売却を決めていなくても大丈夫です。</p>
+        <div class="mid-cta__ctas">
+          <a class="btn btn--primary btn--lg" href="#contact">無料で相談してみる<span class="btn__arrow" aria-hidden="true">›</span></a>
+          <a class="btn btn--ghost btn--lg btn--tel" href="tel:0120615755">0120-615-755</a>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px">
-        <div style="background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px;text-align:center"><p style="font-family:'Figtree',sans-serif;font-weight:600;font-size:22px;line-height:1.2">214,900<span style="font-size:12px;margin-left:2px">pt</span></p><p style="font-size:12px;color:var(--color-neutral-700);margin-top:2px">寄付ポイント</p></div>
-        <div style="background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px;text-align:center"><p style="font-family:'Figtree',sans-serif;font-weight:600;font-size:22px;line-height:1.2">21,490<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:12px;margin-left:2px">円</span></p><p style="font-size:12px;color:var(--color-neutral-700);margin-top:2px">応援金に換算</p></div>
+      <img class="mid-cta__team" src="assets/img/team.png" alt="" width="1053" height="579" loading="lazy">
+    </section>
+
+    <!-- ===== S07 代表 ===== -->
+    <section class="section message" id="message" aria-labelledby="message-title">
+      <div class="section__inner">
+        <header class="section-head">
+          <p class="eyebrow" lang="en">MESSAGE</p>
+          <h2 class="section-title" id="message-title">北陸で生まれ、<br>北陸の会社とともに<br class="u-sp">歩んできた。</h2>
+          <span class="section-bar" aria-hidden="true"></span>
+        </header>
+
+        <div class="message__body">
+          <figure class="message__profile">
+            <div class="message__photo">
+              <img src="assets/img/ceo.png" alt="株式会社ヒルストン 代表取締役 石坂 裕" width="900" height="821" loading="lazy">
+            </div>
+            <figcaption>
+              <span class="message__role">株式会社ヒルストン 代表取締役</span>
+              <span class="message__name">石坂 裕</span>
+            </figcaption>
+          </figure>
+
+          <div class="message__text">
+            <blockquote class="message__quote">
+              <p>「マッチングで世界を変える」という理念のもと、<br class="u-pc">全国で地域密着型のビジネスを展開しています。</p>
+            </blockquote>
+
+            <ol class="timeline">
+              <li><span class="timeline__year" lang="en">ORIGIN</span><div class="timeline__body"><p class="timeline__main">石川県金沢市出身</p></div></li>
+              <li><span class="timeline__year" lang="en">RECRUIT</span><div class="timeline__body"><p class="timeline__main">株式会社リクルートに新卒入社</p><p class="timeline__sub">4年間、富山支社の立ち上げを含め北陸で採用広告の営業に従事</p></div></li>
+              <li><span class="timeline__year">[年]</span><div class="timeline__body"><p class="timeline__main">金沢でヒルストンキャリアを創業</p><p class="timeline__sub">現・株式会社ヒルストンの前身</p></div></li>
+              <li><span class="timeline__year">2014</span><div class="timeline__body"><p class="timeline__main">北陸で人材紹介事業をスタート</p></div></li>
+              <li><span class="timeline__year">2018</span><div class="timeline__body"><p class="timeline__main">M&amp;A事業に参入</p></div></li>
+              <li class="is-now"><span class="timeline__year" lang="en">NOW</span><div class="timeline__body"><p class="timeline__main">北陸の取引先1,000社／M&amp;A通算成約200件以上</p><p class="timeline__sub">北陸の地域活性に取り組む</p></div></li>
+            </ol>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <table class="table" data-reveal style="margin-top:28px;font-size:14px">
-      <caption style="text-align:left;font-size:13px;font-weight:700;color:var(--color-neutral-700);padding-bottom:8px">これまでの推移</caption>
-      <thead><tr><th scope="col" style="text-transform:none;letter-spacing:.04em;font-size:12px;padding:8px 4px">時点</th><th scope="col" style="text-align:right;text-transform:none;letter-spacing:.04em;font-size:12px;padding:8px 4px">応援金</th><th scope="col" style="text-align:right;text-transform:none;letter-spacing:.04em;font-size:12px;padding:8px 4px">上限に対して</th></tr></thead>
-      <tbody>
-        <tr><td style="padding:12px 4px;font-size:13px">令和7年度（昨年度）</td><td style="padding:12px 4px;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">80,576円</td><td style="padding:12px 4px;text-align:right;font-weight:700">67%</td></tr>
-        <tr><td style="padding:12px 4px;font-size:13px">令和8年度 7月末</td><td style="padding:12px 4px;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">11,170円</td><td style="padding:12px 4px;text-align:right;font-weight:700">約9%</td></tr>
-        <tr><td style="padding:12px 4px;font-size:13px;font-weight:700">令和8年度 10月8日</td><td style="padding:12px 4px;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-accent-700)">21,490円</td><td style="padding:12px 4px;text-align:right;font-weight:700;color:var(--color-accent-700)">17.9%</td></tr>
-      </tbody>
-    </table>
+    <!-- ===== S10 料金 ===== -->
+    <section class="section section--tint price" id="price" aria-labelledby="price-title">
+      <div class="section__inner">
+        <header class="section-head">
+          <p class="eyebrow" lang="en">PRICE</p>
+          <h2 class="section-title" id="price-title">シンプルな<br class="u-sp">完全成果報酬</h2>
+          <span class="section-bar" aria-hidden="true"></span>
+        </header>
 
-    <p style="margin-top:26px">7月末から、応援金は<b style="color:var(--color-accent-700)">約2倍</b>に増えました。ご協力ありがとうございます！ 昨年度の67%と比べるとまだこれから。年度末に向けて、昨年度超え、そして上限の12万円を目指しましょう。</p>
+        <ul class="zero-cards">
+          <li class="zero-card"><span class="zero-card__label"><span class="u-pc">ご相談・企業価値算定</span><span class="u-sp">相談・<br>価値算定</span></span><span class="zero-card__value"><span class="num">0</span><span class="unit">円</span></span></li>
+          <li class="zero-card"><span class="zero-card__label">着手金</span><span class="zero-card__value"><span class="num">0</span><span class="unit">円</span></span></li>
+          <li class="zero-card"><span class="zero-card__label">調査費用</span><span class="zero-card__value"><span class="num">0</span><span class="unit">円</span></span></li>
+        </ul>
 
-    <div data-reveal style="margin-top:28px;background:var(--color-bg);border-radius:var(--radius-lg);padding:24px 22px">
-      <p style="text-align:center;font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600">HOW TO</p>
-      <p style="text-align:center;font-weight:700;font-size:15px;margin-top:2px">参加のしかた</p>
-      <ol style="list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:4px">
-        <li style="display:flex;gap:14px;align-items:center;font-size:14px;font-weight:500;line-height:1.6;padding:8px 0"><span style="flex:none;width:30px;height:30px;border-radius:50%;background:var(--color-accent-200);color:var(--color-accent-800);font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;display:grid;place-items:center">1</span><span>アプリ「かわさきTEKTEK」を入れる</span></li>
-        <li style="display:flex;gap:14px;align-items:center;font-size:14px;font-weight:500;line-height:1.6;padding:8px 0"><span style="flex:none;width:30px;height:30px;border-radius:50%;background:var(--color-accent-200);color:var(--color-accent-800);font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;display:grid;place-items:center">2</span><span>ふだんどおり歩いてポイントをためる</span></li>
-        <li style="display:flex;gap:14px;align-items:center;font-size:14px;font-weight:500;line-height:1.6;padding:8px 0"><span style="flex:none;width:30px;height:30px;border-radius:50%;background:var(--color-accent-200);color:var(--color-accent-800);font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;display:grid;place-items:center">3</span><span>たまったポイントを宮前平小へ寄付</span></li>
-      </ol>
-      <p style="font-size:13px;color:var(--color-neutral-700);margin-top:10px">寄付先の選び方など、詳しい手順はアプリ内の案内をご確認ください。</p>
-    </div>
-  </section>
-
-  <!-- ── 05 ── -->
-  <section id="k5" data-screen-label="05 給食試食会" style="padding:88px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">05</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">VOLUNTEER</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0;text-wrap:pretty">給食試食会、<br>準備が進んでいます</h2>
-    </div>
-
-    <p style="margin-top:30px">前号でお知らせした給食試食会。成人委員さんが栄養士さんと打ち合わせを重ね、当日に必要なボランティアの募集を進めてくれています。</p>
-
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:28px 0 20px">
-      <div style="background:var(--color-accent-100);border-radius:var(--radius-lg);padding:20px 12px;text-align:center"><p style="font-family:'Figtree',sans-serif;font-weight:600;font-size:30px;line-height:1;color:var(--color-accent)">11/10</p><p style="font-size:13px;font-weight:700;margin-top:8px">1年生 対象</p></div>
-      <div style="background:var(--color-accent-100);border-radius:var(--radius-lg);padding:20px 12px;text-align:center"><p style="font-family:'Figtree',sans-serif;font-weight:600;font-size:30px;line-height:1;color:var(--color-accent)">11/19</p><p style="font-size:13px;font-weight:700;margin-top:8px">3〜6年生 対象</p></div>
-    </div>
-    <ul style="list-style:none;margin:0;padding:0;border-top:1px solid var(--color-neutral-300)">
-      <li style="display:flex;gap:16px;padding:12px 4px;border-bottom:1px solid var(--color-neutral-300);font-size:14px"><span style="width:4em;flex:none;color:var(--color-neutral-700);font-size:13px">内容</span><b>配膳や集金のお手伝い</b></li>
-      <li style="display:flex;gap:16px;padding:12px 4px;border-bottom:1px solid var(--color-neutral-300);font-size:14px"><span style="width:4em;flex:none;color:var(--color-neutral-700);font-size:13px">人数</span><b>各回 4〜8名</b></li>
-      <li style="display:flex;gap:16px;padding:12px 4px;border-bottom:1px solid var(--color-neutral-300);font-size:14px"><span style="width:4em;flex:none;color:var(--color-neutral-700);font-size:13px">時間</span><b>10:30〜13:00 目処</b></li>
-      <li style="display:flex;gap:16px;padding:12px 4px;border-bottom:1px solid var(--color-neutral-300);font-size:14px"><span style="width:4em;flex:none;color:var(--color-neutral-700);font-size:13px">申込</span><b>がくぷりでご案内中</b></li>
-    </ul>
-    <p style="font-size:13px;color:var(--color-neutral-700);margin-top:16px;text-align:center">「この日なら手伝えるかも」という気軽な気持ちで大丈夫です。</p>
-  </section>
-
-  <!-- ── 06 ── -->
-  <section id="k6" data-screen-label="06 PTAポイント" style="padding:88px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">06</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">POINTS</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0;text-wrap:pretty">PTAポイント、<br>どう活かしましょう？</h2>
-    </div>
-
-    <p style="margin-top:30px">昨年度までのPTA活動で付与されていた「PTAポイント」は、任意化にともない、現在宙に浮いています。</p>
-    <p style="margin-top:14px">これまでは「次年度以降、役員をやらなくてもよくなる」という、免罪符的な使われ方をしていたものです。ですが、やりたくない人はやらなくていい、やりたい人・できる人ができる範囲のことをやるPTAとなった今、<b style="color:var(--color-accent-700)">「一回やれば、もうやらなくていい」という前提自体が崩れています</b>。</p>
-    <p style="margin-top:14px">であれば、よりポジティブな使われ方、参加したくなるような仕組みのひとつになったら素敵かなと考えています。そこで運営委員会では、もっとよい使い道がないか話し合いをはじめました。いま出ているアイデアはこちらです。</p>
-    <ul data-reveal style="list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:8px">
-      <li style="display:flex;gap:14px;align-items:center;background:var(--color-bg);border-radius:999px;padding:14px 22px;font-weight:700;font-size:14px"><span style="width:8px;height:8px;border-radius:50%;background:var(--color-accent);flex:none"></span>卒業式での優先席</li>
-      <li style="display:flex;gap:14px;align-items:center;background:var(--color-bg);border-radius:999px;padding:14px 22px;font-weight:700;font-size:14px"><span style="width:8px;height:8px;border-radius:50%;background:var(--color-accent);flex:none"></span>運動会での優先席</li>
-      <li style="display:flex;gap:14px;align-items:center;background:var(--color-bg);border-radius:999px;padding:14px 22px;font-weight:700;font-size:14px"><span style="width:8px;height:8px;border-radius:50%;background:var(--color-accent);flex:none"></span>ポイントをお持ちの方限定のイベント</li>
-    </ul>
-
-    <h3 style="font-weight:700;font-size:17px;line-height:1.6;letter-spacing:.04em;margin:44px 0 8px;text-align:center">他校ではこんな使い方も</h3>
-    <p style="font-size:13px;text-align:center;color:var(--color-neutral-700)">ほかの学校や地域の事例を集めてみました。タップすると詳しく読めます。</p>
-    <div data-reveal style="margin-top:18px;display:flex;flex-direction:column;gap:10px">
-      <details style="background:var(--color-bg);border-radius:var(--radius-lg);padding:0 18px">
-        <summary style="cursor:pointer;display:flex;align-items:center;gap:14px;min-height:62px;padding:14px 0;font-weight:700;font-size:14px;line-height:1.6"><span style="flex:none;width:30px;height:30px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;display:grid;place-items:center">1</span><span style="flex:1">入学式・卒業式の前方席</span><span aria-hidden="true" style="position:relative;flex:none;width:22px;height:22px"><span style="position:absolute;left:4px;right:4px;top:10px;height:2px;border-radius:2px;background:var(--color-accent)"></span><span class="plus-v" style="position:absolute;top:4px;bottom:4px;left:10px;width:2px;border-radius:2px;background:var(--color-accent);transition:opacity .15s"></span></span></summary>
-        <div style="padding:0 0 20px;display:flex;flex-direction:column;gap:12px">
-          <p style="font-size:14px">早朝からの席取り競争をしなくても、しっかり我が子を見守れる。わかりやすく、実感のある特典です。</p>
-          <div style="background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px;font-size:14px"><b style="display:block;font-size:13px;color:var(--color-accent-700);margin-bottom:4px">世田谷区立等々力小学校PTA</b>20ポイント以上で、卒業式の最前列席を確保。<a href="https://note.com/todoroki_pta/n/nd8571efb056e" target="_blank" rel="noopener" style="display:block;margin-top:8px;font-size:12px;padding:4px 0">出典：等々力小PTA（note）</a></div>
-          <div style="background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px;font-size:14px"><b style="display:block;font-size:13px;color:var(--color-accent-700);margin-bottom:4px">川崎市立南百合丘小学校PTA</b>本部役員を務めた方に「イベント優先入場権」を付与。入学式・卒業式では保護者席前方の優先席に座れます。<a href="https://kawasaki-edu.jp/2/506minamiyurigaoka/index.cfm/10,677,c,html/677/20230130-083753.pdf" target="_blank" rel="noopener" style="display:block;margin-top:8px;font-size:12px;padding:4px 0">出典：南百合丘小「PTA活動」（PDF）</a></div>
+        <div class="fee-tables">
+          <section class="fee-table" aria-labelledby="fee1-title">
+            <h3 class="fee-table__head" id="fee1-title">譲渡額 1億円以下（成功報酬）</h3>
+            <dl class="fee-table__body">
+              <div><dt>1,000万円以下</dt><dd><span class="num">150</span><span class="unit">万円</span></dd></div>
+              <div><dt>3,000万円以下</dt><dd><span class="num">250</span><span class="unit">万円</span></dd></div>
+              <div><dt>6,000万円以下</dt><dd><span class="num">350</span><span class="unit">万円</span></dd></div>
+              <div><dt>1億円以下</dt><dd><span class="num">500</span><span class="unit">万円</span></dd></div>
+            </dl>
+          </section>
+          <section class="fee-table fee-table--blue" aria-labelledby="fee2-title">
+            <h3 class="fee-table__head" id="fee2-title">譲渡額 1億円超（成功報酬）</h3>
+            <dl class="fee-table__body">
+              <div><dt>5億円以下の部分</dt><dd><span class="num">5%</span></dd></div>
+              <div><dt>5〜10億円の部分</dt><dd><span class="num">4%</span></dd></div>
+              <div><dt>10〜50億円の部分</dt><dd><span class="num">3%</span></dd></div>
+              <div><dt>50億円超の部分</dt><dd><span class="num">2%</span></dd></div>
+            </dl>
+          </section>
         </div>
-      </details>
-      <details style="background:var(--color-bg);border-radius:var(--radius-lg);padding:0 18px">
-        <summary style="cursor:pointer;display:flex;align-items:center;gap:14px;min-height:62px;padding:14px 0;font-weight:700;font-size:14px;line-height:1.6"><span style="flex:none;width:30px;height:30px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;display:grid;place-items:center">2</span><span style="flex:1">引換券・グッズ・還元イベント</span><span aria-hidden="true" style="position:relative;flex:none;width:22px;height:22px"><span style="position:absolute;left:4px;right:4px;top:10px;height:2px;border-radius:2px;background:var(--color-accent)"></span><span class="plus-v" style="position:absolute;top:4px;bottom:4px;left:10px;width:2px;border-radius:2px;background:var(--color-accent);transition:opacity .15s"></span></span></summary>
-        <div style="padding:0 0 20px;display:flex;flex-direction:column;gap:12px">
-          <p style="font-size:14px">親の貢献が、子どもや家族の楽しみに直接かえってくる仕組みです。</p>
-          <div style="background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px;font-size:14px"><b style="display:block;font-size:13px;color:var(--color-accent-700);margin-bottom:4px">世田谷区立等々力小学校PTA</b>10ポイント以上で、夏祭り・冬祭りの飲食物引換券を付与。ポイントが「家族でイベントを楽しむクーポン」に変わります。<a href="https://note.com/todoroki_pta/n/nd8571efb056e" target="_blank" rel="noopener" style="display:block;margin-top:8px;font-size:12px;padding:4px 0">出典：等々力小PTA（note）</a></div>
-          <div style="background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px;font-size:14px"><b style="display:block;font-size:13px;color:var(--color-accent-700);margin-bottom:4px">川崎市立東小倉小学校PTA</b>「おたすけぴー太くんポイントプログラム」で、ボランティア参加者がポイントを貯められます。ふれあいまつりや運動会で、PTAオリジナルのバッチやバッグなどと交換。さらに、放課後の学校探検や屋上での巨大シャボン玉づくりといった「ポイント還元イベント」も開いています。<a href="https://higashiogura-pta.jimdofree.com/pta%E3%83%96%E3%83%AD%E3%82%B0/r4%E5%B9%B4%E5%BA%A6/" target="_blank" rel="noopener" style="display:block;margin-top:8px;font-size:12px;padding:4px 0">出典：東小倉小PTAブログ（令和4年度）</a></div>
+        <p class="note note--12">※ 税別。遠方の場合の交通費は別途ご相談。承継後の人材紹介費用は別途［要確認］</p>
+      </div>
+    </section>
+
+    <!-- ===== S11 ご利用の流れ ===== -->
+    <section class="section flow" aria-labelledby="flow-title">
+      <div class="section__inner section__inner--wide">
+        <header class="section-head">
+          <p class="eyebrow" lang="en">FLOW</p>
+          <h2 class="section-title" id="flow-title">ご相談から成約まで</h2>
+          <span class="section-bar" aria-hidden="true"></span>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num" lang="en">STEP 01</span>
+            <h3 class="step__title">ご相談・<br class="u-pc">企業価値算定</h3>
+            <span class="tag">無料</span>
+            <p class="step__text">社名を伏せたご相談も可能。まずは会社の価値を無料で算定します。</p>
+          </li>
+          <li class="step">
+            <span class="step__num" lang="en">STEP 02</span>
+            <h3 class="step__title">仲介契約の<br class="u-pc">締結</h3>
+            <span class="tag">着手金0円</span>
+            <p class="step__text">進め方と費用をご説明し、ご納得いただいてから契約します。</p>
+          </li>
+          <li class="step">
+            <span class="step__num" lang="en">STEP 03</span>
+            <h3 class="step__title">買い手の探索・<br class="u-pc">ご提案</h3>
+            <p class="step__text">北陸のつながりから、条件と相性の合う買い手候補をご提案します。</p>
+          </li>
+          <li class="step">
+            <span class="step__num" lang="en">STEP 04</span>
+            <h3 class="step__title">条件交渉・<br class="u-pc">基本合意</h3>
+            <p class="step__text">譲渡価格や社員の雇用など、アドバイザーが間に入って調整します。</p>
+          </li>
+          <li class="step step--goal">
+            <span class="step__num" lang="en">STEP 05</span>
+            <h3 class="step__title">デューデリ<br class="u-pc">ジェンス・成約</h3>
+            <span class="tag tag--light">成約時のみ報酬</span>
+            <p class="step__text">買い手の調査を経て最終契約へ。報酬は成約時のみです。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== S12 よくある質問 ===== -->
+    <section class="section section--tint faq" id="faq" aria-labelledby="faq-title">
+      <div class="section__inner section__inner--narrow">
+        <header class="section-head">
+          <p class="eyebrow" lang="en">FAQ</p>
+          <h2 class="section-title" id="faq-title">よくあるご質問</h2>
+          <span class="section-bar" aria-hidden="true"></span>
+        </header>
+
+        <dl class="faq-list">
+          <div class="qa"><dt><span class="qa__mark" aria-hidden="true">Q</span>まだ売却を決めていなくても相談できますか？</dt><dd><span class="qa__mark" aria-hidden="true">A</span>はい。企業価値の算定や親族内承継との比較など、情報収集の段階からご相談いただけます。</dd></div>
+          <div class="qa"><dt><span class="qa__mark" aria-hidden="true">Q</span>社員や取引先、地元に知られることはありませんか？</dt><dd><span class="qa__mark" aria-hidden="true">A</span>秘密保持契約のもと、社名を伏せた打診から始めます。[面談場所への配慮なども追記]</dd></div>
+          <div class="qa"><dt><span class="qa__mark" aria-hidden="true">Q</span>小さな会社・個人事業でも対応してもらえますか？</dt><dd><span class="qa__mark" aria-hidden="true">A</span>年商1,000万円程度からご相談いただけます。[対象範囲を要確認]</dd></div>
+          <div class="qa"><dt><span class="qa__mark" aria-hidden="true">Q</span>できれば県内・北陸の会社に引き継ぎたいのですが。</dt><dd><span class="qa__mark" aria-hidden="true">A</span>北陸1,000社のネットワークから、地元の承継先を優先してご提案します。</dd></div>
+          <div class="qa"><dt><span class="qa__mark" aria-hidden="true">Q</span>承継後、社員の雇用や人手不足が心配です。</dt><dd><span class="qa__mark" aria-hidden="true">A</span>雇用継続を条件交渉の最優先に置き、成約後も人材紹介で幹部・人員の補強をお手伝いします。</dd></div>
+          <div class="qa"><dt><span class="qa__mark" aria-hidden="true">Q</span>富山・福井でも訪問してもらえますか？</dt><dd><span class="qa__mark" aria-hidden="true">A</span>はい。北陸支社から3県すべてに伺います。[拠点・訪問条件を要確認]</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== S13 フォーム ===== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact__inner">
+        <header class="section-head section-head--light">
+          <p class="eyebrow eyebrow--pink" lang="en">CONTACT</p>
+          <h2 class="section-title" id="contact-title">まずは、会社の<br class="u-sp">“いまの価値”を<br class="u-pc">知ることから。</h2>
+          <p class="contact__lead"><span class="u-pc">企業価値の</span>無料算定・ご相談は秘密厳守。<br class="u-sp">担当者から1営業日以内にご連絡します。</p>
+        </header>
+
+        <div class="form-card">
+          <h3 class="form-card__title">無料 企業価値算定・ご相談<span class="u-pc">フォーム</span></h3>
+
+          <!-- HubSpot Form -->
+          <div class="hs-form-wrap" id="hubspot-form" aria-live="polite">
+            <noscript><p>フォームを表示するにはJavaScriptを有効にしてください。お電話（0120-615-755）でもご相談いただけます。</p></noscript>
+          </div>
+          <script charset="utf-8" src="https://js-na2.hsforms.net/forms/embed/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              portalId: "45458435",
+              formId: "68167e78-2309-413a-a0d7-b095d07479dd",
+              region: "na2",
+              target: "#hubspot-form"
+            });
+          </script>
+
+          <p class="form-card__tel">
+            <span class="form-card__tel-label">お電話でのご相談<span class="u-sp">（9:00–19:00／年中無休）</span></span>
+            <a class="form-card__tel-num" href="tel:0120615755">0120-615-755</a>
+            <span class="form-card__tel-hours u-pc">9:00–19:00／年中無休</span>
+          </p>
         </div>
-      </details>
-      <details style="background:var(--color-bg);border-radius:var(--radius-lg);padding:0 18px">
-        <summary style="cursor:pointer;display:flex;align-items:center;gap:14px;min-height:62px;padding:14px 0;font-weight:700;font-size:14px;line-height:1.6"><span style="flex:none;width:30px;height:30px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:12px;display:grid;place-items:center">3</span><span style="flex:1">地域通貨との連携（アイデア）</span><span aria-hidden="true" style="position:relative;flex:none;width:22px;height:22px"><span style="position:absolute;left:4px;right:4px;top:10px;height:2px;border-radius:2px;background:var(--color-accent)"></span><span class="plus-v" style="position:absolute;top:4px;bottom:4px;left:10px;width:2px;border-radius:2px;background:var(--color-accent);transition:opacity .15s"></span></span></summary>
-        <div style="padding:0 0 20px;display:flex;flex-direction:column;gap:12px">
-          <p style="font-size:14px">PTAの枠を超えて、地域全体で貢献を循環させる発想です。</p>
-          <div style="background:var(--color-neutral-100);border-radius:var(--radius-md);padding:14px 16px;font-size:14px"><b style="display:block;font-size:13px;color:var(--color-accent-700);margin-bottom:4px">千葉県木更津市（電子地域通貨「アクアコイン」）</b>PTA役員やボランティアにお茶を出す代わりに、ボランティアポイントを付与。上位の方には、花火大会の観覧席やアクアラインマラソンの出場権など、市からの特典を付与する、という提案が、アクアコインのアイデアコンテストに寄せられています。<a href="https://www.kisarazu-aquacoin.com/new_common2021/pdf/idea01.pdf" target="_blank" rel="noopener" style="display:block;margin-top:8px;font-size:12px;padding:4px 0">出典：アクアコイン アイデアコンテスト提案資料（PDF）</a></div>
-        </div>
-      </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__top">
+        <p class="brand brand--footer">
+          <img class="brand__logo" src="assets/img/logo.png" alt="地域事業承継 Regional Business Successions" width="126" height="36" loading="lazy">
+          <span class="brand__tag">北陸</span>
+        </p>
+        <a class="site-footer__buyer" href="https://hokuriku.regional-succession.com/">買い手企業の方はこちら<span class="u-pc">（地域事業承継サクセッション 北陸サイトへ）</span> ›</a>
+      </div>
+      <p class="site-footer__company">運営会社：株式会社ヒルストン<span class="sep" aria-hidden="true"></span>北陸支社：[住所]<span class="sep" aria-hidden="true"></span>M&amp;A支援機関登録<span class="sep" aria-hidden="true"></span>一般社団法人日本M&amp;Aアドバイザー協会（JMAA）会員</p>
+      <p class="site-footer__tm">「地域事業承継サクセッション」は株式会社ヒルストンの登録商標です。［登録番号・表記ルールを要確認］</p>
+      <p class="site-footer__links"><a href="#">プライバシーポリシー</a><span class="sep" aria-hidden="true"></span><a href="#">会社概要</a><span class="sep" aria-hidden="true"></span><small>© Hillstone Inc.</small></p>
     </div>
-
-    <p style="margin-top:24px;text-align:center;font-size:14px">「こんな使い方がうれしい」というアイデアがあれば、<br>ぜひお聞かせください。</p>
-    <div style="display:flex;justify-content:center;margin-top:18px"><a class="btn btn-primary" href="https://forms.gle/q2W19Z5Lz9GFZxdU7" target="_blank" rel="noopener" style="display:inline-flex;min-height:52px;padding:4px 6px 4px 26px;gap:16px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em">アイデアを送る<span class="arr" style="width:40px;height:40px;border-radius:50%;background:var(--color-bg);color:var(--color-accent);display:grid;place-items:center;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a></div>
-  </section>
-
-  <!-- ── 07 ── -->
-  <section id="k7" data-screen-label="07 委員会" style="padding:88px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">07</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">COMMITTEE</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0;text-wrap:pretty">PTAが本当にすべきことを、<br>あらためて考えます</h2>
-    </div>
-
-    <p style="margin-top:30px">他校のPTAとの交流会などで、各校の事例や現状を聞いてきました。その中で、次の委員会を<b style="color:var(--color-accent-700)">設置していない学校が増えている</b>ことがわかってきました。</p>
-    <div style="display:flex;gap:8px;margin:20px 0 20px">
-      <span class="tag tag-outline" style="flex:1;justify-content:center;font-weight:700;font-size:13px;padding:10px 6px;color:var(--color-accent-700)">成人委員会</span>
-      <span class="tag tag-outline" style="flex:1;justify-content:center;font-weight:700;font-size:13px;padding:10px 6px;color:var(--color-accent-700)">組織委員会</span>
-      <span class="tag tag-outline" style="flex:1;justify-content:center;font-weight:700;font-size:13px;padding:10px 6px;color:var(--color-accent-700)">広報委員会</span>
-    </div>
-    <p>「これまでやってきたから」ではなく、「PTAとして本当になすべきことは何か」。宮小PTAでも、その視点で選択と集中を考えていきたいと思います。</p>
-    <p style="margin-top:14px">今年度、少ない人数で活動を支えてくださっている委員のみなさんには、心から感謝しています。いまの活動を大切にしながら、来年度以降のあり方を一緒に考えていけたらと思います。</p>
-
-    <div data-reveal style="margin-top:28px;background:var(--color-bg);border-radius:var(--radius-lg);padding:24px 22px">
-      <p style="text-align:center;font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600">CASE</p>
-      <p style="text-align:center;font-weight:700;font-size:15px;margin-top:2px">他校ではこんな例も｜宮崎台小学校</p>
-      <p style="font-size:14px;margin-top:12px">「イベント委員」という、やりたいイベントをみんなで考える委員さんがいるそうです。「やらなければならないこと」ではなく、「やりたいこと」から始まる委員会です。</p>
-    </div>
-
-    <div style="display:flex;justify-content:center;margin-top:24px"><a class="btn btn-primary" href="https://forms.gle/q2W19Z5Lz9GFZxdU7" target="_blank" rel="noopener" style="display:inline-flex;min-height:52px;padding:4px 6px 4px 26px;gap:16px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em">ご意見を送る<span class="arr" style="width:40px;height:40px;border-radius:50%;background:var(--color-bg);color:var(--color-accent);display:grid;place-items:center;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a></div>
-  </section>
-
-  <!-- ── 08 ── -->
-  <section id="k8" data-screen-label="08 相互監査" style="padding:88px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">08</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">AUDIT</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0;text-wrap:pretty">会計監査を、<br>3校で「相互監査」に</h2>
-    </div>
-
-    <p style="margin-top:30px">今年度の会計監査は、<b style="color:var(--color-accent-700)">宮前平中学校・宮崎台小学校のPTAと連携</b>して、相互監査のトライアルを行います。</p>
-
-    <div data-reveal style="display:grid;gap:10px;margin:26px 0">
-      <div style="background:var(--color-bg);border-radius:var(--radius-lg);padding:16px 22px"><p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--color-neutral-600);font-weight:600">BEFORE</p><p style="font-weight:700;font-size:14px;line-height:1.7;margin-top:2px">自分たちでつくった予算を、自分たちで監査</p></div>
-      <div style="background:var(--color-accent-100);border-radius:var(--radius-lg);padding:16px 22px"><p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--color-accent-700);font-weight:600">AFTER</p><p style="font-weight:700;font-size:14px;line-height:1.7;margin-top:2px">ほかの学校のPTAが、第三者の目で監査</p></div>
-    </div>
-
-    <figure data-reveal style="margin:8px 0 0">
-      <svg viewBox="0 0 320 196" role="img" aria-label="宮前平小・宮前平中・宮崎台小の3校PTAが、おたがいの会計を監査する図" style="width:100%;height:auto;display:block">
-        <defs><marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0b6a5"></path></marker></defs>
-        <g stroke="#c0b6a5" stroke-width="2.5" stroke-linecap="round" fill="none" marker-start="url(#ah3)" marker-end="url(#ah3)">
-          <line x1="134" y1="62" x2="78" y2="136"></line><line x1="186" y1="62" x2="242" y2="136"></line><line x1="118" y1="166" x2="202" y2="166"></line>
-        </g>
-        <g font-family="Zen Kaku Gothic New, sans-serif" font-weight="700" font-size="15" text-anchor="middle" letter-spacing="1">
-          <rect x="100" y="8" width="120" height="48" rx="24" fill="#c67139"></rect><text x="160" y="38" fill="#f5ead8">宮前平小</text>
-          <rect x="4" y="142" width="108" height="48" rx="24" fill="#f5ead8"></rect><text x="58" y="172" fill="#201e1d">宮前平中</text>
-          <rect x="208" y="142" width="108" height="48" rx="24" fill="#f5ead8"></rect><text x="262" y="172" fill="#201e1d">宮崎台小</text>
-        </g>
-      </svg>
-      <figcaption style="text-align:center;font-size:12px;color:var(--color-neutral-700);margin-top:8px">3校のPTAで、おたがいの会計をチェック</figcaption>
-    </figure>
-
-    <p style="margin-top:26px">まずはトライアルです。各PTAの会長が、他校PTAのお金の使い方やまとめ方を知る情報収集の機会にもなります。よい工夫は、宮小PTAの運営にも取り入れていきます。</p>
-  </section>
-
-  <!-- ── 09 ── -->
-  <section id="k9" data-screen-label="09 役員募集" style="padding:88px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">09</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">RECRUIT</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0;text-wrap:pretty">次年度のPTA役員、<br>募集をはじめます！</h2>
-    </div>
-
-    <p style="margin-top:30px">子どもたちや学校、地域のために、面白いことをやってみたい方。「ちょっとでもやってみようかな」という気持ちだけで大丈夫です。</p>
-    <ul aria-label="募集する役職" data-reveal style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:22px 0 26px;padding:0;list-style:none">
-      <li class="tag tag-accent" style="font-weight:700;font-size:14px;padding:8px 18px">会長</li>
-      <li class="tag tag-accent" style="font-weight:700;font-size:14px;padding:8px 18px">副会長</li>
-      <li class="tag tag-accent" style="font-weight:700;font-size:14px;padding:8px 18px">書記</li>
-      <li class="tag tag-accent" style="font-weight:700;font-size:14px;padding:8px 18px">会計</li>
-      <li class="tag tag-accent" style="font-weight:700;font-size:14px;padding:8px 18px">校外</li>
-      <li class="tag tag-accent" style="font-weight:700;font-size:14px;padding:8px 18px">地教</li>
-      <li class="tag tag-accent" style="font-weight:700;font-size:14px;padding:8px 18px">区P</li>
-    </ul>
-    <p>今年度、宮小PTAは「やれるときに、やれることを、たのしんで」の形に生まれ変わりました。来年度も、その流れを一緒につくっていく仲間を探しています。</p>
-    <p style="margin-top:14px">お問い合わせフォームのほか、運営メンバーに直接声をかけていただいても大歓迎です。</p>
-    <div style="display:flex;justify-content:center;margin-top:24px"><a class="btn btn-primary" href="https://forms.gle/q2W19Z5Lz9GFZxdU7" target="_blank" rel="noopener" style="display:inline-flex;min-height:52px;padding:4px 6px 4px 26px;gap:16px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em">役員について問い合わせる<span class="arr" style="width:40px;height:40px;border-radius:50%;background:var(--color-bg);color:var(--color-accent);display:grid;place-items:center;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a></div>
-  </section>
-
-  <!-- ── 10 ── -->
-  <section id="k10" data-screen-label="10 会長から一言" style="padding:88px 24px 0;scroll-margin-top:16px">
-    <div data-reveal style="text-align:center">
-      <span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);font-family:'Figtree',sans-serif;font-weight:600;font-size:13px">10</span>
-      <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600;margin-top:14px">MESSAGE</p>
-      <h2 style="font-weight:700;font-size:22px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0">会長から一言</h2>
-    </div>
-    <div data-reveal style="margin-top:30px;background:var(--color-bg);border-radius:var(--radius-lg);padding:24px 22px">
-      <p style="font-size:14px">会長も夏休みの宿題として、<b>オニヤンマの標本づくりと調査</b>を出しました。見てくれた人、ありがとうございます。</p>
-      <p style="font-size:14px;margin-top:12px">あと、最近猫を飼いました。<span style="white-space:nowrap">かわいいにゃん。</span></p>
-      <p style="text-align:right;font-size:13px;font-weight:700;color:var(--color-neutral-700);margin-top:16px">宮前平小学校PTA会長</p>
-    </div>
-  </section>
-
-  <!-- ── お問い合わせ ── -->
-  <section aria-labelledby="hc" data-screen-label="お問い合わせ" data-reveal style="margin:88px 24px 0;background:var(--color-accent-100);border-radius:var(--radius-lg);padding:32px 22px;text-align:center">
-    <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600">CONTACT</p>
-    <h2 id="hc" style="font-weight:700;font-size:20px;line-height:1.6;letter-spacing:.05em;margin:6px 0 0">PTAへのお問い合わせ</h2>
-    <p style="font-size:14px;color:var(--color-neutral-700);margin-top:8px">ご質問・ご意見・記事の感想など、<br>お気軽にどうぞ。</p>
-    <div style="display:flex;justify-content:center;margin-top:20px"><a class="btn btn-primary" href="https://forms.gle/q2W19Z5Lz9GFZxdU7" target="_blank" rel="noopener" style="display:inline-flex;min-height:52px;padding:4px 6px 4px 26px;gap:16px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em">お問い合わせフォームを開く<span class="arr" style="width:40px;height:40px;border-radius:50%;background:var(--color-bg);color:var(--color-accent);display:grid;place-items:center;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a></div>
-  </section>
-
-  <footer style="padding:56px 24px 80px;text-align:center;font-size:12px;line-height:1.9;color:var(--color-neutral-700)">
-    <p style="font-family:'Figtree',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--color-accent-700);font-weight:600">MIYAMAEDAIRA ELEMENTARY SCHOOL PTA</p>
-    <p style="font-weight:700;color:var(--color-text);font-size:16px;letter-spacing:.08em;margin-top:8px">PTAだより vol.02</p>
-    <p style="margin-top:6px">宮前平小学校PTA｜第2号｜令和8年10月発行</p>
-    <p>やれるときに、やれることを、たのしんで！</p>
   </footer>
-</div>
 
-<a href="#top" aria-label="ページの先頭へ戻る" style="position:fixed;right:16px;bottom:16px;width:48px;height:48px;border-radius:50%;background:var(--color-neutral-100);color:var(--color-accent);box-shadow:var(--shadow-md);display:grid;place-items:center;text-decoration:none" style-hover="background:var(--color-accent-100)" style-active="background:var(--color-accent-200)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"></path></svg></a>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;washPhotos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;写真&quot;},&quot;ground&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;cream&quot;,&quot;options&quot;:[&quot;cream&quot;,&quot;white&quot;],&quot;tsType&quot;:&quot;'cream' | 'white'&quot;,&quot;section&quot;:&quot;背景&quot;}}">
-class Component extends DCLogic {
-  applyGround() {
-    const g = this.props.ground ?? 'cream';
-    document.body.style.background = g === 'white' ? '#f3efe8' : '';
-  }
-  componentDidMount() {
-    this.applyGround();
-    const els = document.querySelectorAll('[data-reveal]');
-    if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
-    this.io = new IntersectionObserver(entries => {
-      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); this.io.unobserve(en.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    els.forEach(e => this.io.observe(e));
-  }
-  componentWillUnmount() { this.io && this.io.disconnect(); }
-  componentDidUpdate() { this.applyGround(); }
-  renderVals() {
-    return { photoClass: (this.props.washPhotos ?? false) ? 'washed' : '' };
-  }
-}
-</script>
+  <!-- ===== 追従CTA（SP・FV通過後に表示） ===== -->
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true" inert>
+    <a class="sticky-cta__tel" href="tel:0120615755"><span aria-hidden="true">☎</span>電話相談</a>
+    <a class="sticky-cta__main" href="#contact">無料で相談してみる</a>
+  </div>
 </body>
 </html>
